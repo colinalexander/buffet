@@ -70,6 +70,36 @@ function truncate(value, maxLength) {
   return `${text.slice(0, maxLength - 3)}...`;
 }
 
+function buildSummaryFacts(data) {
+  const facts = [];
+  const confidenceLevel = data.confidence?.level;
+  if (confidenceLevel !== undefined && confidenceLevel !== null) {
+    facts.push(`Confidence: ${confidenceLevel}`);
+  }
+  const regime = data.state?.environment_summary?.regime_state;
+  if (regime) {
+    facts.push(`Regime: ${regime}`);
+  }
+  const grossExposure = data.state?.portfolio_summary?.key_exposures?.gross_exposure;
+  if (grossExposure !== undefined && grossExposure !== null) {
+    facts.push(`Gross exposure: ${grossExposure}`);
+  }
+  const bufferMonths = data.state?.portfolio_summary?.liquidity_position?.buffer_months;
+  if (bufferMonths !== undefined && bufferMonths !== null) {
+    facts.push(`Liquidity buffer: ${bufferMonths} mo`);
+  }
+  return facts;
+}
+
+function renderFactChips(facts) {
+  if (!facts.length) {
+    return "";
+  }
+  return `<div class="fact-list">${facts
+    .map((fact) => `<span class="fact-chip">${escapeHtml(fact)}</span>`)
+    .join("")}</div>`;
+}
+
 function formatRecommendedChanges(changes) {
   if (!Array.isArray(changes) || changes.length === 0) {
     return "<p>None</p>";
@@ -151,7 +181,24 @@ function renderDetail(data, recordPath) {
   detailOutcomeBadge.className = `badge ${outcomeType}`;
   detailOutcomeBadge.style.display = "inline-flex";
   rawLink.href = recordPath || "#";
+  const summaryFacts = buildSummaryFacts(data);
+  const summaryDescription = data.outcome.description
+    ? truncate(data.outcome.description, 140)
+    : "";
+  const callout =
+    outcomeType === "escalate"
+      ? '<div class="callout">Human authority required.</div>'
+      : "";
   detailPanel.innerHTML = `
+    <section>
+      <h4>Summary</h4>
+      <p><span class="badge ${escapeHtml(data.outcome.type)}">${escapeHtml(
+        data.outcome.type
+      )}</span></p>
+      ${summaryDescription ? `<p>${escapeHtml(summaryDescription)}</p>` : ""}
+      ${renderFactChips(summaryFacts)}
+      ${callout}
+    </section>
     <section>
       <h4>Authority</h4>
       <p>Mandate: ${escapeHtml(data.authority.mandate_id)} (v${escapeHtml(
@@ -165,13 +212,6 @@ function renderDetail(data, recordPath) {
       <h4>Invocation</h4>
       <p>Trigger: ${escapeHtml(data.invocation.trigger_type)}</p>
       <p>${escapeHtml(data.invocation.trigger_description)}</p>
-    </section>
-    <section>
-      <h4>Outcome</h4>
-      <p><span class="badge ${escapeHtml(data.outcome.type)}">${escapeHtml(
-        data.outcome.type
-      )}</span></p>
-      <p>${escapeHtml(data.outcome.description)}</p>
     </section>
     <section>
       <h4>Confidence</h4>

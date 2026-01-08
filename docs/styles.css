@@ -131,6 +131,8 @@ select {
 .badge.escalate {
   color: #f7768e;
   border-color: rgba(247, 118, 142, 0.4);
+  background: rgba(247, 118, 142, 0.08);
+  box-shadow: 0 0 0 1px rgba(247, 118, 142, 0.2), 0 4px 12px rgba(247, 118, 142, 0.15);
 }
 
 .record-list li.active {
@@ -176,6 +178,32 @@ select {
 .detail p {
   margin: 0.15rem 0;
   color: var(--muted);
+}
+
+.fact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.fact-chip {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.5rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+  background: #12151c;
+}
+
+.callout {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(247, 118, 142, 0.4);
+  background: rgba(247, 118, 142, 0.12);
+  color: #f2c4cd;
+  font-size: 0.85rem;
 }
 
 .change-list {

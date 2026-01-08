@@ -1,0 +1,17 @@
+[project]
+name = "buffet"
+version = "0.1.0"
+description = "Machine-native judgment system prototype"
+requires-python = ">=3.13"
+dependencies = [
+  "pyyaml>=6.0",
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

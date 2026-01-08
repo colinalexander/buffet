@@ -1,0 +1,55 @@
+record_id: "2f8a3f5d-9c5d-4c58-9e01-5d1a835d1c3a"
+timestamp: "2022-10-01T00:00:00Z"
+authority:
+  mandate_id: db_pension_v1
+  mandate_version: "1.0"
+  procedure_id: rate_regime_adjustment
+  procedure_version: "v1"
+invocation:
+  trigger_type: state_change
+  trigger_description: "2022 rate regime shock"
+  persistence_evidence: "two consecutive monthly reviews"
+state:
+  portfolio_summary:
+    key_exposures:
+      duration_gap_years: -2.0
+      gross_exposure: 1.15
+    liquidity_position:
+      buffer_months: 14
+    leverage_level: 1.15
+  environment_summary:
+    regime_state: rising_rates
+    key_uncertainties:
+      - inflation_persistence
+outcome:
+  type: recommend_adjustment
+  description: "Reduce duration and gross leverage to align with liability sensitivity."
+adjustment:
+  adjustment_unit: exposure
+  recommended_changes:
+    - "Reduce duration gap toward neutral"
+    - "Lower gross exposure by ~0.05"
+  mandate_constraints_checked: true
+confidence:
+  level: 0.78
+  trend: degrading
+  attribution: "Rate volatility elevated but within mandate floor."
+constraints:
+  hard_constraints_breached: false
+  constraints_at_risk:
+    - liquidity_buffer_months
+compliance:
+  procedure_followed: true
+  deviations: null
+behavior:
+  tool_calls: 0
+  procedure_branches_taken:
+    - constraints_at_risk
+    - outcome_recommend_adjustment
+  decision_latency_ms: 12
+  escalated: false
+  inaction: false
+audit:
+  retained_until: "2032-10-01"
+  immutable: true
+  superseded_by: null

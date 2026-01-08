@@ -1,0 +1,7 @@
+# Procedure trigger thresholds only. Do not restate mandate limits.
+# This file may define persistence windows or confirmation counts, but it must
+# never duplicate mandate constraints (e.g., max drawdown, max leverage).
+
+persistence:
+  minimum_confirmations: 2
+  review_cycles: 2

@@ -1,0 +1,10 @@
+scenario_id: inflation_shock_2022
+as_of: 2022-06-01T00:00:00Z
+environment:
+  rate_regime: volatile
+  inflation_regime: shock
+  uncertainty: 0.4
+portfolio:
+  gross_exposure: 1.05
+  liquidity_buffer_months: 16
+  funding_ratio: 0.9

@@ -1,0 +1,51 @@
+record_id: "9b0d8b1a-4cbe-4d46-8f2b-0b4a7d6e0d8c"
+timestamp: "2022-10-01T00:00:00Z"
+authority:
+  mandate_id: endowment_v1
+  mandate_version: "1.0"
+  procedure_id: rate_regime_adjustment
+  procedure_version: "v1"
+invocation:
+  trigger_type: state_change
+  trigger_description: "2022 rate regime shock"
+  persistence_evidence: "two consecutive monthly reviews"
+state:
+  portfolio_summary:
+    key_exposures:
+      duration_gap_years: -0.5
+      gross_exposure: 1.10
+    liquidity_position:
+      buffer_months: 14
+    leverage_level: 1.10
+  environment_summary:
+    regime_state: rising_rates
+    key_uncertainties:
+      - inflation_persistence
+outcome:
+  type: affirm_alignment
+  description: "Current exposures remain within mandate tolerances under the observed rate regime."
+inaction:
+  justification: "Liquidity and leverage remain within tolerances; no adjustment required under the mandate."
+  risks_acknowledged:
+    - "Sustained inflation could pressure real spending over time"
+confidence:
+  level: 0.81
+  trend: stable
+  attribution: "Regime shift is observed but within acceptable tolerance bands."
+constraints:
+  hard_constraints_breached: false
+  constraints_at_risk: []
+compliance:
+  procedure_followed: true
+  deviations: null
+behavior:
+  tool_calls: 0
+  procedure_branches_taken:
+    - outcome_affirm_alignment
+  decision_latency_ms: 9
+  escalated: false
+  inaction: true
+audit:
+  retained_until: "2032-10-01"
+  immutable: true
+  superseded_by: null

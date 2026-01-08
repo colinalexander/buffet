@@ -1,0 +1,203 @@
+# ============================================================
+# Mandate Definition — Liability-Driven / Solvency-Critical
+# ============================================================
+
+meta:
+  mandate_id: db_pension_v1
+  archetype: liability_driven
+  investor_type: defined_benefit_pension
+  version: 1.0
+  effective_date: 2026-01-01
+  review_frequency: annual
+  owner: investment_committee
+  fiduciary_standard: exclusive_benefit_rule
+
+# ------------------------------------------------------------
+# Core Objective
+# ------------------------------------------------------------
+objective:
+  primary:
+    type: liability_relative
+    description: >
+      Meet projected benefit payments with high confidence
+      while preserving long-term solvency.
+    evaluation_horizon_years: [10, 15]
+
+  return_target:
+    real_return_target: 0.035        # CPI + 3.5%
+    tolerance_band: [-0.01, 0.01]    # Not a hard constraint
+
+# ------------------------------------------------------------
+# Liability Profile
+# ------------------------------------------------------------
+liabilities:
+  duration_years: 12.5
+  convexity_sensitive: true
+  near_term_cashflow:
+    horizon_months: 36
+    minimum_funding_coverage: 1.0    # Must fully cover benefits
+
+# ------------------------------------------------------------
+# Risk Constraints (Hard)
+# ------------------------------------------------------------
+risk_constraints:
+  max_drawdown:
+    level: 0.20                      # 20% peak-to-trough
+    measurement_basis: total_fund
+    breach_action: escalate
+
+  funding_ratio:
+    minimum: 0.85
+    measurement_frequency: quarterly
+    breach_action: freeze_and_escalate
+
+  shortfall_risk:
+    horizon_years: 5
+    max_probability: 0.05
+    breach_action: escalate
+
+# ------------------------------------------------------------
+# Risk Preferences (Soft)
+# ------------------------------------------------------------
+risk_preferences:
+  volatility:
+    priority: secondary
+    acceptable_range: [0.08, 0.14]
+
+  tracking_error:
+    priority: low
+    note: >
+      Benchmark-relative tracking error is not a binding objective.
+
+# ------------------------------------------------------------
+# Liquidity Constraints
+# ------------------------------------------------------------
+liquidity:
+  minimum_buffer_months: 18
+  stress_liquidity_horizon_days: 30
+  forced_liquidation:
+    prohibited: true
+
+  illiquid_assets:
+    max_allocation: 0.15
+    overlapping_liability_risk: prohibited
+
+# ------------------------------------------------------------
+# Asset Allocation Structure
+# ------------------------------------------------------------
+asset_allocation:
+  strategic_targets:
+    public_equity:
+      target: 0.40
+      range: [0.30, 0.50]
+      style_bias: quality
+
+    fixed_income:
+      target: 0.35
+      range: [0.25, 0.45]
+      role: liability_hedge
+
+    real_assets:
+      target: 0.10
+      range: [0.05, 0.15]
+
+    private_markets:
+      target: 0.10
+      range: [0.00, 0.15]
+
+    cash:
+      target: 0.05
+      range: [0.02, 0.10]
+
+# ------------------------------------------------------------
+# Adjustment & Rebalancing Policy
+# ------------------------------------------------------------
+adjustment_policy:
+  philosophy: state_based
+  adjustment_unit: exposure
+  preferred_behavior:
+    - gradual_realignment
+    - minimize_turnover
+    - preserve_optionalities
+
+  inaction:
+    explicitly_allowed: true
+    justification_required: true
+
+# ------------------------------------------------------------
+# Leverage & Derivatives
+# ------------------------------------------------------------
+leverage:
+  permitted: true
+  purposes_allowed:
+    - liability_hedging
+    - exposure_efficiency
+  purposes_prohibited:
+    - return_amplification
+
+  max_gross_exposure: 1.20
+  breach_action: immediate_escalation
+
+# ------------------------------------------------------------
+# Automation Boundary
+# ------------------------------------------------------------
+automation:
+  allowed_actions:
+    - monitor_alignment
+    - recommend_adjustments
+    - justify_inaction
+    - trigger_escalation
+
+  prohibited_actions:
+    - redefine_objectives
+    - alter_risk_limits
+    - execute_irreversible_actions
+    - expand_system_authority
+
+# ------------------------------------------------------------
+# Escalation Rules
+# ------------------------------------------------------------
+escalation:
+  triggers:
+    - risk_constraint_breach
+    - confidence_degradation
+    - conflicting_objectives
+    - regime_uncertainty_spike
+
+  human_authority_required:
+    - mandate_revision
+    - forced_deleveraging
+    - large_illiquid_exits
+
+# ------------------------------------------------------------
+# Confidence & Uncertainty Handling
+# ------------------------------------------------------------
+confidence:
+  minimum_confidence_level: 0.70
+  degradation_response:
+    - slow_adjustments
+    - increase_liquidity
+    - escalate_if_persistent
+
+# ------------------------------------------------------------
+# Definition of Success & Failure
+# ------------------------------------------------------------
+outcomes:
+  success:
+    - liabilities_met
+    - funding_ratio_within_bounds
+    - adherence_to_procedure
+
+  failure:
+    - forced_liquidation
+    - mandate_redefinition_post_loss
+    - silent_constraint_violation
+
+# ------------------------------------------------------------
+# Audit & Memory
+# ------------------------------------------------------------
+audit:
+  logging_required: true
+  rationale_retention_years: 10
+  versioning_required: true
+

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MandateOS Judgment Viewer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img
+        src="figures/banner.png"
+        alt="Institutional investment judgment represented as a governed control system, with supervised procedures, explicit constraints, and auditable outcomes rather than trading activity"
+      />
+      <div class="hero-text">
+        <h1>MandateOS — Judgment Viewer</h1>
+        <p>
+          Read-only viewer of published judgment records.
+        </p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Records</h2>
+        <div class="filters">
+          <label>
+            Mandate
+            <select id="filter-mandate"></select>
+          </label>
+          <label>
+            Procedure
+            <select id="filter-procedure"></select>
+          </label>
+          <label>
+            Outcome
+            <select id="filter-outcome"></select>
+          </label>
+        </div>
+        <ul id="record-list" class="record-list"></ul>
+      </section>
+
+      <section class="panel detail-panel">
+        <div class="detail-header">
+          <div class="detail-title">
+            <h2>Record Detail</h2>
+            <span id="detail-outcome-badge" class="badge"></span>
+          </div>
+          <a id="raw-link" href="#" target="_blank" rel="noopener">Open raw JSON</a>
+        </div>
+        <div id="record-detail" class="detail"></div>
+
+        <div class="compare">
+          <div class="compare-header">
+            <h3>Compare</h3>
+            <label>
+              Compare to
+              <select id="compare-select"></select>
+            </label>
+          </div>
+          <div class="compare-grid">
+            <div>
+              <h4>Primary</h4>
+              <div id="compare-primary"></div>
+            </div>
+            <div>
+              <h4>Secondary</h4>
+              <div id="compare-secondary"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Non-authoritative, read-only viewer of published judgment records. No actions are executed here.
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

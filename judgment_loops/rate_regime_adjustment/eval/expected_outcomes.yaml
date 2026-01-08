@@ -1,0 +1,7 @@
+cases:
+  - mandate: mandates/liability_driven/db_pension_v1/mandate.yaml
+    scenario: judgment_loops/rate_regime_adjustment/scenarios/rising_rates_2022.yaml
+    expected_outcome: recommend_adjustment
+  - mandate: mandates/perpetual_capital/endowment_v1/mandate.yaml
+    scenario: judgment_loops/rate_regime_adjustment/scenarios/rising_rates_2022.yaml
+    expected_outcome: affirm_alignment

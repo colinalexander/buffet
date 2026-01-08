@@ -1,13 +1,6 @@
 {
   "_published_at": "2026-01-08T09:55:05.469783Z",
-  "_published_from": "20260108T080550Z_34f0e815-1158-4fa2-9586-55291d6e45b3.yaml",
-  "adjustment": {
-    "adjustment_unit": "exposure",
-    "mandate_constraints_checked": true,
-    "recommended_changes": [
-      "Increase liquidity buffer to mandate minimum"
-    ]
-  },
+  "_published_from": "20260108T095505Z_23d1d90a-fea4-481d-9f7d-e355996c40a9.yaml",
   "audit": {
     "immutable": true,
     "retained_until": "2036-01-06",
@@ -21,11 +14,12 @@
   },
   "behavior": {
     "decision_latency_ms": 0,
-    "escalated": false,
+    "escalated": true,
     "inaction": false,
     "procedure_branches_taken": [
+      "hard_constraint_breach",
       "constraints_at_risk",
-      "outcome_recommend_adjustment"
+      "outcome_escalate"
     ],
     "tool_calls": 0
   },
@@ -42,18 +36,25 @@
     "constraints_at_risk": [
       "liquidity_buffer_months"
     ],
-    "hard_constraints_breached": false
+    "hard_constraints_breached": true
+  },
+  "escalation": {
+    "automated_actions_suspended": true,
+    "escalation_reason": "Mandate constraints breached or confidence below floor.",
+    "human_authority_required": [
+      "Investment committee review"
+    ]
   },
   "invocation": {
     "persistence_evidence": "2 confirmations over 2 cycles",
-    "trigger_description": "Scenario rising_rates_2022",
+    "trigger_description": "Scenario escalation_case",
     "trigger_type": "state_change"
   },
   "outcome": {
-    "description": "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | confidence=0.72 | mandate=db_pension_v1 | constraints_at_risk",
-    "type": "recommend_adjustment"
+    "description": "Regime=rising_rates | gross_exposure=1.35 | liquidity_buffer_months=14 | confidence=0.72 | mandate=db_pension_v1 | hard_constraint_breach",
+    "type": "escalate"
   },
-  "record_id": "34f0e815-1158-4fa2-9586-55291d6e45b3",
+  "record_id": "23d1d90a-fea4-481d-9f7d-e355996c40a9",
   "state": {
     "environment_summary": {
       "key_uncertainties": [
@@ -63,13 +64,13 @@
     },
     "portfolio_summary": {
       "key_exposures": {
-        "gross_exposure": 1.15
+        "gross_exposure": 1.35
       },
-      "leverage_level": 1.15,
+      "leverage_level": 1.35,
       "liquidity_position": {
         "buffer_months": 14
       }
     }
   },
-  "timestamp": "2026-01-08T08:05:50Z"
+  "timestamp": "2026-01-08T09:55:05Z"
 }

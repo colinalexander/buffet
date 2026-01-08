@@ -1,6 +1,33 @@
 {
-  "generated_at": "2026-01-08T09:34:55.389866Z",
+  "generated_at": "2026-01-08T09:55:05.469783Z",
   "records": [
+    {
+      "confidence_level": 0.725,
+      "mandate_id": "db_pension_v1",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260108T095505Z_17742099-a1c7-473b-af4d-79ba2884a379.json",
+      "procedure_id": "rate_regime_adjustment",
+      "record_id": "17742099-a1c7-473b-af4d-79ba2884a379",
+      "timestamp": "2026-01-08T09:55:05Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "mandate_id": "db_pension_v1",
+      "outcome_type": "escalate",
+      "path": "data/records/20260108T095505Z_23d1d90a-fea4-481d-9f7d-e355996c40a9.json",
+      "procedure_id": "rate_regime_adjustment",
+      "record_id": "23d1d90a-fea4-481d-9f7d-e355996c40a9",
+      "timestamp": "2026-01-08T09:55:05Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "mandate_id": "endowment_v1",
+      "outcome_type": "affirm_alignment",
+      "path": "data/records/20260108T095505Z_566f4d72-8737-4312-8e49-3cd4b0e5f499.json",
+      "procedure_id": "rate_regime_adjustment",
+      "record_id": "566f4d72-8737-4312-8e49-3cd4b0e5f499",
+      "timestamp": "2026-01-08T09:55:05Z"
+    },
     {
       "confidence_level": 0.725,
       "mandate_id": "endowment_v1",

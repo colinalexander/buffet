@@ -54,5 +54,6 @@ docs/data/records/*.json
 # Preserve directory structure
 !docs/data/records/.gitkeep
 
+# --- GitHub Pages viewer snapshots (tracked) ---
 !docs/data/index.json
 !docs/data/records/*.json

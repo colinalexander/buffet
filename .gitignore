@@ -1,0 +1,55 @@
+# ------------------------------------------------------------------
+# Python bytecode / caches
+# ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ------------------------------------------------------------------
+# Test / coverage artifacts
+# ------------------------------------------------------------------
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# ------------------------------------------------------------------
+# Virtual environments
+# ------------------------------------------------------------------
+.venv/
+venv/
+ENV/
+env/
+
+# ------------------------------------------------------------------
+# OS / editor noise
+# ------------------------------------------------------------------
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ------------------------------------------------------------------
+# Runtime outputs (authoritative outputs should be curated explicitly)
+# ------------------------------------------------------------------
+# Keep directory structure, ignore generated files
+data/processed/judgment_records/*.yaml
+data/processed/judgment_records/*.json
+data/processed/escalations/*
+data/processed/overrides/*
+
+# Preserve placeholders
+!data/processed/judgment_records/.gitkeep
+!data/processed/escalations/.gitkeep
+!data/processed/overrides/.gitkeep
+
+# ------------------------------------------------------------------
+# GitHub Pages published snapshots (regenerated via make pages)
+# ------------------------------------------------------------------
+docs/data/index.json
+docs/data/records/*.json
+
+# Preserve directory structure
+!docs/data/records/.gitkeep

@@ -53,3 +53,6 @@ docs/data/records/*.json
 
 # Preserve directory structure
 !docs/data/records/.gitkeep
+
+!docs/data/index.json
+!docs/data/records/*.json

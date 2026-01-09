@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MandateOS FAQ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero hero-compact">
+      <img
+        src="figures/banner.png"
+        alt="Institutional investment judgment represented as a governed control system, with supervised procedures, explicit constraints, and auditable outcomes rather than trading activity"
+      />
+      <div class="hero-text">
+        <div class="hero-top">
+          <h1>MandateOS — FAQ</h1>
+          <nav class="nav" aria-label="Site">
+            <a href="./index.html">Viewer</a>
+            <a class="active" href="./faq.html">FAQ</a>
+          </nav>
+        </div>
+        <p>Governance-first answers for non-engineers.</p>
+      </div>
+    </header>
+
+    <main class="layout faq-layout">
+      <section class="panel">
+        <p class="preamble">
+          MandateOS is a mandate-bound judgment system. It produces auditable,
+          append-only Judgment Records and may escalate to human authority; it
+          never places trades.
+        </p>
+
+        <div class="faq-item">
+          <h3>1) Is MandateOS a trading system?</h3>
+          <p>
+            No. MandateOS is a governance and judgment system that produces
+            records describing an outcome: affirm alignment, recommend an
+            exposure-level adjustment, or escalate. It does not route orders or
+            execute trades.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>2) Does MandateOS place trades or mutate portfolios?</h3>
+          <p>
+            No. The system outputs read-only artifacts (Judgment Records and
+            escalation artifacts) and does not mutate portfolio state. Any
+            portfolio changes occur only through human-controlled processes
+            outside this repository.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>3) Does MandateOS make investment decisions?</h3>
+          <p>
+            MandateOS applies documented procedures under an explicit mandate to
+            produce a judgment outcome and rationale. It may recommend
+            exposure-level adjustments within authority bounds, or escalate when
+            authority or confidence limits are reached. Final accountability and
+            authorization remain with human fiduciaries.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>4) Does the system learn over time?</h3>
+          <p>
+            Not autonomously. Institutional learning occurs through human review
+            and versioned updates to mandates and procedures. The system does
+            not perform trial-and-error learning or adapt its authority at
+            runtime.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>5) Is reinforcement learning used?</h3>
+          <p>
+            No. Reinforcement learning and reward optimization are outside the
+            authority model. The system is designed for determinism, audit, and
+            escalation discipline rather than self-optimization.
+          </p>
+        </div>
+
+        <div class="faq-item escalate">
+          <h3>6) What triggers escalation?</h3>
+          <p>
+            Escalation is triggered when predefined authority boundaries are
+            reached: hard constraint breaches, confidence falling below mandate
+            minimums, conflicting objectives, or persistent uncertainty beyond
+            procedural tolerance. Escalation is a designed outcome, not an error
+            condition.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>7) What happens after escalation?</h3>
+          <p>
+            The system produces an escalation artifact that routes the issue to
+            human authority. Automated judgment does not proceed as if the
+            decision were resolved; escalation indicates human review is
+            required to authorize any next step.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>8) Can mandates or procedures be changed through the UI?</h3>
+          <p>
+            No. The Judgment Viewer is a read-only, non-authoritative viewer of
+            published artifacts. It does not provide controls to modify
+            mandates, procedures, or records.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>9) How is past behavior audited and reproduced?</h3>
+          <p>
+            Each Judgment Record binds to the mandate and procedure versions
+            used at the time of judgment, and records are append-only for audit.
+            Auditing is performed by reviewing the referenced authority sources
+            and the emitted record. Reproducing exact outputs additionally
+            depends on the execution engine version used to run the procedure.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>10) Who is accountable for outcomes?</h3>
+          <p>
+            Human fiduciaries remain accountable for mandates, procedure
+            governance, and any actions taken in response to judgments or
+            escalations. The system is designed to make authority explicit and
+            decisions auditable, not to replace fiduciary responsibility.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>Non-authoritative, read-only documentation. No actions are executed here.</footer>
+  </body>
+</html>

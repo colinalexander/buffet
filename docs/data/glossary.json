@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-01-09T00:00:00Z",
+  "terms": [
+    {
+      "slug": "judgment-record",
+      "term": "Judgment Record",
+      "definition": "An append-only, audit-ready artifact emitted by MandateOS. It binds a judgment outcome to the mandate and procedure versions that governed it, plus the state snapshot, confidence, constraints, and behavior metadata.",
+      "examples": [
+        "Used by a risk officer to verify a mandate constraint was checked before any change is proposed.",
+        "Used by a committee to review why an escalation halted automation."
+      ],
+      "tags": ["audit", "artifact", "append-only"]
+    },
+    {
+      "slug": "mandate",
+      "term": "Mandate",
+      "definition": "A machine-readable authority contract (typically YAML) that encodes institutional constraints and boundaries (e.g., risk limits, liquidity buffers, confidence floors). Mandates define what is allowed.",
+      "examples": ["Two mandates may legitimately yield different outcomes under the same procedure because constraints differ."],
+      "tags": ["authority", "constraints"]
+    },
+    {
+      "slug": "procedure",
+      "term": "Procedure",
+      "definition": "A governed, versioned decision loop specification that defines how judgment is applied under a mandate (triggers, checks, escalation rules). Procedures define how judgment is applied, not what the mandate allows.",
+      "examples": [
+        "A rate regime adjustment procedure can recommend exposure-level changes while staying within mandate bounds."
+      ],
+      "tags": ["governance", "process"]
+    },
+    {
+      "slug": "affirm-alignment",
+      "term": "affirm_alignment",
+      "definition": "Outcome type indicating the evaluated state is within authority bounds under the referenced mandate and procedure. No change is requested; the system explicitly chooses inaction under governance discipline.",
+      "examples": ["Record shows constraints satisfied and confidence stable; automation continues."],
+      "tags": ["outcome", "inaction"]
+    },
+    {
+      "slug": "recommend-adjustment",
+      "term": "recommend_adjustment",
+      "definition": "Outcome type indicating a bounded, exposure-level adjustment is recommended within the mandate’s authority boundaries. The system does not execute trades; humans decide whether to accept and execute outside MandateOS.",
+      "examples": ["Recommendation to increase liquidity buffer to the mandate minimum."],
+      "tags": ["outcome", "recommendation"]
+    },
+    {
+      "slug": "escalate",
+      "term": "escalate",
+      "definition": "Outcome type indicating an authority boundary was reached (e.g., hard constraint breach, confidence below floor, or unresolved tradeoff). Automation is suspended until human authority reviews and decides.",
+      "examples": ["A leverage constraint breach triggers escalation and routes to the investment committee."],
+      "tags": ["outcome", "human-authority"]
+    },
+    {
+      "slug": "authority-boundary",
+      "term": "Authority boundary",
+      "definition": "The set of explicit limits and decision rights defined by mandates and procedures. When a boundary is reached, the correct behavior is escalation rather than discretionary action.",
+      "examples": ["Confidence below a mandate minimum triggers escalation instead of silent continuation."],
+      "tags": ["authority", "safety"]
+    },
+    {
+      "slug": "confidence",
+      "term": "Confidence",
+      "definition": "A structured measure of judgment certainty produced by the procedure. Confidence does not justify expanding authority; low confidence should drive escalation per mandate.",
+      "examples": ["Confidence trend stable vs degrading informs whether to recommend adjustment or escalate."],
+      "tags": ["risk", "uncertainty"]
+    },
+    {
+      "slug": "hard-constraint",
+      "term": "Hard constraint",
+      "definition": "A binding mandate limit that must not be violated. Hard constraint breaches typically trigger escalation (or freeze-and-escalate) rather than recommendation.",
+      "examples": ["Max gross exposure limit exceeded -> escalate."],
+      "tags": ["constraints", "escalation"]
+    },
+    {
+      "slug": "constraints-at-risk",
+      "term": "Constraints at risk",
+      "definition": "A set of constraints that are trending toward breach. This is a governance signal: it can justify early adjustment recommendations before a hard breach occurs.",
+      "examples": ["Liquidity buffer months approaching minimum -> recommend adjustment."],
+      "tags": ["monitoring", "risk"]
+    },
+    {
+      "slug": "audit-package",
+      "term": "Audit package",
+      "definition": "A portable bundle of selected judgment records plus supporting governance context (e.g., glossary and authority attachments). Designed for committee packets and compliance review.",
+      "examples": ["Zip containing selected records, a timeline CSV, and referenced authority sources."],
+      "tags": ["export", "audit"]
+    },
+    {
+      "slug": "append-only",
+      "term": "Append-only",
+      "definition": "A storage discipline where prior records are never overwritten. New runs produce new artifacts, enabling a complete and immutable audit trail.",
+      "examples": ["New judgment -> new record file; past records remain intact."],
+      "tags": ["audit", "immutability"]
+    }
+  ]
+}
+

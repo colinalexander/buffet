@@ -71,6 +71,9 @@ MandateOS is designed to make **Investment Policy Statements (IPS)** operational
 
 ## What You Can Click Right Now
 - **Judgment Viewer (GitHub Pages):** https://colinalexander.github.io/buffet/
+- **Visualizations:** https://colinalexander.github.io/buffet/visualizations.html
+- **Glossary:** https://colinalexander.github.io/buffet/glossary.html
+- **Download & Audit tools:** https://colinalexander.github.io/buffet/download.html
 - **Founder demo (narrative walkthrough):** `documentation/FOUNDER_DEMO.md`
 
 ![MandateOS high-level architecture showing human authority, contracts, mandates, procedures, and append-only judgment record outputs with escalation back to humans.](documentation/figures/process.png)
@@ -133,6 +136,41 @@ This repo demonstrates the instincts needed to build durable investing systems:
 ---
 
 ## Implementation Notes
+
+### Judgment Viewer — Governance Interface (Static, GitHub Pages Deployable)
+
+The viewer under `docs/` is designed for CIOs, risk officers, and compliance committees: it emphasizes **authority bindings**, **auditability**, and **explicit escalation discipline** (no trades).
+
+Key pages:
+- `docs/index.html`: human-readable summary cards + role-based context side panel; filters (mandate/procedure/type/date/search); raw JSON preserved as an audit artifact disclosure.
+- `docs/visualizations.html`: judgment timeline, escalation frequency by mandate/procedure, and an escalation heatmap with drilldown to records.
+- `docs/glossary.html`: governance glossary + interpretation guidance; onboarding wizard to explain how to read records and when escalation requires action.
+- `docs/download.html`: export tools (CSV timelines, PDF summary packets, and a zip “audit package” bundling records + glossary + authority attachments when published).
+- UI mockup: `docs/figures/judgment-viewer-mockup.svg`
+
+### Deploying on GitHub Pages
+
+1) Generate the published dataset snapshot:
+
+```bash
+make pages
+```
+
+This publishes:
+- `docs/data/index.json` + `docs/data/records/*.json` (published judgment records)
+- `docs/attachments/**` + `docs/data/authority_sources.json` (mandate/procedure attachments referenced by records)
+
+2) In GitHub, enable Pages for this repo with **Source: Deploy from a branch** and **Folder: `/docs`**.
+
+### Running locally
+
+Because the viewer fetches JSON via `fetch()`, serve `docs/` with a local web server:
+
+```bash
+python3 -m http.server -d docs 8000
+```
+
+Then open `http://localhost:8000/`.
 
 ### How It Works
 

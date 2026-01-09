@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="hero">
       <img
         src="figures/banner.png"
@@ -16,20 +17,37 @@
         <div class="hero-top">
           <h1>MandateOS — Judgment Viewer</h1>
           <nav class="nav" aria-label="Site">
-            <a class="active" href="./index.html">Viewer</a>
-            <a href="./faq.html">FAQ</a>
+            <a data-nav href="./index.html">Home</a>
+            <a data-nav href="./visualizations.html">Visualizations</a>
+            <a data-nav href="./glossary.html">Glossary</a>
+            <a data-nav href="./download.html">Download</a>
+            <a data-nav href="./faq.html">FAQ</a>
+            <button id="nav-onboarding" class="nav-btn" type="button">Onboarding</button>
           </nav>
         </div>
         <p>
-          Read-only viewer of published judgment records.
+          Governance-first viewer of published, append-only Judgment Records (no trades).
         </p>
       </div>
     </header>
 
-    <main class="layout">
+    <main id="main" class="layout layout-3">
       <section class="panel">
-        <h2>Records</h2>
+        <div class="panel-header">
+          <div>
+            <h2>Records</h2>
+            <p class="panel-subtitle"><span id="filtered-count">0</span> visible · <span id="selected-count">0</span> selected</p>
+          </div>
+          <div class="panel-actions">
+            <button id="select-all" class="btn btn-ghost" type="button">Select all</button>
+            <button id="clear-selection" class="btn btn-ghost" type="button">Clear</button>
+          </div>
+        </div>
         <div class="filters">
+          <label>
+            Search
+            <input id="filter-search" type="search" placeholder="mandate, procedure, outcome, record id…" />
+          </label>
           <label>
             Mandate
             <select id="filter-mandate"></select>
@@ -39,11 +57,26 @@
             <select id="filter-procedure"></select>
           </label>
           <label>
-            Outcome
+            Judgment type
             <select id="filter-outcome"></select>
           </label>
+          <div class="date-grid">
+            <label>
+              From
+              <input id="filter-from" type="date" />
+            </label>
+            <label>
+              To
+              <input id="filter-to" type="date" />
+            </label>
+          </div>
         </div>
         <ul id="record-list" class="record-list"></ul>
+        <div class="export-bar" aria-label="Export selected records">
+          <button id="export-csv" class="btn" type="button">Export CSV</button>
+          <button id="export-pdf" class="btn" type="button">Export PDF</button>
+          <button id="download-audit" class="btn btn-primary" type="button">Download audit package</button>
+        </div>
       </section>
 
       <section class="panel detail-panel">
@@ -75,13 +108,21 @@
         </div>
 
         <div id="record-detail" class="detail"></div>
+        <details class="raw-details">
+          <summary>Raw JSON (audit artifact)</summary>
+          <pre id="raw-json" class="raw-json" aria-label="Raw JSON"></pre>
+        </details>
       </section>
+
+      <aside id="context-panel" class="panel context-panel" aria-label="Role-based context panel"></aside>
     </main>
 
     <footer>
       Non-authoritative, read-only viewer of published judgment records. No actions are executed here.
     </footer>
 
-    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

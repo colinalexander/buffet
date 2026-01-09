@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="hero hero-compact">
       <img
         src="figures/banner.png"
@@ -16,15 +17,19 @@
         <div class="hero-top">
           <h1>MandateOS — FAQ</h1>
           <nav class="nav" aria-label="Site">
-            <a href="./index.html">Viewer</a>
-            <a class="active" href="./faq.html">FAQ</a>
+            <a data-nav href="./index.html">Home</a>
+            <a data-nav href="./visualizations.html">Visualizations</a>
+            <a data-nav href="./glossary.html">Glossary</a>
+            <a data-nav href="./download.html">Download</a>
+            <a data-nav href="./faq.html">FAQ</a>
+            <button id="nav-onboarding" class="nav-btn" type="button">Onboarding</button>
           </nav>
         </div>
         <p>Governance-first answers for non-engineers.</p>
       </div>
     </header>
 
-    <main class="layout faq-layout">
+    <main id="main" class="layout faq-layout">
       <section class="panel">
         <p class="preamble">
           MandateOS is a mandate-bound judgment system. It produces auditable,
@@ -136,5 +141,10 @@
     </main>
 
     <footer>Non-authoritative, read-only documentation. No actions are executed here.</footer>
+    <script type="module">
+      import { setActiveNav, wireOnboarding } from "./js/page.js";
+      setActiveNav();
+      wireOnboarding({ autoOpen: false });
+    </script>
   </body>
 </html>

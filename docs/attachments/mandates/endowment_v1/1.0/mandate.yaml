@@ -1,0 +1,200 @@
+# ============================================================
+# Mandate Definition — Perpetual Capital / Intergenerational
+# ============================================================
+
+meta:
+  mandate_id: endowment_v1
+  archetype: perpetual_capital
+  investor_type: university_endowment
+  version: 1.0
+  effective_date: 2026-01-01
+  review_frequency: annual
+  owner: investment_committee
+  fiduciary_standard: intergenerational_equity
+
+# ------------------------------------------------------------
+# Core Objective
+# ------------------------------------------------------------
+objective:
+  primary:
+    type: purchasing_power_preservation
+    description: >
+      Preserve and grow real purchasing power of capital
+      across generations while supporting stable annual spending.
+    evaluation_horizon_years: [15, 25]
+
+  return_target:
+    real_return_target: 0.045        # CPI + 4.5%
+    tolerance_band: [-0.015, 0.015]
+
+# ------------------------------------------------------------
+# Liability / Spending Profile
+# ------------------------------------------------------------
+liabilities:
+  spending_policy:
+    annual_spend_rate: 0.045
+    smoothing_window_years: 3
+
+  near_term_cashflow:
+    horizon_months: 24
+    minimum_funding_coverage: 0.75   # Partial coverage acceptable
+
+# ------------------------------------------------------------
+# Risk Constraints (Hard)
+# ------------------------------------------------------------
+risk_constraints:
+  max_drawdown:
+    level: 0.30                      # 30% peak-to-trough
+    measurement_basis: total_fund
+    breach_action: escalate
+
+  existential_risk:
+    probability_threshold: 0.01
+    horizon_years: 10
+    breach_action: freeze_and_escalate
+
+# ------------------------------------------------------------
+# Risk Preferences (Soft)
+# ------------------------------------------------------------
+risk_preferences:
+  volatility:
+    priority: tolerated
+    acceptable_range: [0.10, 0.18]
+
+  tracking_error:
+    priority: irrelevant
+    note: >
+      Benchmark-relative tracking error is not a decision input.
+
+# ------------------------------------------------------------
+# Liquidity Constraints
+# ------------------------------------------------------------
+liquidity:
+  minimum_buffer_months: 12
+  stress_liquidity_horizon_days: 60
+
+  forced_liquidation:
+    prohibited: true
+
+  illiquid_assets:
+    max_allocation: 0.35
+    overlapping_liability_risk: acceptable
+
+# ------------------------------------------------------------
+# Asset Allocation Structure
+# ------------------------------------------------------------
+asset_allocation:
+  strategic_targets:
+    public_equity:
+      target: 0.45
+      range: [0.35, 0.60]
+      style_bias: quality_growth
+
+    fixed_income:
+      target: 0.15
+      range: [0.05, 0.25]
+      role: ballast
+
+    real_assets:
+      target: 0.15
+      range: [0.10, 0.25]
+
+    private_markets:
+      target: 0.20
+      range: [0.10, 0.40]
+
+    cash:
+      target: 0.05
+      range: [0.02, 0.10]
+
+# ------------------------------------------------------------
+# Adjustment & Rebalancing Policy
+# ------------------------------------------------------------
+adjustment_policy:
+  philosophy: tolerance_based
+  adjustment_unit: exposure
+  preferred_behavior:
+    - tolerate_volatility
+    - preserve_growth_optionalities
+    - avoid_reactionary_de_risking
+
+  inaction:
+    explicitly_allowed: true
+    justification_required: true
+
+# ------------------------------------------------------------
+# Leverage & Derivatives
+# ------------------------------------------------------------
+leverage:
+  permitted: true
+  purposes_allowed:
+    - exposure_efficiency
+    - risk_balancing
+  purposes_prohibited:
+    - short_term_speculation
+
+  max_gross_exposure: 1.40
+  breach_action: escalate
+
+# ------------------------------------------------------------
+# Automation Boundary
+# ------------------------------------------------------------
+automation:
+  allowed_actions:
+    - monitor_alignment
+    - recommend_adjustments
+    - justify_inaction
+    - trigger_escalation
+
+  prohibited_actions:
+    - redefine_objectives
+    - alter_spending_policy
+    - execute_irreversible_actions
+    - expand_system_authority
+
+# ------------------------------------------------------------
+# Escalation Rules
+# ------------------------------------------------------------
+escalation:
+  triggers:
+    - existential_risk_signal
+    - confidence_degradation
+    - conflicting_objectives
+    - sustained_spending_coverage_shortfall
+
+  human_authority_required:
+    - spending_policy_change
+    - large_scale_de_risking
+    - permanent_liquidity_shift
+
+# ------------------------------------------------------------
+# Confidence & Uncertainty Handling
+# ------------------------------------------------------------
+confidence:
+  minimum_confidence_level: 0.60
+  degradation_response:
+    - widen_tolerance_bands
+    - slow_adjustments
+    - escalate_if_persistent
+
+# ------------------------------------------------------------
+# Definition of Success & Failure
+# ------------------------------------------------------------
+outcomes:
+  success:
+    - purchasing_power_preserved
+    - spending_stability
+    - adherence_to_procedure
+
+  failure:
+    - permanent_spending_impairment
+    - forced_liquidation
+    - silent_authority_expansion
+
+# ------------------------------------------------------------
+# Audit & Memory
+# ------------------------------------------------------------
+audit:
+  logging_required: true
+  rationale_retention_years: 15
+  versioning_required: true

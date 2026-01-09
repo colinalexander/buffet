@@ -7,7 +7,7 @@ import json
 import shutil
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterable, List
+from typing import Any, Dict, Iterable, List, Tuple
 
 import yaml
 
@@ -87,9 +87,110 @@ def _index_entry(record: Dict[str, Any], json_path: Path, out_dir: Path) -> Dict
         "record_id": record.get("record_id"),
         "timestamp": record.get("timestamp"),
         "mandate_id": authority.get("mandate_id"),
+        "mandate_version": authority.get("mandate_version"),
         "procedure_id": authority.get("procedure_id"),
+        "procedure_version": authority.get("procedure_version"),
         "outcome_type": outcome.get("type"),
         "confidence_level": confidence.get("level"),
+    }
+
+
+def _load_mandate_sources() -> Dict[Tuple[str, str], Path]:
+    """Index mandate source files by (mandate_id, version)."""
+    sources: Dict[Tuple[str, str], Path] = {}
+    for path in Path("mandates").glob("**/mandate.yaml"):
+        try:
+            data = yaml.safe_load(path.read_text())
+        except Exception:
+            continue
+        if not isinstance(data, dict):
+            continue
+        meta = data.get("meta")
+        if not isinstance(meta, dict):
+            continue
+        mandate_id = meta.get("mandate_id")
+        version = meta.get("version")
+        if not mandate_id or version is None:
+            continue
+        sources[(str(mandate_id), str(version))] = path
+    return sources
+
+
+def _publish_authority_attachments(
+    out_dir: Path,
+    mandate_keys: Iterable[Tuple[str, str]],
+    procedure_keys: Iterable[Tuple[str, str]],
+    clean: bool = False,
+) -> Dict[str, Any]:
+    """Publish referenced mandate/procedure sources for audit packages."""
+    site_root = out_dir.parent
+    attachments_root = site_root / "attachments"
+    if clean and attachments_root.exists():
+        shutil.rmtree(attachments_root)
+
+    mandates_out = attachments_root / "mandates"
+    procedures_out = attachments_root / "procedures"
+    mandates_out.mkdir(parents=True, exist_ok=True)
+    procedures_out.mkdir(parents=True, exist_ok=True)
+
+    mandate_sources = _load_mandate_sources()
+
+    published_mandates: List[Dict[str, Any]] = []
+    for mandate_id, version in sorted(set(mandate_keys)):
+        source_path = mandate_sources.get((mandate_id, version))
+        repo_path = source_path.as_posix() if source_path else None
+        published_path = None
+        if source_path:
+            target_dir = mandates_out / mandate_id / version
+            target_dir.mkdir(parents=True, exist_ok=True)
+            target_path = target_dir / "mandate.yaml"
+            shutil.copy2(source_path, target_path)
+            published_path = target_path.relative_to(site_root).as_posix()
+        published_mandates.append(
+            {
+                "mandate_id": mandate_id,
+                "version": version,
+                "repo_path": repo_path,
+                "published_path": published_path,
+            }
+        )
+
+    published_procedures: List[Dict[str, Any]] = []
+    for procedure_id, version in sorted(set(procedure_keys)):
+        source_path = Path("judgment_loops") / procedure_id / "procedure.md"
+        repo_path = source_path.as_posix() if source_path.exists() else None
+        published_path = None
+        thresholds_repo_path = None
+        thresholds_published_path = None
+        if source_path.exists():
+            target_dir = procedures_out / procedure_id / version
+            target_dir.mkdir(parents=True, exist_ok=True)
+            target_path = target_dir / "procedure.md"
+            shutil.copy2(source_path, target_path)
+            published_path = target_path.relative_to(site_root).as_posix()
+
+            thresholds_path = source_path.parent / "thresholds.yaml"
+            if thresholds_path.exists():
+                thresholds_repo_path = thresholds_path.as_posix()
+                thresholds_target = target_dir / "thresholds.yaml"
+                shutil.copy2(thresholds_path, thresholds_target)
+                thresholds_published_path = thresholds_target.relative_to(site_root).as_posix()
+
+        published_procedures.append(
+            {
+                "procedure_id": procedure_id,
+                "version": version,
+                "repo_path": repo_path,
+                "published_path": published_path,
+                "thresholds_repo_path": thresholds_repo_path,
+                "thresholds_published_path": thresholds_published_path,
+            }
+        )
+
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "mandates": published_mandates,
+        "procedures": published_procedures,
     }
 
 
@@ -116,6 +217,8 @@ def publish_pages_data(
         records_dir.mkdir(parents=True, exist_ok=True)
 
     index_entries: List[Dict[str, Any]] = []
+    mandate_keys: List[Tuple[str, str]] = []
+    procedure_keys: List[Tuple[str, str]] = []
     for record in records:
         source_path = record.pop("_source_path")
         json_path = _record_json_path(out_dir, source_path)
@@ -125,6 +228,16 @@ def publish_pages_data(
         with json_path.open("w", encoding="utf-8") as handle:
             json.dump(payload, handle, sort_keys=True, indent=2)
         index_entries.append(_index_entry(payload, json_path, out_dir))
+        authority = payload.get("authority")
+        if isinstance(authority, dict):
+            mandate_id = authority.get("mandate_id")
+            mandate_version = authority.get("mandate_version")
+            procedure_id = authority.get("procedure_id")
+            procedure_version = authority.get("procedure_version")
+            if mandate_id and mandate_version is not None:
+                mandate_keys.append((str(mandate_id), str(mandate_version)))
+            if procedure_id and procedure_version:
+                procedure_keys.append((str(procedure_id), str(procedure_version)))
 
     index_entries.sort(key=lambda entry: entry.get("timestamp") or "", reverse=True)
     index = {
@@ -136,6 +249,13 @@ def publish_pages_data(
     index_path = out_dir / "index.json"
     with index_path.open("w", encoding="utf-8") as handle:
         json.dump(index, handle, sort_keys=True, indent=2)
+
+    authority_sources = _publish_authority_attachments(
+        out_dir=out_dir, mandate_keys=mandate_keys, procedure_keys=procedure_keys, clean=clean
+    )
+    authority_path = out_dir / "authority_sources.json"
+    with authority_path.open("w", encoding="utf-8") as handle:
+        json.dump(authority_sources, handle, sort_keys=True, indent=2)
 
     return index
 

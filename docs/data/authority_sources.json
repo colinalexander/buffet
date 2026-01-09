@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-01-09T08:12:13.149099Z",
+  "mandates": [
+    {
+      "mandate_id": "db_pension_v1",
+      "published_path": "attachments/mandates/db_pension_v1/1.0/mandate.yaml",
+      "repo_path": "mandates/liability_driven/db_pension_v1/mandate.yaml",
+      "version": "1.0"
+    },
+    {
+      "mandate_id": "endowment_v1",
+      "published_path": "attachments/mandates/endowment_v1/1.0/mandate.yaml",
+      "repo_path": "mandates/perpetual_capital/endowment_v1/mandate.yaml",
+      "version": "1.0"
+    }
+  ],
+  "procedures": [
+    {
+      "procedure_id": "rate_regime_adjustment",
+      "published_path": "attachments/procedures/rate_regime_adjustment/v1/procedure.md",
+      "repo_path": "judgment_loops/rate_regime_adjustment/procedure.md",
+      "thresholds_published_path": "attachments/procedures/rate_regime_adjustment/v1/thresholds.yaml",
+      "thresholds_repo_path": "judgment_loops/rate_regime_adjustment/thresholds.yaml",
+      "version": "v1"
+    }
+  ]
+}

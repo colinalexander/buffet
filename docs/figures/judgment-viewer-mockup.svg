@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-label="MandateOS Judgment Viewer UI mockup">
+  <defs>
+    <style>
+      .bg{fill:#0f1115}
+      .panel{fill:#171a21;stroke:#262b36;stroke-width:2}
+      .chip{fill:#1f2430;stroke:#262b36;stroke-width:1}
+      .text{fill:#e6e9ef;font:600 18px system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
+      .muted{fill:#9aa3b2;font:14px system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
+      .small{fill:#9aa3b2;font:12px system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
+      .badgeOk{fill:rgba(139,213,202,0.12);stroke:rgba(139,213,202,0.55)}
+      .badgeWarn{fill:rgba(245,197,66,0.12);stroke:rgba(245,197,66,0.55)}
+      .badgeDanger{fill:rgba(247,118,142,0.12);stroke:rgba(247,118,142,0.55)}
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="820" />
+
+  <rect class="panel" x="40" y="38" width="1320" height="118" rx="16" />
+  <text class="text" x="72" y="82">MandateOS — Judgment Viewer</text>
+  <text class="muted" x="72" y="112">Governance-first interface: audit artifacts, explicit authority boundaries, no trades.</text>
+  <rect class="chip" x="980" y="66" width="340" height="56" rx="28" />
+  <text class="small" x="1010" y="100">Home</text>
+  <text class="small" x="1066" y="100">Visualizations</text>
+  <text class="small" x="1166" y="100">Glossary</text>
+  <text class="small" x="1226" y="100">Download</text>
+  <text class="small" x="1296" y="100">Onboarding</text>
+
+  <rect class="panel" x="40" y="188" width="360" height="592" rx="16" />
+  <text class="text" x="72" y="226">Records</text>
+  <text class="muted" x="72" y="252">Filters + search + selection</text>
+  <rect class="chip" x="72" y="272" width="296" height="42" rx="10" />
+  <text class="small" x="86" y="298">Search: mandate, procedure, record id…</text>
+  <rect class="chip" x="72" y="326" width="296" height="42" rx="10" />
+  <text class="small" x="86" y="352">Mandate</text>
+  <rect class="chip" x="72" y="380" width="296" height="42" rx="10" />
+  <text class="small" x="86" y="406">Procedure</text>
+  <rect class="chip" x="72" y="434" width="296" height="42" rx="10" />
+  <text class="small" x="86" y="460">Judgment type</text>
+
+  <rect class="chip" x="72" y="504" width="296" height="68" rx="12" />
+  <text class="small" x="86" y="532">Record list</text>
+  <text class="small" x="86" y="556">Outcome badges + key facts</text>
+
+  <rect class="panel" x="430" y="188" width="540" height="592" rx="16" />
+  <text class="text" x="462" y="226">Record Detail</text>
+  <text class="muted" x="462" y="252">Natural-language summary above audit JSON</text>
+  <rect class="chip badgeDanger" x="462" y="276" width="112" height="28" rx="14" />
+  <text class="small" x="476" y="296">ESCALATE</text>
+
+  <rect class="chip" x="462" y="320" width="476" height="196" rx="14" />
+  <text class="small" x="480" y="352">Institutional summary card</text>
+  <text class="small" x="480" y="378">- Headline: what happened</text>
+  <text class="small" x="480" y="402">- Required action: who must decide</text>
+  <text class="small" x="480" y="426">- Key facts: confidence, constraints, regime</text>
+  <text class="small" x="480" y="450">- Why it matters to governance</text>
+
+  <rect class="chip" x="462" y="536" width="476" height="132" rx="14" />
+  <text class="small" x="480" y="566">Sections: Authority · Invocation · Confidence · Constraints · Behavior</text>
+  <text class="small" x="480" y="592">Compare panel + raw JSON disclosure</text>
+
+  <rect class="panel" x="1000" y="188" width="360" height="592" rx="16" />
+  <text class="text" x="1032" y="226">Governance context</text>
+  <text class="muted" x="1032" y="252">Role-based interpretation panel</text>
+  <rect class="chip badgeOk" x="1032" y="276" width="170" height="32" rx="16" />
+  <text class="small" x="1044" y="298">affirm_alignment</text>
+  <rect class="chip badgeWarn" x="1032" y="318" width="220" height="32" rx="16" />
+  <text class="small" x="1044" y="340">recommend_adjustment</text>
+  <rect class="chip badgeDanger" x="1032" y="360" width="120" height="32" rx="16" />
+  <text class="small" x="1044" y="382">escalate</text>
+
+  <rect class="chip" x="1032" y="414" width="296" height="320" rx="14" />
+  <text class="small" x="1050" y="444">Meaning</text>
+  <text class="small" x="1050" y="468">Why it matters</text>
+  <text class="small" x="1050" y="492">Who acts</text>
+  <text class="small" x="1050" y="516">Typical next steps</text>
+</svg>
+

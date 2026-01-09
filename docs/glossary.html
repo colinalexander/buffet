@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MandateOS Glossary</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="hero hero-compact">
+      <img
+        src="figures/banner.png"
+        alt="Institutional investment judgment represented as a governed control system, with supervised procedures, explicit constraints, and auditable outcomes rather than trading activity"
+      />
+      <div class="hero-text">
+        <div class="hero-top">
+          <h1>MandateOS — Glossary</h1>
+          <nav class="nav" aria-label="Site">
+            <a data-nav href="./index.html">Home</a>
+            <a data-nav href="./visualizations.html">Visualizations</a>
+            <a data-nav href="./glossary.html">Glossary</a>
+            <a data-nav href="./download.html">Download</a>
+            <a data-nav href="./faq.html">FAQ</a>
+            <button id="nav-onboarding" class="nav-btn" type="button">Onboarding</button>
+          </nav>
+        </div>
+        <p>Definitions and interpretation guidance for institutional governance users.</p>
+      </div>
+    </header>
+
+    <main id="main" class="layout viz-layout">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Onboarding</h2>
+            <p class="panel-subtitle">A short guide for reading judgment outputs.</p>
+          </div>
+          <div class="panel-actions">
+            <button id="glossary-onboarding" class="btn btn-primary" type="button">Start onboarding</button>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="card">
+            <h3>How to read one Judgment Record</h3>
+            <ol class="muted">
+              <li>Read the outcome type (affirm alignment / recommend adjustment / escalate).</li>
+              <li>Confirm mandate + procedure versions (authority bindings).</li>
+              <li>Scan constraints and confidence for the “why”.</li>
+              <li>Treat outputs as audit artifacts: append-only and reviewable.</li>
+            </ol>
+          </div>
+          <div class="card">
+            <h3>When escalation requires action</h3>
+            <ul class="muted">
+              <li>Escalate means a boundary was reached; automation is suspended.</li>
+              <li>Assign accountable ownership; record committee disposition.</li>
+              <li>Route any portfolio action through human-controlled execution outside MandateOS.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Governance principles</h2>
+            <p class="panel-subtitle">What makes outputs institutionally reviewable.</p>
+          </div>
+        </div>
+        <div class="prose">
+          <h3>Auditability</h3>
+          <p class="muted">
+            Every record binds to a mandate and procedure version and is written as an append-only artifact. The
+            institution can reproduce the decision context by inspecting those sources.
+          </p>
+          <h3>Explicit authority boundaries</h3>
+          <p class="muted">
+            Mandates define what is allowed. Procedures define how judgment is applied. When authority is exceeded or
+            confidence is insufficient, the system escalates rather than improvising.
+          </p>
+          <h3>No trades</h3>
+          <p class="muted">
+            MandateOS produces judgment records only. Recommendations may inform human decision-making, but execution is
+            outside this system and outside this viewer.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Glossary</h2>
+            <p class="panel-subtitle"><span id="glossary-count">0</span> terms</p>
+          </div>
+          <div class="panel-actions">
+            <label>
+              Search terms
+              <input id="glossary-search" type="search" placeholder="authority, escalation, constraint…" />
+            </label>
+          </div>
+        </div>
+        <div id="glossary-terms" class="glossary"></div>
+      </section>
+    </main>
+
+    <footer>Glossary is non-authoritative guidance. The authoritative sources are the mandate/procedure documents.</footer>
+
+    <script type="module" src="./js/glossary.js"></script>
+  </body>
+</html>
+

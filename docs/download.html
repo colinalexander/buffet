@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MandateOS Download & Audit</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="hero hero-compact">
+      <img
+        src="figures/banner.png"
+        alt="Institutional investment judgment represented as a governed control system, with supervised procedures, explicit constraints, and auditable outcomes rather than trading activity"
+      />
+      <div class="hero-text">
+        <div class="hero-top">
+          <h1>MandateOS — Download & Audit</h1>
+          <nav class="nav" aria-label="Site">
+            <a data-nav href="./index.html">Home</a>
+            <a data-nav href="./visualizations.html">Visualizations</a>
+            <a data-nav href="./glossary.html">Glossary</a>
+            <a data-nav href="./download.html">Download</a>
+            <a data-nav href="./faq.html">FAQ</a>
+            <button id="nav-onboarding" class="nav-btn" type="button">Onboarding</button>
+          </nav>
+        </div>
+        <p>Export committee packets: CSV timelines, PDF summaries, and audit packages (zip).</p>
+      </div>
+    </header>
+
+    <main id="main" class="layout download-layout">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Select records</h2>
+            <p class="panel-subtitle"><span id="dl-visible">0</span> visible · <span id="dl-selected">0</span> selected</p>
+          </div>
+          <div class="panel-actions">
+            <button id="dl-select-all" class="btn btn-ghost" type="button">Select all</button>
+            <button id="dl-clear" class="btn btn-ghost" type="button">Clear</button>
+          </div>
+        </div>
+        <div class="filters">
+          <label>
+            Search
+            <input id="dl-search" type="search" placeholder="mandate, procedure, record id…" />
+          </label>
+          <label>
+            Mandate
+            <select id="dl-mandate"></select>
+          </label>
+          <label>
+            Procedure
+            <select id="dl-procedure"></select>
+          </label>
+          <label>
+            Judgment type
+            <select id="dl-outcome"></select>
+          </label>
+          <div class="date-grid">
+            <label>
+              From
+              <input id="dl-from" type="date" />
+            </label>
+            <label>
+              To
+              <input id="dl-to" type="date" />
+            </label>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table table-compact" aria-label="Selectable records table">
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>Date</th>
+                <th>Mandate</th>
+                <th>Procedure</th>
+                <th>Outcome</th>
+                <th>Open</th>
+              </tr>
+            </thead>
+            <tbody id="dl-rows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Exports</h2>
+        <p class="preamble">
+          Exports contain audit artifacts only. MandateOS does not execute trades; any portfolio action is performed
+          outside this system under human authority.
+        </p>
+
+        <div class="card">
+          <h3>CSV timelines</h3>
+          <p class="muted">CSV includes timestamp, mandate, procedure, judgment type, confidence, and record id.</p>
+          <div class="export-bar">
+            <button id="dl-csv-filtered" class="btn" type="button">Export filtered CSV</button>
+            <button id="dl-csv-selected" class="btn" type="button">Export selected CSV</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>PDF summaries</h3>
+          <p class="muted">Generates a committee-ready packet summarizing selected records.</p>
+          <div class="export-bar">
+            <button id="dl-pdf-selected" class="btn btn-primary" type="button">Export selected PDF</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Audit package (zip)</h3>
+          <p class="muted">
+            Includes selected JSON records, glossary, and authority attachments (mandates/procedures) when available.
+          </p>
+          <label class="inline-field">
+            Include authority attachments
+            <select id="dl-attachments">
+              <option value="include">Include</option>
+              <option value="skip">Skip</option>
+            </select>
+          </label>
+          <div class="export-bar">
+            <button id="dl-audit" class="btn btn-primary" type="button">Download audit package</button>
+          </div>
+          <p id="dl-status" class="muted" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>Export tools are client-side only. No records are modified by this site.</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script type="module" src="./js/download.js"></script>
+  </body>
+</html>
+

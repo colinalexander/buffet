@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://colinalexander.github.io/buffet/schemas/mandateos-viewer-ui.schema.json",
+  "title": "MandateOS Judgment Viewer UI Schemas",
+  "description": "Non-authoritative JSON Schemas for the Judgment Viewer UI components and published snapshots. These schemas support the static viewer and export tooling; authoritative record requirements live under documentation/ in the repo.",
+  "type": "object",
+  "$defs": {
+    "OutcomeType": {
+      "type": "string",
+      "enum": ["affirm_alignment", "recommend_adjustment", "escalate"]
+    },
+    "IndexRecord": {
+      "type": "object",
+      "required": [
+        "path",
+        "record_id",
+        "timestamp",
+        "mandate_id",
+        "mandate_version",
+        "procedure_id",
+        "procedure_version",
+        "outcome_type",
+        "confidence_level"
+      ],
+      "properties": {
+        "path": { "type": "string", "description": "Relative path to the record JSON under docs/." },
+        "record_id": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "mandate_id": { "type": "string" },
+        "mandate_version": { "type": "string" },
+        "procedure_id": { "type": "string" },
+        "procedure_version": { "type": "string" },
+        "outcome_type": { "$ref": "#/$defs/OutcomeType" },
+        "confidence_level": { "type": ["number", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "IndexSnapshot": {
+      "type": "object",
+      "required": ["generated_at", "records"],
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "records": { "type": "array", "items": { "$ref": "#/$defs/IndexRecord" } }
+      },
+      "additionalProperties": true
+    },
+    "FilterState": {
+      "type": "object",
+      "description": "Client-side filters applied to the published index.",
+      "properties": {
+        "mandate_id": { "type": ["string", "null"] },
+        "procedure_id": { "type": ["string", "null"] },
+        "outcome_type": { "type": ["string", "null"] },
+        "from_date": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "to_date": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "search": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "AuditPackageManifest": {
+      "type": "object",
+      "required": ["generated_at", "selected_record_ids"],
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "selected_record_ids": { "type": "array", "items": { "type": "string" } },
+        "viewer_filters": { "$ref": "#/$defs/FilterState" },
+        "selection_basis": { "$ref": "#/$defs/FilterState" }
+      },
+      "additionalProperties": true
+    },
+    "GlossaryTerm": {
+      "type": "object",
+      "required": ["slug", "term", "definition"],
+      "properties": {
+        "slug": { "type": "string" },
+        "term": { "type": "string" },
+        "definition": { "type": "string" },
+        "examples": { "type": "array", "items": { "type": "string" } },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "Glossary": {
+      "type": "object",
+      "required": ["version", "terms"],
+      "properties": {
+        "version": { "type": "string" },
+        "generated_at": { "type": "string" },
+        "terms": { "type": "array", "items": { "$ref": "#/$defs/GlossaryTerm" } }
+      },
+      "additionalProperties": true
+    },
+    "AuthoritySource": {
+      "type": "object",
+      "properties": {
+        "repo_path": { "type": ["string", "null"] },
+        "published_path": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "AuthoritySources": {
+      "type": "object",
+      "required": ["generated_at", "mandates", "procedures"],
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "mandates": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              { "$ref": "#/$defs/AuthoritySource" },
+              {
+                "type": "object",
+                "required": ["mandate_id", "version"],
+                "properties": {
+                  "mandate_id": { "type": "string" },
+                  "version": { "type": "string" }
+                }
+              }
+            ]
+          }
+        },
+        "procedures": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              { "$ref": "#/$defs/AuthoritySource" },
+              {
+                "type": "object",
+                "required": ["procedure_id", "version"],
+                "properties": {
+                  "procedure_id": { "type": "string" },
+                  "version": { "type": "string" },
+                  "thresholds_repo_path": { "type": ["string", "null"] },
+                  "thresholds_published_path": { "type": ["string", "null"] }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
+

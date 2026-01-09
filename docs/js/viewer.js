@@ -206,6 +206,11 @@ function renderContext(outcomeType) {
 
   els.contextPanel.innerHTML = `
     <h2>Governance context</h2>
+    <div class="microcallout" aria-label="Authority hierarchy">
+      <div class="microcallout-title">Authority hierarchy</div>
+      <div class="microcallout-body">Contracts → mandates → procedures → code</div>
+      <div class="microcallout-body muted">Contracts are constitutional (highest authority).</div>
+    </div>
     <div class="context-title">
       <span class="badge ${outcomeType}">${outcomeType}</span>
       <div class="context-heading">${ctx.title}</div>

@@ -239,6 +239,7 @@ uv run python -m buffet.simulation.eval_procedures
 
 Machine outputs are append-only and written under `data/processed/`.
 MandateOS intentionally does not execute trades, allocate capital, or optimize returns.
+Non-scope reminder: this repository does not authorize actions or mutate portfolios.
 
 ### Quickstart
 

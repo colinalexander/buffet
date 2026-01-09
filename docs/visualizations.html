@@ -15,7 +15,10 @@
       />
       <div class="hero-text">
         <div class="hero-top">
-          <h1>MandateOS — Visualizations</h1>
+          <div class="title-row">
+            <h1>MandateOS — Visualizations</h1>
+            <span class="pill pill-ro" aria-label="Read-only, no trades">READ-ONLY · NO TRADES</span>
+          </div>
           <nav class="nav" aria-label="Site">
             <a data-nav href="./index.html">Home</a>
             <a data-nav href="./dashboard.html">Executive Dashboard</a>
@@ -74,6 +77,9 @@
       <section class="panel">
         <h2>Timeline of judgments</h2>
         <p class="preamble">Counts of outcomes over time for the filtered dataset.</p>
+        <p class="helper">
+          Escalations indicate authority boundary crossings (human review), not failures or performance.
+        </p>
         <div class="chart-wrap">
           <canvas id="timeline-chart" aria-label="Judgment timeline chart" role="img"></canvas>
         </div>
@@ -82,12 +88,14 @@
       <section class="panel viz-grid">
         <div class="viz-card">
           <h2>Escalations by mandate</h2>
+          <p class="helper">Escalations indicate authority boundary crossings (human review), not failures or performance.</p>
           <div class="chart-wrap">
             <canvas id="escalations-mandate" aria-label="Escalations per mandate chart" role="img"></canvas>
           </div>
         </div>
         <div class="viz-card">
           <h2>Escalations by procedure</h2>
+          <p class="helper">Escalations indicate authority boundary crossings (human review), not failures or performance.</p>
           <div class="chart-wrap">
             <canvas id="escalations-procedure" aria-label="Escalations per procedure chart" role="img"></canvas>
           </div>
@@ -111,6 +119,7 @@
             </label>
           </div>
         </div>
+        <p class="helper">Escalations are a governance safety valve: they halt automation when authority limits are reached.</p>
         <div id="heatmap" class="heatmap" aria-label="Escalation heatmap"></div>
         <div class="drilldown">
           <h3>Drilldown</h3>

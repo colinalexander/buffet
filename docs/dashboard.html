@@ -15,7 +15,10 @@
       />
       <div class="hero-text">
         <div class="hero-top">
-          <h1>MandateOS — Executive Dashboard</h1>
+          <div class="title-row">
+            <h1>MandateOS — Executive Dashboard</h1>
+            <span class="pill pill-ro" aria-label="Read-only, no trades">READ-ONLY · NO TRADES</span>
+          </div>
           <nav class="nav" aria-label="Site">
             <a data-nav href="./index.html">Home</a>
             <a data-nav href="./dashboard.html">Executive Dashboard</a>
@@ -44,6 +47,7 @@
           thresholds were reached and human review may be required. This interface is read-only and executes no actions
           or trades.
         </p>
+        <p class="helper">This dashboard is not performance reporting and does not express market outlook.</p>
 
         <div class="tile-grid" aria-label="Executive metrics">
           <div class="tile">
@@ -80,6 +84,7 @@
           How to interpret escalations: escalation is a designed outcome that halts automation when authority limits are
           reached. It is not a performance indicator.
         </p>
+        <p class="helper">Escalations indicate authority boundary crossings (human review), not failures or performance.</p>
         <div class="chart-wrap chart-wrap-tall">
           <canvas id="chart-escalations-mandate" aria-label="Escalations by mandate chart" role="img"></canvas>
         </div>
@@ -149,7 +154,7 @@
       </section>
     </main>
 
-    <footer>Read-only governance dashboard. No actions are executed here.</footer>
+    <footer>Read-only governance dashboard. No actions are executed or authorized here. No trades.</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script type="module" src="./js/dashboard.js"></script>

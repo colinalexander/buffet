@@ -45,7 +45,7 @@
     {
       "slug": "escalate",
       "term": "escalate",
-      "definition": "Outcome type indicating an authority boundary was reached (e.g., hard constraint breach, confidence below floor, or unresolved tradeoff). Automation is suspended until human authority reviews and decides.",
+      "definition": "Outcome type indicating an authority boundary was reached (e.g., hard constraint breach, confidence below floor, or unresolved tradeoff). Escalation is a designed safety valve: automation is suspended until human authority reviews and records disposition.",
       "examples": ["A leverage constraint breach triggers escalation and routes to the investment committee."],
       "tags": ["outcome", "human-authority"]
     },
@@ -93,4 +93,3 @@
     }
   ]
 }
-

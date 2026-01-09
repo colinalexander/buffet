@@ -15,7 +15,10 @@
       />
       <div class="hero-text">
         <div class="hero-top">
-          <h1>MandateOS — FAQ</h1>
+          <div class="title-row">
+            <h1>MandateOS — FAQ</h1>
+            <span class="pill pill-ro" aria-label="Read-only, no trades">READ-ONLY · NO TRADES</span>
+          </div>
           <nav class="nav" aria-label="Site">
             <a data-nav href="./index.html">Home</a>
             <a data-nav href="./dashboard.html">Executive Dashboard</a>
@@ -36,6 +39,9 @@
           MandateOS is a mandate-bound judgment system. It produces auditable,
           append-only Judgment Records and may escalate to human authority; it
           never places trades.
+        </p>
+        <p class="preamble">
+          The questions below address common governance, risk, and control concerns raised by non-engineers.
         </p>
 
         <div class="faq-item">
@@ -61,10 +67,11 @@
         <div class="faq-item">
           <h3>3) Does MandateOS make investment decisions?</h3>
           <p>
-            MandateOS applies documented procedures under an explicit mandate to
-            produce a judgment outcome and rationale. It may recommend
-            exposure-level adjustments within authority bounds, or escalate when
-            authority or confidence limits are reached. Final accountability and
+            MandateOS does not decide what to do with capital; it applies
+            documented procedures under an explicit mandate to produce a
+            judgment outcome and rationale. It may recommend exposure-level
+            adjustments within authority bounds, or escalate when authority or
+            confidence limits are reached. Final accountability and
             authorization remain with human fiduciaries.
           </p>
         </div>
@@ -141,7 +148,7 @@
       </section>
     </main>
 
-    <footer>Non-authoritative, read-only documentation. No actions are executed here.</footer>
+    <footer>Non-authoritative, read-only documentation. No actions are executed or authorized here.</footer>
     <script type="module">
       import { setActiveNav, wireOnboarding } from "./js/page.js";
       setActiveNav();

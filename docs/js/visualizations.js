@@ -164,7 +164,7 @@ function renderTimeline(records) {
         {
           label: OUTCOME_CONTEXT.escalate.title,
           data: dataByOutcome("escalate"),
-          backgroundColor: "rgba(247, 118, 142, 0.45)",
+          backgroundColor: "rgba(247, 118, 142, 0.34)",
           borderColor: "rgba(247, 118, 142, 0.85)",
           borderWidth: 1,
         },
@@ -208,7 +208,7 @@ function renderEscalations(records) {
         {
           label: "Escalations",
           data: byMandate.map((r) => r.escalations),
-          backgroundColor: "rgba(247, 118, 142, 0.45)",
+          backgroundColor: "rgba(247, 118, 142, 0.34)",
           borderColor: "rgba(247, 118, 142, 0.85)",
           borderWidth: 1,
         },
@@ -233,7 +233,7 @@ function renderEscalations(records) {
         {
           label: "Escalations",
           data: byProcedure.map((r) => r.escalations),
-          backgroundColor: "rgba(247, 118, 142, 0.45)",
+          backgroundColor: "rgba(247, 118, 142, 0.34)",
           borderColor: "rgba(247, 118, 142, 0.85)",
           borderWidth: 1,
         },
@@ -378,7 +378,7 @@ async function renderHeatmap(records) {
   const color = window.d3
     .scaleSequential()
     .domain([0, maxValue])
-    .interpolator(window.d3.interpolateRgb("rgba(23,26,33,0.9)", "rgba(247,118,142,0.95)"));
+    .interpolator(window.d3.interpolateRgb("rgba(23,26,33,0.9)", "rgba(247,118,142,0.72)"));
 
   const x = window.d3.scaleBand().domain(procedures).range([margin.left, width - margin.right]).padding(0.06);
   const y = window.d3.scaleBand().domain(mandates).range([margin.top, height - margin.bottom]).padding(0.06);
@@ -481,4 +481,3 @@ async function init() {
 }
 
 init();
-

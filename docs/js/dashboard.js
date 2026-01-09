@@ -65,7 +65,7 @@ function renderEscalationsByMandate(records) {
         {
           label: "Escalation count",
           data: rows.map((r) => r.count),
-          backgroundColor: "rgba(247, 118, 142, 0.45)",
+          backgroundColor: "rgba(247, 118, 142, 0.34)",
           borderColor: "rgba(247, 118, 142, 0.85)",
           borderWidth: 1,
         },
@@ -154,7 +154,7 @@ function renderTrend(records) {
         {
           label: outcomeLabel("escalate"),
           data: series("escalate"),
-          backgroundColor: "rgba(247, 118, 142, 0.4)",
+          backgroundColor: "rgba(247, 118, 142, 0.32)",
           borderColor: "rgba(247, 118, 142, 0.85)",
           borderWidth: 1,
           stack: "counts",

@@ -87,6 +87,32 @@ body {
   gap: 1rem;
 }
 
+.title-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: rgba(122, 162, 247, 0.06);
+  color: var(--text);
+}
+
+.pill-ro {
+  border-color: rgba(139, 213, 202, 0.35);
+  background: rgba(139, 213, 202, 0.08);
+  color: #c6f2eb;
+}
+
 .nav {
   display: inline-flex;
   gap: 0.4rem;
@@ -149,6 +175,14 @@ body {
   color: var(--muted);
   line-height: 1.45;
   max-width: 70ch;
+}
+
+.helper {
+  margin: 0.35rem 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  max-width: 80ch;
 }
 
 .executive-panels {
@@ -499,8 +533,8 @@ select {
 .badge.escalate {
   color: var(--danger);
   border-color: rgba(247, 118, 142, 0.4);
-  background: rgba(247, 118, 142, 0.08);
-  box-shadow: 0 0 0 1px rgba(247, 118, 142, 0.2), 0 4px 12px rgba(247, 118, 142, 0.15);
+  background: rgba(247, 118, 142, 0.05);
+  box-shadow: 0 0 0 1px rgba(247, 118, 142, 0.18);
 }
 
 .record-list li.active {
@@ -707,6 +741,27 @@ select {
   align-items: center;
   gap: 0.6rem;
   margin-bottom: 0.75rem;
+}
+
+.microcallout {
+  border: 1px solid var(--border);
+  background: rgba(31, 36, 48, 0.6);
+  border-radius: 10px;
+  padding: 0.7rem 0.75rem;
+  margin: 0.6rem 0 0.85rem;
+}
+
+.microcallout-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+}
+
+.microcallout-body {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.35;
 }
 
 .context-heading {

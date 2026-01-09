@@ -19,7 +19,7 @@
 
 MandateOS is a concept implementation of **institutional investment judgment as governed procedure**: mandate-bound decision loops that produce append-only, reviewable **Judgment Records** (`affirm_alignment` / `recommend_adjustment` / `escalate`) and **halt automation via escalation** when authority boundaries are exceeded.
 
-> **TL;DR:** IPS operationalization via governed procedures — **no trades**.  
+> **TL;DR:** Investment Policy Statements (IPS) operationalization via governed procedures — **no trades**.  
 > Deterministic scenarios in, **append-only** Judgment Records out.  
 > When mandate/authority limits or ambiguity are hit: **escalation** (humans decide).  
 > The deliverable is an auditable judgment trail, not execution.

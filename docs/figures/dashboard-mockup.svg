@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="MandateOS Executive Dashboard mockup">
+  <defs>
+    <style>
+      .bg{fill:#0f1115}
+      .panel{fill:#171a21;stroke:#262b36;stroke-width:2}
+      .chip{fill:#1f2430;stroke:#262b36;stroke-width:1}
+      .text{fill:#e6e9ef;font:600 18px system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
+      .muted{fill:#9aa3b2;font:14px system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
+      .small{fill:#9aa3b2;font:12px system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
+      .ok{fill:rgba(139,213,202,0.14);stroke:rgba(139,213,202,0.55)}
+      .warn{fill:rgba(245,197,66,0.14);stroke:rgba(245,197,66,0.55)}
+      .danger{fill:rgba(247,118,142,0.14);stroke:rgba(247,118,142,0.55)}
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1600" height="1000" />
+
+  <rect class="panel" x="40" y="36" width="1520" height="116" rx="16" />
+  <text class="text" x="72" y="78">MandateOS — Executive Dashboard</text>
+  <text class="muted" x="72" y="106">Governance insights: record volume, escalation discipline, and procedural activity (no trades).</text>
+  <rect class="chip" x="1120" y="60" width="408" height="60" rx="30" />
+  <text class="small" x="1152" y="96">Home</text>
+  <text class="small" x="1212" y="96">Dashboard</text>
+  <text class="small" x="1298" y="96">Visualizations</text>
+  <text class="small" x="1410" y="96">Glossary</text>
+  <text class="small" x="1482" y="96">Download</text>
+
+  <rect class="panel" x="40" y="184" width="1520" height="132" rx="16" />
+  <text class="text" x="72" y="224">Executive summary</text>
+  <text class="muted" x="72" y="250">What the data shows: a count of published Judgment Records and escalation rate. Escalations indicate authority boundaries reached.</text>
+  <rect class="chip ok" x="72" y="268" width="300" height="36" rx="18" />
+  <text class="small" x="90" y="292">Affirm alignment</text>
+  <rect class="chip warn" x="388" y="268" width="340" height="36" rx="18" />
+  <text class="small" x="406" y="292">Recommend adjustment</text>
+  <rect class="chip danger" x="746" y="268" width="240" height="36" rx="18" />
+  <text class="small" x="764" y="292">Escalate</text>
+  <rect class="chip" x="1240" y="250" width="288" height="54" rx="14" />
+  <text class="small" x="1256" y="276">Scope: Last 30 days</text>
+  <text class="small" x="1256" y="296">Bucket: Weekly</text>
+
+  <rect class="panel" x="40" y="340" width="760" height="300" rx="16" />
+  <text class="text" x="72" y="380">Judgment trend</text>
+  <text class="muted" x="72" y="404">Counts per bucket, color-coded by judgment type.</text>
+  <rect class="chip" x="72" y="428" width="696" height="188" rx="14" />
+  <text class="small" x="92" y="462">Stacked area/line chart</text>
+  <text class="small" x="92" y="486">Tooltip includes: “Escalate = human authority required.”</text>
+
+  <rect class="panel" x="820" y="340" width="740" height="300" rx="16" />
+  <text class="text" x="852" y="380">Escalations by mandate</text>
+  <text class="muted" x="852" y="404">Sorted highest → lowest.</text>
+  <rect class="chip" x="852" y="428" width="676" height="188" rx="14" />
+  <text class="small" x="872" y="462">Bar chart</text>
+
+  <rect class="panel" x="40" y="664" width="760" height="296" rx="16" />
+  <text class="text" x="72" y="704">Most active procedures</text>
+  <text class="muted" x="72" y="728">Top procedures by record volume, with outcome breakdown.</text>
+  <rect class="chip" x="72" y="752" width="696" height="184" rx="14" />
+  <text class="small" x="92" y="786">Table: Procedure | Total | Affirm | Recommend | Escalate</text>
+
+  <rect class="panel" x="820" y="664" width="740" height="296" rx="16" />
+  <text class="text" x="852" y="704">Recent escalations</text>
+  <text class="muted" x="852" y="728">Most recent “escalate” outcomes with short rationale and link to record detail.</text>
+  <rect class="chip" x="852" y="752" width="676" height="184" rx="14" />
+  <text class="small" x="872" y="786">List: Mandate · Procedure · Date · Rationale · Open</text>
+</svg>
+

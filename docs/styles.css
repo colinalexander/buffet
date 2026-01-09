@@ -144,6 +144,156 @@ body {
   align-items: start;
 }
 
+.executive-lede {
+  margin: 0.25rem 0 0.9rem;
+  color: var(--muted);
+  line-height: 1.45;
+  max-width: 70ch;
+}
+
+.executive-panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.exec-panel {
+  border: 1px solid var(--border);
+  background: #12151c;
+  border-radius: 12px;
+  padding: 0.9rem 0.95rem;
+}
+
+.exec-panel h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.exec-metric {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0.2rem 0 0.65rem;
+}
+
+.exec-breakdown {
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.exec-breakdown > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.exec-breakdown dt {
+  margin: 0;
+}
+
+.exec-breakdown dd {
+  margin: 0;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.exec-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-top: 1px solid rgba(38, 43, 54, 0.65);
+}
+
+.exec-row:first-of-type {
+  border-top: none;
+}
+
+.exec-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.exec-value {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.exec-link {
+  display: inline-flex;
+  margin-top: 0.75rem;
+  text-decoration: none;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.8rem;
+}
+
+.tile {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #12151c;
+  padding: 0.9rem 0.95rem;
+}
+
+.tile-danger {
+  border-color: rgba(247, 118, 142, 0.35);
+  background: rgba(247, 118, 142, 0.06);
+}
+
+.tile-kicker {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.tile-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0.35rem 0 0.35rem;
+}
+
+.tile-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.chart-wrap-tall {
+  height: 340px;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+
+.link-card {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #12151c;
+  padding: 0.9rem 0.95rem;
+  text-decoration: none;
+}
+
+.link-card:hover {
+  border-color: rgba(122, 162, 247, 0.55);
+}
+
+.link-card-title {
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
 .preamble {
   margin: 0 0 1rem;
   color: var(--muted);

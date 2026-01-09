@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MandateOS Executive Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="hero hero-compact">
+      <img
+        src="figures/banner.png"
+        alt="Institutional investment judgment represented as a governed control system, with supervised procedures, explicit constraints, and auditable outcomes rather than trading activity"
+      />
+      <div class="hero-text">
+        <div class="hero-top">
+          <h1>MandateOS — Executive Dashboard</h1>
+          <nav class="nav" aria-label="Site">
+            <a data-nav href="./index.html">Home</a>
+            <a data-nav href="./dashboard.html">Executive Dashboard</a>
+            <a data-nav href="./visualizations.html">Visualizations</a>
+            <a data-nav href="./glossary.html">Glossary</a>
+            <a data-nav href="./download.html">Download</a>
+            <a data-nav href="./faq.html">FAQ</a>
+            <button id="nav-onboarding" class="nav-btn" type="button">Onboarding</button>
+          </nav>
+        </div>
+        <p>High-level governance insights over published Judgment Records (read-only; no trades).</p>
+      </div>
+    </header>
+
+    <main id="main" class="layout viz-layout">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Governance overview</h2>
+            <p class="panel-subtitle">Calm executive metrics designed for audit and committee packets.</p>
+          </div>
+        </div>
+
+        <p class="executive-lede">
+          What the data shows: record volume by mandate-bound procedures. Escalations indicate occasions where authority
+          thresholds were reached and human review may be required. This interface is read-only and executes no actions
+          or trades.
+        </p>
+
+        <div class="tile-grid" aria-label="Executive metrics">
+          <div class="tile">
+            <div class="tile-kicker">Total Judgment Records</div>
+            <div id="tile-total" class="tile-value">—</div>
+            <div class="tile-note">Append-only audit artifacts published by the system.</div>
+          </div>
+          <div class="tile tile-danger">
+            <div class="tile-kicker">Total Escalations</div>
+            <div id="tile-escalations" class="tile-value">—</div>
+            <div class="tile-note">Escalations indicate authority boundary crossings (human review).</div>
+          </div>
+          <div class="tile">
+            <div class="tile-kicker">Distinct Mandates</div>
+            <div id="tile-mandates" class="tile-value">—</div>
+            <div class="tile-note">Governance contexts with distinct authority constraints.</div>
+          </div>
+          <div class="tile">
+            <div class="tile-kicker">Distinct Procedures</div>
+            <div id="tile-procedures" class="tile-value">—</div>
+            <div class="tile-note">Approved procedural logic that produced records.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Escalations by mandate</h2>
+            <p class="panel-subtitle">Sorted by escalation count (highest → lowest).</p>
+          </div>
+        </div>
+        <p class="preamble">
+          How to interpret escalations: escalation is a designed outcome that halts automation when authority limits are
+          reached. It is not a performance indicator.
+        </p>
+        <div class="chart-wrap chart-wrap-tall">
+          <canvas id="chart-escalations-mandate" aria-label="Escalations by mandate chart" role="img"></canvas>
+        </div>
+        <p id="chart-escalations-mandate-fallback" class="muted" hidden>No judgment records loaded.</p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Judgment activity over time</h2>
+            <p class="panel-subtitle">Weekly buckets, broken down by judgment type.</p>
+          </div>
+        </div>
+        <p class="preamble">
+          Governance purpose: detect procedural clustering or drift (e.g., repeated escalations under a mandate), not to
+          infer market outlook.
+        </p>
+        <div class="chart-wrap chart-wrap-tall">
+          <canvas id="chart-trend" aria-label="Judgment activity over time chart" role="img"></canvas>
+        </div>
+        <p id="chart-trend-fallback" class="muted" hidden>No judgment records loaded.</p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Top procedures by activity</h2>
+            <p class="panel-subtitle">Procedures with the most published records (counts only).</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table" aria-label="Top procedures table">
+            <thead>
+              <tr>
+                <th>Procedure</th>
+                <th>Total judgments</th>
+                <th>Escalations</th>
+              </tr>
+            </thead>
+            <tbody id="table-procedures"></tbody>
+          </table>
+        </div>
+        <p id="table-procedures-fallback" class="muted" hidden>No judgment records loaded.</p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Navigation & actions</h2>
+            <p class="panel-subtitle">Links only (no execution or portfolio controls).</p>
+          </div>
+        </div>
+        <div class="link-grid" aria-label="Dashboard links">
+          <a class="link-card" href="./index.html">
+            <div class="link-card-title">View all records</div>
+            <div class="muted">Open the record viewer with filters and raw JSON disclosure.</div>
+          </a>
+          <a class="link-card" href="./download.html">
+            <div class="link-card-title">Download audit package</div>
+            <div class="muted">Export CSV timelines, PDF summaries, and zip audit bundles.</div>
+          </a>
+          <a class="link-card" href="./glossary.html">
+            <div class="link-card-title">Open glossary</div>
+            <div class="muted">Definitions and interpretation guidance for governance users.</div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>Read-only governance dashboard. No actions are executed here.</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script type="module" src="./js/dashboard.js"></script>
+  </body>
+</html>

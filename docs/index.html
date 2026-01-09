@@ -18,6 +18,7 @@
           <h1>MandateOS — Judgment Viewer</h1>
           <nav class="nav" aria-label="Site">
             <a data-nav href="./index.html">Home</a>
+            <a data-nav href="./dashboard.html">Executive Dashboard</a>
             <a data-nav href="./visualizations.html">Visualizations</a>
             <a data-nav href="./glossary.html">Glossary</a>
             <a data-nav href="./download.html">Download</a>
@@ -43,6 +44,69 @@
             <button id="clear-selection" class="btn btn-ghost" type="button">Clear</button>
           </div>
         </div>
+
+        <p class="executive-lede">
+          This viewer summarizes append-only Judgment Records produced by mandate-bound procedures. Escalations indicate
+          occasions where authority thresholds were reached and human review may be required. This interface is read-only
+          and executes no actions or trades.
+        </p>
+
+        <div class="executive-panels" aria-label="Executive summary panels">
+          <section class="exec-panel" aria-label="Total Judgments panel">
+            <h3>Total Judgments</h3>
+            <div id="exec-total" class="exec-metric">—</div>
+            <dl class="exec-breakdown">
+              <div>
+                <dt><span class="badge affirm_alignment">affirm_alignment</span></dt>
+                <dd id="exec-affirm">—</dd>
+              </div>
+              <div>
+                <dt><span class="badge recommend_adjustment">recommend_adjustment</span></dt>
+                <dd id="exec-recommend">—</dd>
+              </div>
+              <div>
+                <dt><span class="badge escalate">escalate</span></dt>
+                <dd id="exec-escalate">—</dd>
+              </div>
+            </dl>
+            <p id="exec-total-empty" class="muted" hidden>No judgment records loaded.</p>
+          </section>
+
+          <section class="exec-panel" aria-label="Escalation Overview panel">
+            <h3>Escalation Overview</h3>
+            <div class="exec-row">
+              <div class="exec-label">Escalations</div>
+              <div id="exec-escalate-rate" class="exec-value">—</div>
+            </div>
+            <div class="exec-row">
+              <div class="exec-label">Most frequently escalated mandate</div>
+              <div id="exec-top-mandate" class="exec-value">—</div>
+            </div>
+            <div class="exec-row">
+              <div class="exec-label">Most frequently escalated procedure</div>
+              <div id="exec-top-procedure" class="exec-value">—</div>
+            </div>
+            <p class="muted">
+              Escalate is a designed outcome indicating an authority boundary was reached; human review may be required.
+            </p>
+            <p id="exec-escalate-empty" class="muted" hidden>No judgment records loaded.</p>
+          </section>
+
+          <section class="exec-panel" aria-label="Recent Activity panel">
+            <h3>Recent Activity</h3>
+            <div class="exec-row">
+              <div class="exec-label">Judgments (last 7 days)</div>
+              <div id="exec-last7" class="exec-value">—</div>
+            </div>
+            <div class="exec-row">
+              <div class="exec-label">Most recent escalation</div>
+              <div id="exec-last-escalation" class="exec-value">—</div>
+            </div>
+            <a class="btn btn-primary exec-link" href="./dashboard.html">View Executive Dashboard →</a>
+            <p id="exec-recent-empty" class="muted" hidden>No judgment records loaded.</p>
+          </section>
+        </div>
+
         <div class="filters">
           <label>
             Search

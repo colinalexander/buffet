@@ -31,6 +31,18 @@ const els = {
   downloadAudit: document.getElementById("download-audit"),
   contextPanel: document.getElementById("context-panel"),
   rawJson: document.getElementById("raw-json"),
+  execTotal: document.getElementById("exec-total"),
+  execAffirm: document.getElementById("exec-affirm"),
+  execRecommend: document.getElementById("exec-recommend"),
+  execEscalate: document.getElementById("exec-escalate"),
+  execEscalateRate: document.getElementById("exec-escalate-rate"),
+  execTopMandate: document.getElementById("exec-top-mandate"),
+  execTopProcedure: document.getElementById("exec-top-procedure"),
+  execLast7: document.getElementById("exec-last7"),
+  execLastEscalation: document.getElementById("exec-last-escalation"),
+  execTotalEmpty: document.getElementById("exec-total-empty"),
+  execEscalateEmpty: document.getElementById("exec-escalate-empty"),
+  execRecentEmpty: document.getElementById("exec-recent-empty"),
 };
 
 function option(label, value) {
@@ -403,6 +415,97 @@ function recordById(recordId) {
   return indexRecords.find((record) => record.record_id === recordId) || null;
 }
 
+function parseTimestamp(ts) {
+  const d = new Date(ts);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+function datasetAnchor(records) {
+  const dates = records.map((r) => parseTimestamp(r.timestamp)).filter(Boolean);
+  if (!dates.length) {
+    return new Date();
+  }
+  return new Date(Math.max(...dates.map((d) => d.getTime())));
+}
+
+function topKeyByCount(items, keyFn) {
+  const counts = new Map();
+  items.forEach((item) => {
+    const key = keyFn(item);
+    counts.set(key, (counts.get(key) || 0) + 1);
+  });
+  let best = null;
+  let bestCount = -1;
+  counts.forEach((count, key) => {
+    if (count > bestCount) {
+      best = key;
+      bestCount = count;
+    }
+  });
+  return best ? { key: best, count: bestCount } : null;
+}
+
+function renderExecutivePanels(records) {
+  const hasPanels = Boolean(els.execTotal && els.execEscalateRate && els.execLast7);
+  if (!hasPanels) {
+    return;
+  }
+
+  const total = records.length;
+  const affirm = records.filter((r) => r.outcome_type === "affirm_alignment").length;
+  const recommend = records.filter((r) => r.outcome_type === "recommend_adjustment").length;
+  const escalate = records.filter((r) => r.outcome_type === "escalate").length;
+
+  const showEmpty = (flag) => {
+    if (els.execTotalEmpty) els.execTotalEmpty.hidden = !flag;
+    if (els.execEscalateEmpty) els.execEscalateEmpty.hidden = !flag;
+    if (els.execRecentEmpty) els.execRecentEmpty.hidden = !flag;
+  };
+
+  if (!total) {
+    els.execTotal.textContent = "—";
+    els.execAffirm.textContent = "—";
+    els.execRecommend.textContent = "—";
+    els.execEscalate.textContent = "—";
+    els.execEscalateRate.textContent = "—";
+    els.execTopMandate.textContent = "—";
+    els.execTopProcedure.textContent = "—";
+    els.execLast7.textContent = "—";
+    els.execLastEscalation.textContent = "—";
+    showEmpty(true);
+    return;
+  }
+
+  showEmpty(false);
+  els.execTotal.textContent = String(total);
+  els.execAffirm.textContent = String(affirm);
+  els.execRecommend.textContent = String(recommend);
+  els.execEscalate.textContent = String(escalate);
+
+  const pct = total ? Math.round((escalate / total) * 100) : 0;
+  els.execEscalateRate.textContent = `${escalate} (${pct}%)`;
+
+  const escalations = records.filter((r) => r.outcome_type === "escalate");
+  const topMandate = topKeyByCount(escalations, (r) => r.mandate_id);
+  const topProcedure = topKeyByCount(escalations, (r) => r.procedure_id);
+  els.execTopMandate.textContent = topMandate ? `${topMandate.key} (${topMandate.count})` : "—";
+  els.execTopProcedure.textContent = topProcedure ? `${topProcedure.key} (${topProcedure.count})` : "—";
+
+  const anchor = datasetAnchor(records);
+  const cutoff = new Date(anchor.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const last7 = records.filter((r) => {
+    const d = parseTimestamp(r.timestamp);
+    if (!d) return false;
+    return d >= cutoff && d <= anchor;
+  }).length;
+  els.execLast7.textContent = String(last7);
+
+  const mostRecentEscalation = escalations
+    .slice()
+    .sort((a, b) => String(b.timestamp ?? "").localeCompare(String(a.timestamp ?? "")))[0];
+  els.execLastEscalation.textContent = mostRecentEscalation ? mostRecentEscalation.timestamp : "—";
+}
+
 function collectSelectedMetas() {
   const byId = new Map(indexRecords.map((r) => [r.record_id, r]));
   return Array.from(selectedIds)
@@ -702,6 +805,7 @@ export async function initViewer() {
 
   const index = await loadIndex();
   indexRecords = index.records || [];
+  renderExecutivePanels(indexRecords);
 
   buildFilters();
   renderCompareOptions();

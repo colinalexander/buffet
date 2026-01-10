@@ -17,14 +17,14 @@ export const OUTCOME_CONTEXT = {
   recommend_adjustment: {
     title: "Recommend Adjustment",
     governance_meaning:
-      "The procedure recommends an exposure-level adjustment that remains within the mandate’s authority boundaries. The system does not execute trades.",
+      "The procedure recommends an exposure-level adjustment that remains within the mandate’s authority boundaries. The system never places trades.",
     why_it_matters:
-      "Signals a governance-relevant change request with bounded authority. Committees can accept, reject, or revise via human-controlled processes.",
+      "Provides a governance-relevant change request with bounded authority. Committees can accept, reject, or revise via human-controlled processes.",
     who_acts: ["Portfolio team", "Risk officer (review)"],
     typical_next_steps: [
       "Review recommended changes and supporting evidence.",
       "Confirm the changes remain within mandate constraints.",
-      "Document acceptance/rejection and route to execution outside MandateOS.",
+      "Document acceptance/rejection and route any portfolio change through human-controlled processes outside MandateOS.",
     ],
   },
   escalate: {
@@ -83,7 +83,7 @@ export function buildGovernanceSummary(meta, data) {
     outcomeType === "escalate"
       ? "Human authority required; automation suspended until reviewed."
       : outcomeType === "recommend_adjustment"
-        ? "Human review required to accept/reject recommendation; no execution occurs here."
+        ? "Human review required to accept/reject recommendation; no portfolio change occurs here."
         : "No action required; record is filed for audit and monitoring.";
 
   return {
@@ -99,4 +99,3 @@ export function buildGovernanceSummary(meta, data) {
     context,
   };
 }
-

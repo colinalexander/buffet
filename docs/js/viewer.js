@@ -2,6 +2,7 @@ import { debounce, formatShortDate, truncate, uniq } from "./core.js";
 import { fetchRecordByPath, loadIndex } from "./data.js";
 import { buildGovernanceSummary, outcomeLabel, OUTCOME_CONTEXT } from "./governance.js";
 import { setActiveNav, wireOnboarding } from "./page.js";
+import { openMandateViewer } from "../mandate_viewer.js";
 
 let indexRecords = [];
 let selectedMeta = null;
@@ -265,7 +266,7 @@ function renderDetail(data, recordPath, meta) {
     outcomeType === "escalate"
       ? '<div class="callout"><strong>Human authority required.</strong> Automation is suspended until reviewed.</div>'
       : outcomeType === "recommend_adjustment"
-        ? '<div class="callout callout-warn"><strong>Human review required.</strong> This viewer never executes trades.</div>'
+        ? '<div class="callout callout-warn"><strong>Human review required.</strong> This viewer never places trades.</div>'
         : '<div class="callout callout-ok"><strong>In policy.</strong> Record affirms alignment under documented authority.</div>';
 
   const authority = data.authority || {};
@@ -293,7 +294,10 @@ function renderDetail(data, recordPath, meta) {
 
     <section>
       <h4>Authority bindings</h4>
-      <p>Mandate: <strong>${authority.mandate_id}</strong> (v${authority.mandate_version})</p>
+      <p>
+        Mandate: <strong>${authority.mandate_id}</strong> (v${authority.mandate_version})
+        <button class="btn btn-ghost" type="button" data-view-mandate>View Mandate</button>
+      </p>
       <p>Procedure: <strong>${authority.procedure_id}</strong> (${authority.procedure_version})</p>
     </section>
 
@@ -371,6 +375,13 @@ function renderDetail(data, recordPath, meta) {
         <p class="muted">Published at: ${data._published_at || "unknown"}</p>
       </section>
     `;
+  }
+
+  const viewMandateBtn = els.detailPanel.querySelector("[data-view-mandate]");
+  if (viewMandateBtn && authority.mandate_id) {
+    viewMandateBtn.addEventListener("click", () =>
+      openMandateViewer(String(authority.mandate_id), { expectedVersion: authority.mandate_version })
+    );
   }
 
   els.rawJson.textContent = JSON.stringify(data, null, 2);
@@ -493,7 +504,18 @@ function renderExecutivePanels(records) {
   const escalations = records.filter((r) => r.outcome_type === "escalate");
   const topMandate = topKeyByCount(escalations, (r) => r.mandate_id);
   const topProcedure = topKeyByCount(escalations, (r) => r.procedure_id);
-  els.execTopMandate.textContent = topMandate ? `${topMandate.key} (${topMandate.count})` : "—";
+  if (!topMandate) {
+    els.execTopMandate.textContent = "—";
+  } else {
+    els.execTopMandate.replaceChildren();
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "link-btn";
+    btn.textContent = topMandate.key;
+    btn.addEventListener("click", () => openMandateViewer(topMandate.key));
+    els.execTopMandate.appendChild(btn);
+    els.execTopMandate.appendChild(document.createTextNode(` (${topMandate.count})`));
+  }
   els.execTopProcedure.textContent = topProcedure ? `${topProcedure.key} (${topProcedure.count})` : "—";
 
   const anchor = datasetAnchor(records);
@@ -739,7 +761,7 @@ async function downloadAuditPackage() {
       "- glossary.json: term definitions and interpretation guidance (if available)",
       "- authority_sources.json: mapping to mandate/procedure attachments (if available)",
       "",
-      "Note: This package contains audit artifacts only; it does not represent trades or execution.",
+      "Note: This package contains audit artifacts only; it does not represent trades or portfolio changes.",
     ].join("\n")
   );
 

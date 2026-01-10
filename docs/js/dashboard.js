@@ -2,6 +2,7 @@ import { debounce, groupBy, uniq } from "./core.js";
 import { loadIndex } from "./data.js";
 import { outcomeLabel } from "./governance.js";
 import { setActiveNav, wireOnboarding } from "./page.js";
+import { openMandateViewer } from "../mandate_viewer.js";
 
 const els = {
   tileTotal: document.getElementById("tile-total"),
@@ -19,6 +20,12 @@ const els = {
 let indexRecords = [];
 let chartEscMandate = null;
 let chartTrend = null;
+
+function integerStep(maxValue, targetTicks = 6) {
+  const max = Number.isFinite(maxValue) ? Math.max(0, maxValue) : 0;
+  const steps = Math.max(2, targetTicks);
+  return Math.max(1, Math.ceil(max / (steps - 1)));
+}
 
 function destroyCharts() {
   if (chartEscMandate) chartEscMandate.destroy();
@@ -47,6 +54,9 @@ function renderEscalationsByMandate(records) {
     count: items.length,
   }));
   rows.sort((a, b) => b.count - a.count || a.mandateId.localeCompare(b.mandateId));
+  const maxCount = rows.length ? rows[0].count : 0;
+  const stepSize = integerStep(maxCount);
+  const suggestedMax = Math.max(stepSize, Math.ceil(maxCount / stepSize) * stepSize);
 
   if (!rows.length || !window.Chart) {
     els.chartEscMandateFallback.hidden = false;
@@ -74,9 +84,21 @@ function renderEscalationsByMandate(records) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      onClick: (event) => {
+        const hits = chartEscMandate.getElementsAtEventForMode(event, "nearest", { intersect: true }, true);
+        if (!hits.length) return;
+        const idx = hits[0].index;
+        const mandateId = chartEscMandate.data.labels?.[idx];
+        if (mandateId) openMandateViewer(String(mandateId));
+      },
       scales: {
         x: { ticks: { color: "#9aa3b2" }, grid: { color: "rgba(38, 43, 54, 0.7)" } },
-        y: { ticks: { color: "#9aa3b2" }, grid: { color: "rgba(38, 43, 54, 0.7)" }, beginAtZero: true },
+        y: {
+          ticks: { color: "#9aa3b2", stepSize, precision: 0 },
+          grid: { color: "rgba(38, 43, 54, 0.7)" },
+          beginAtZero: true,
+          suggestedMax,
+        },
       },
       plugins: {
         legend: { labels: { color: "#e6e9ef" } },
@@ -85,7 +107,7 @@ function renderEscalationsByMandate(records) {
             afterBody: () => [
               "Governance meaning:",
               "Escalate = authority boundary reached; human review may be required.",
-              "No trades or actions are executed by MandateOS.",
+              "Read-only governance viewer. No actions or trades are executed here.",
             ],
           },
         },
@@ -120,6 +142,16 @@ function renderTrend(records) {
 
   const labels = Array.from(buckets.keys()).sort();
   const series = (outcomeType) => labels.map((label) => buckets.get(label)?.[outcomeType] || 0);
+  const maxStacked = labels.length
+    ? Math.max(
+        ...labels.map((label) => {
+          const row = buckets.get(label);
+          return (row?.affirm_alignment || 0) + (row?.recommend_adjustment || 0) + (row?.escalate || 0);
+        })
+      )
+    : 0;
+  const stepSize = integerStep(maxStacked);
+  const suggestedMax = Math.max(stepSize, Math.ceil(maxStacked / stepSize) * stepSize);
 
   if (!labels.length || !window.Chart) {
     els.chartTrendFallback.hidden = false;
@@ -166,7 +198,13 @@ function renderTrend(records) {
       maintainAspectRatio: false,
       scales: {
         x: { stacked: true, ticks: { color: "#9aa3b2" }, grid: { color: "rgba(38, 43, 54, 0.7)" } },
-        y: { stacked: true, ticks: { color: "#9aa3b2" }, grid: { color: "rgba(38, 43, 54, 0.7)" }, beginAtZero: true },
+        y: {
+          stacked: true,
+          ticks: { color: "#9aa3b2", stepSize, precision: 0 },
+          grid: { color: "rgba(38, 43, 54, 0.7)" },
+          beginAtZero: true,
+          suggestedMax,
+        },
       },
       plugins: {
         legend: { labels: { color: "#e6e9ef" } },

@@ -2,6 +2,7 @@ import { debounce, formatShortDate, groupBy, sum, uniq } from "./core.js";
 import { fetchRecordByPath, loadIndex } from "./data.js";
 import { outcomeLabel, OUTCOME_CONTEXT } from "./governance.js";
 import { setActiveNav, wireOnboarding } from "./page.js";
+import { openMandateViewer } from "../mandate_viewer.js";
 
 const els = {
   count: document.getElementById("viz-count"),
@@ -27,6 +28,12 @@ let mandateChart = null;
 let procedureChart = null;
 
 const escalationSeverityCache = new Map();
+
+function integerStep(maxValue, targetTicks = 6) {
+  const max = Number.isFinite(maxValue) ? Math.max(0, maxValue) : 0;
+  const steps = Math.max(2, targetTicks);
+  return Math.max(1, Math.ceil(max / (steps - 1)));
+}
 
 function option(label, value) {
   const opt = document.createElement("option");
@@ -141,6 +148,16 @@ function byDateBuckets(records) {
 function renderTimeline(records) {
   const { dates, buckets } = byDateBuckets(records);
   const dataByOutcome = (outcomeType) => dates.map((d) => buckets.get(d)?.[outcomeType] || 0);
+  const maxStacked = dates.length
+    ? Math.max(
+        ...dates.map((d) => {
+          const row = buckets.get(d);
+          return (row?.affirm_alignment || 0) + (row?.recommend_adjustment || 0) + (row?.escalate || 0);
+        })
+      )
+    : 0;
+  const stepSize = integerStep(maxStacked);
+  const suggestedMax = Math.max(stepSize, Math.ceil(maxStacked / stepSize) * stepSize);
 
   timelineChart = new window.Chart(els.timeline, {
     type: "bar",
@@ -175,7 +192,13 @@ function renderTimeline(records) {
       maintainAspectRatio: false,
       scales: {
         x: { stacked: true, ticks: { color: "#9aa3b2" }, grid: { color: "rgba(38, 43, 54, 0.7)" } },
-        y: { stacked: true, ticks: { color: "#9aa3b2" }, grid: { color: "rgba(38, 43, 54, 0.7)" } },
+        y: {
+          stacked: true,
+          ticks: { color: "#9aa3b2", stepSize, precision: 0 },
+          grid: { color: "rgba(38, 43, 54, 0.7)" },
+          beginAtZero: true,
+          suggestedMax,
+        },
       },
       plugins: {
         legend: { labels: { color: "#e6e9ef" } },
@@ -199,6 +222,12 @@ function topEscalations(records, keyFn) {
 function renderEscalations(records) {
   const byMandate = topEscalations(records, (r) => r.mandate_id).slice(0, 12);
   const byProcedure = topEscalations(records, (r) => r.procedure_id).slice(0, 12);
+  const maxMandate = byMandate.length ? byMandate[0].escalations : 0;
+  const maxProcedure = byProcedure.length ? byProcedure[0].escalations : 0;
+  const stepMandate = integerStep(maxMandate);
+  const stepProcedure = integerStep(maxProcedure);
+  const suggestedMaxMandate = Math.max(stepMandate, Math.ceil(maxMandate / stepMandate) * stepMandate);
+  const suggestedMaxProcedure = Math.max(stepProcedure, Math.ceil(maxProcedure / stepProcedure) * stepProcedure);
 
   mandateChart = new window.Chart(els.escMandate, {
     type: "bar",
@@ -217,9 +246,21 @@ function renderEscalations(records) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      onClick: (event) => {
+        const hits = mandateChart.getElementsAtEventForMode(event, "nearest", { intersect: true }, true);
+        if (!hits.length) return;
+        const idx = hits[0].index;
+        const mandateId = mandateChart.data.labels?.[idx];
+        if (mandateId) openMandateViewer(String(mandateId));
+      },
       scales: {
         x: { ticks: { color: "#9aa3b2" }, grid: { color: "rgba(38, 43, 54, 0.7)" } },
-        y: { ticks: { color: "#9aa3b2" }, grid: { color: "rgba(38, 43, 54, 0.7)" }, beginAtZero: true },
+        y: {
+          ticks: { color: "#9aa3b2", stepSize: stepMandate, precision: 0 },
+          grid: { color: "rgba(38, 43, 54, 0.7)" },
+          beginAtZero: true,
+          suggestedMax: suggestedMaxMandate,
+        },
       },
       plugins: { legend: { labels: { color: "#e6e9ef" } } },
     },
@@ -244,7 +285,12 @@ function renderEscalations(records) {
       maintainAspectRatio: false,
       scales: {
         x: { ticks: { color: "#9aa3b2" }, grid: { color: "rgba(38, 43, 54, 0.7)" } },
-        y: { ticks: { color: "#9aa3b2" }, grid: { color: "rgba(38, 43, 54, 0.7)" }, beginAtZero: true },
+        y: {
+          ticks: { color: "#9aa3b2", stepSize: stepProcedure, precision: 0 },
+          grid: { color: "rgba(38, 43, 54, 0.7)" },
+          beginAtZero: true,
+          suggestedMax: suggestedMaxProcedure,
+        },
       },
       plugins: { legend: { labels: { color: "#e6e9ef" } } },
     },
@@ -344,12 +390,14 @@ function renderDrilldown(records, mandateId, procedureId) {
     const url = `./index.html?record=${encodeURIComponent(r.record_id)}`;
     tr.innerHTML = `
       <td>${formatShortDate(r.timestamp)}</td>
-      <td>${r.mandate_id}</td>
+      <td><button type="button" class="link-btn" data-open-mandate>${r.mandate_id}</button></td>
       <td>${r.procedure_id}</td>
       <td><span class="badge ${r.outcome_type}">${r.outcome_type}</span></td>
       <td>${r.confidence_level ?? ""}</td>
       <td><a class="link" href="${url}">Open</a></td>
     `;
+    const btn = tr.querySelector("[data-open-mandate]");
+    if (btn) btn.addEventListener("click", () => openMandateViewer(String(r.mandate_id)));
     els.drillRows.appendChild(tr);
   });
 }
@@ -406,7 +454,22 @@ async function renderHeatmap(records) {
     .attr("text-anchor", "end")
     .attr("fill", "#9aa3b2")
     .attr("font-size", 11)
+    .attr("tabindex", 0)
+    .attr("role", "button")
+    .style("cursor", "pointer")
     .text((d) => d);
+
+  svg
+    .selectAll("text[role='button']")
+    .on("click", (event, d) => openMandateViewer(String(d)))
+    .on("keydown", (event, d) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openMandateViewer(String(d));
+      }
+    })
+    .append("title")
+    .text((d) => `Open mandate ${d}`);
 
   const cells = svg.append("g").selectAll("rect").data(values).join("rect");
 

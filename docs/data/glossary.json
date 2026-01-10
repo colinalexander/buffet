@@ -38,7 +38,7 @@
     {
       "slug": "recommend-adjustment",
       "term": "recommend_adjustment",
-      "definition": "Outcome type indicating a bounded, exposure-level adjustment is recommended within the mandate’s authority boundaries. The system does not execute trades; humans decide whether to accept and execute outside MandateOS.",
+      "definition": "Outcome type indicating a bounded, exposure-level adjustment is recommended within the mandate’s authority boundaries. The system does not place trades; humans decide whether to accept and route changes outside MandateOS.",
       "examples": ["Recommendation to increase liquidity buffer to the mandate minimum."],
       "tags": ["outcome", "recommendation"]
     },
@@ -73,7 +73,7 @@
     {
       "slug": "constraints-at-risk",
       "term": "Constraints at risk",
-      "definition": "A set of constraints that are trending toward breach. This is a governance signal: it can justify early adjustment recommendations before a hard breach occurs.",
+      "definition": "A set of constraints that are trending toward breach. This is a governance indicator: it can justify early adjustment recommendations before a hard breach occurs.",
       "examples": ["Liquidity buffer months approaching minimum -> recommend adjustment."],
       "tags": ["monitoring", "risk"]
     },

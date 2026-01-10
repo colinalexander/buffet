@@ -16,7 +16,7 @@ const DEFAULT_STEPS = [
       "Escalate means an authority boundary was reached (e.g., hard constraint breach, confidence below floor, unresolved tradeoff).",
       "Automation is suspended: the system must not proceed as if a decision were made.",
       "Assign an accountable owner and record disposition; no further automated judgment proceeds until disposition is recorded.",
-      "Route any portfolio action through human-controlled execution outside MandateOS (never from this viewer).",
+      "Route any portfolio change through human-controlled processes outside MandateOS (never from this viewer).",
     ],
   },
 ];

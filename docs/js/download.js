@@ -327,7 +327,7 @@ async function downloadAuditPackage() {
       "- glossary.json (definitions + interpretation guidance, if published)",
       "- attachments/ (mandate + procedure sources, if published)",
       "",
-      "Note: MandateOS produces audit artifacts only; it does not place trades or execute portfolio actions.",
+      "Note: MandateOS produces audit artifacts only; it does not place trades or apply portfolio changes.",
     ].join("\n")
   );
 
@@ -376,4 +376,3 @@ async function init() {
 }
 
 init();
-

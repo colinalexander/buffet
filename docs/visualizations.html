@@ -23,6 +23,7 @@
             <a data-nav href="./index.html">Home</a>
             <a data-nav href="./dashboard.html">Executive Dashboard</a>
             <a data-nav href="./visualizations.html">Visualizations</a>
+            <a data-nav href="./mandates.html">Mandates</a>
             <a data-nav href="./glossary.html">Glossary</a>
             <a data-nav href="./download.html">Download</a>
             <a data-nav href="./faq.html">FAQ</a>
@@ -78,7 +79,7 @@
         <h2>Timeline of judgments</h2>
         <p class="preamble">Counts of outcomes over time for the filtered dataset.</p>
         <p class="helper">
-          Escalations indicate authority boundary crossings (human review), not failures or performance.
+          Escalations indicate authority boundary crossings (human review), not failures or market commentary.
         </p>
         <div class="chart-wrap">
           <canvas id="timeline-chart" aria-label="Judgment timeline chart" role="img"></canvas>
@@ -88,14 +89,14 @@
       <section class="panel viz-grid">
         <div class="viz-card">
           <h2>Escalations by mandate</h2>
-          <p class="helper">Escalations indicate authority boundary crossings (human review), not failures or performance.</p>
+          <p class="helper">Escalations indicate authority boundary crossings (human review), not failures or market commentary.</p>
           <div class="chart-wrap">
             <canvas id="escalations-mandate" aria-label="Escalations per mandate chart" role="img"></canvas>
           </div>
         </div>
         <div class="viz-card">
           <h2>Escalations by procedure</h2>
-          <p class="helper">Escalations indicate authority boundary crossings (human review), not failures or performance.</p>
+          <p class="helper">Escalations indicate authority boundary crossings (human review), not failures or market commentary.</p>
           <div class="chart-wrap">
             <canvas id="escalations-procedure" aria-label="Escalations per procedure chart" role="img"></canvas>
           </div>
@@ -143,10 +144,12 @@
       </section>
     </main>
 
-    <footer>Read-only analytics on published judgment artifacts. No execution or portfolio actions occur here.</footer>
+    <footer>Read-only governance viewer. No actions or trades are executed here.</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
     <script type="module" src="./js/visualizations.js"></script>
   </body>
 </html>

@@ -38,7 +38,7 @@ A **rate regime event** is deemed to exist when one or more of the following con
    Model-implied confidence in liability hedging or funding projections falls below the minimum confidence level
    specified in the governing mandate *and* the degradation is attributable primarily to rate uncertainty.
 
-3. **Convexity Stress Signal**  
+3. **Convexity Stress Indicator**  
    Non-linear sensitivity of liabilities to rate changes materially increases forecast dispersion over the mandate’s
    shortfall-risk horizon.
 
@@ -97,7 +97,7 @@ constraints defined by the governing mandate.
 
 The following are explicitly disallowed:
 
-* Increasing rate exposure to enhance expected returns.
+* Increasing rate exposure to pursue non-mandate objectives.
 * Introducing new instruments to speculate on rate direction.
 * Re-defining the liability benchmark, evaluation horizon, or any mandate objective.
 
@@ -136,7 +136,7 @@ Records must be retained for the minimum period specified by the governing manda
 
 ## 8. Definition of Procedural Compliance
 
-This procedure is considered properly executed if:
+This procedure is considered correctly applied if:
 
 * No hard risk constraints are silently violated.
 * All recommendations remain within stated authority and mandate bounds.

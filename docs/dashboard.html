@@ -23,6 +23,7 @@
             <a data-nav href="./index.html">Home</a>
             <a data-nav href="./dashboard.html">Executive Dashboard</a>
             <a data-nav href="./visualizations.html">Visualizations</a>
+            <a data-nav href="./mandates.html">Mandates</a>
             <a data-nav href="./glossary.html">Glossary</a>
             <a data-nav href="./download.html">Download</a>
             <a data-nav href="./faq.html">FAQ</a>
@@ -44,10 +45,9 @@
 
         <p class="executive-lede">
           What the data shows: record volume by mandate-bound procedures. Escalations indicate occasions where authority
-          thresholds were reached and human review may be required. This interface is read-only and executes no actions
-          or trades.
+          thresholds were reached and human review may be required. Read-only governance viewer. No actions or trades are executed here.
         </p>
-        <p class="helper">This dashboard is not performance reporting and does not express market outlook.</p>
+        <p class="helper">Read-only governance viewer. No actions or trades are executed here.</p>
 
         <div class="tile-grid" aria-label="Executive metrics">
           <div class="tile">
@@ -82,9 +82,9 @@
         </div>
         <p class="preamble">
           How to interpret escalations: escalation is a designed outcome that halts automation when authority limits are
-          reached. It is not a performance indicator.
+          reached. It is not market commentary.
         </p>
-        <p class="helper">Escalations indicate authority boundary crossings (human review), not failures or performance.</p>
+        <p class="helper">Escalations indicate authority boundary crossings (human review), not failures or market commentary.</p>
         <div class="chart-wrap chart-wrap-tall">
           <canvas id="chart-escalations-mandate" aria-label="Escalations by mandate chart" role="img"></canvas>
         </div>
@@ -134,7 +134,7 @@
         <div class="panel-header">
           <div>
             <h2>Navigation & actions</h2>
-            <p class="panel-subtitle">Links only (no execution or portfolio controls).</p>
+            <p class="panel-subtitle">Links only (no portfolio controls).</p>
           </div>
         </div>
         <div class="link-grid" aria-label="Dashboard links">
@@ -154,9 +154,11 @@
       </section>
     </main>
 
-    <footer>Read-only governance dashboard. No actions are executed or authorized here. No trades.</footer>
+    <footer>Read-only governance viewer. No actions or trades are executed here.</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
     <script type="module" src="./js/dashboard.js"></script>
   </body>
 </html>

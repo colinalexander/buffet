@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-01-09T22:29:42.709438Z",
+  "mandates": [
+    {
+      "archetype": "liability_driven",
+      "changelog_path": "mandates/liability_driven/db_pension_v1/changelog.md",
+      "effective_date": "2026-01-01",
+      "hard_constraint_highlights": "Max drawdown \u2264 20.0% (escalate); Funding ratio \u2265 0.85 (freeze_and_escalate); Shortfall probability \u2264 5.0% / 5y (escalate); Liquidity buffer \u2265 18 months",
+      "investor_type": "defined_benefit_pension",
+      "ips_path": "mandates/liability_driven/db_pension_v1/IPS.md",
+      "mandate_id": "db_pension_v1",
+      "owner": "investment_committee",
+      "published_changelog_path": "mandates/db_pension_v1/changelog.md",
+      "published_ips_path": "mandates/db_pension_v1/IPS.md",
+      "published_mandate_path": "mandates/db_pension_v1/mandate.yaml",
+      "source_path": "mandates/liability_driven/db_pension_v1/mandate.yaml",
+      "version": "1.0"
+    },
+    {
+      "archetype": "perpetual_capital",
+      "changelog_path": "mandates/perpetual_capital/endowment_v1/changelog.md",
+      "effective_date": "2026-01-01",
+      "hard_constraint_highlights": "Max drawdown \u2264 30.0% (escalate); Existential risk threshold \u2264 1.0% / 10y (freeze_and_escalate); Liquidity buffer \u2265 12 months; Forced liquidation prohibited",
+      "investor_type": "university_endowment",
+      "ips_path": "mandates/perpetual_capital/endowment_v1/IPS.md",
+      "mandate_id": "endowment_v1",
+      "owner": "investment_committee",
+      "published_changelog_path": "mandates/endowment_v1/changelog.md",
+      "published_ips_path": "mandates/endowment_v1/IPS.md",
+      "published_mandate_path": "mandates/endowment_v1/mandate.yaml",
+      "source_path": "mandates/perpetual_capital/endowment_v1/mandate.yaml",
+      "version": "1.0"
+    }
+  ]
+}

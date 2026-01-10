@@ -23,6 +23,7 @@
             <a data-nav href="./index.html">Home</a>
             <a data-nav href="./dashboard.html">Executive Dashboard</a>
             <a data-nav href="./visualizations.html">Visualizations</a>
+            <a data-nav href="./mandates.html">Mandates</a>
             <a data-nav href="./glossary.html">Glossary</a>
             <a data-nav href="./download.html">Download</a>
             <a data-nav href="./faq.html">FAQ</a>
@@ -50,8 +51,7 @@
 
         <p class="executive-lede">
           This viewer summarizes append-only Judgment Records produced by mandate-bound procedures. Escalations indicate
-          occasions where authority thresholds were reached and human review may be required. This interface is read-only
-          and executes no actions or trades.
+          occasions where authority thresholds were reached and human review may be required. Read-only governance viewer. No actions or trades are executed here.
         </p>
 
         <div class="executive-panels" aria-label="Executive summary panels">
@@ -184,12 +184,12 @@
       <aside id="context-panel" class="panel context-panel" aria-label="Role-based context panel"></aside>
     </main>
 
-    <footer>
-      Non-authoritative, read-only viewer of published judgment records. No actions are executed or authorized here. No trades.
-    </footer>
+    <footer>Read-only governance viewer. No actions or trades are executed here.</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
     <script type="module" src="app.js"></script>
   </body>
 </html>

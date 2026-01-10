@@ -1,20 +1,13 @@
 {
   "_published_at": "2026-01-10T02:33:15.773015Z",
-  "_published_from": "20260109T053957Z_c19d8c59-1b43-43f3-a5c5-fa7d8375391e.yaml",
-  "adjustment": {
-    "adjustment_unit": "exposure",
-    "mandate_constraints_checked": true,
-    "recommended_changes": [
-      "Increase liquidity buffer to mandate minimum"
-    ]
-  },
+  "_published_from": "20260109T110500Z_c4d0364f-550d-4b92-8d61-b09466f391c6.yaml",
   "audit": {
     "immutable": true,
-    "retained_until": "2036-01-07",
+    "retained_until": "2041-01-05",
     "superseded_by": null
   },
   "authority": {
-    "mandate_id": "db_pension_v1",
+    "mandate_id": "endowment_v1",
     "mandate_version": "1.0",
     "procedure_id": "rate_regime_adjustment",
     "procedure_version": "v1"
@@ -22,10 +15,9 @@
   "behavior": {
     "decision_latency_ms": 0,
     "escalated": false,
-    "inaction": false,
+    "inaction": true,
     "procedure_branches_taken": [
-      "constraints_at_risk",
-      "outcome_recommend_adjustment"
+      "outcome_affirm_alignment"
     ],
     "tool_calls": 0
   },
@@ -39,10 +31,14 @@
     "trend": "stable"
   },
   "constraints": {
-    "constraints_at_risk": [
-      "liquidity_buffer_months"
-    ],
+    "constraints_at_risk": [],
     "hard_constraints_breached": false
+  },
+  "inaction": {
+    "justification": "Exposures remain within mandate tolerances; no adjustment required.",
+    "risks_acknowledged": [
+      "Regime shift warrants continued monitoring"
+    ]
   },
   "invocation": {
     "persistence_evidence": "2 confirmations over 2 cycles",
@@ -50,10 +46,10 @@
     "trigger_type": "state_change"
   },
   "outcome": {
-    "description": "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | confidence=0.72 | mandate=db_pension_v1 | constraints_at_risk",
-    "type": "recommend_adjustment"
+    "description": "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | confidence=0.72 | mandate=endowment_v1 | within_constraints",
+    "type": "affirm_alignment"
   },
-  "record_id": "c19d8c59-1b43-43f3-a5c5-fa7d8375391e",
+  "record_id": "c4d0364f-550d-4b92-8d61-b09466f391c6",
   "state": {
     "environment_summary": {
       "key_uncertainties": [
@@ -71,5 +67,5 @@
       }
     }
   },
-  "timestamp": "2026-01-09T05:39:57Z"
+  "timestamp": "2026-01-09T11:05:00Z"
 }

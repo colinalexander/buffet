@@ -1,0 +1,189 @@
+# Skill Authority Matrix (non-authoritative registry)
+#
+# Purpose: provide a machine-readable summary of authority boundaries already stated
+# in each skill's canonical source file.
+#
+# This registry MUST NOT introduce new authority. If any conflict is detected between
+# this file and a skill source, the skill source governs. If a conflict exists between
+# skills and higher-order authority, defer to:
+# - `documentation/JUDGMENT_AUTHORITY.md`
+# - `documentation/PROCEDURE_CONTRACT.md`
+# - `documentation/JUDGMENT_RECORD_SCHEMA.md`
+#
+# Conventions:
+# - `skill_id` MUST match the directory name under `skills/`.
+# - `source_path` MUST point to the canonical file in that directory.
+
+skills:
+  - skill_id: _template
+    source_path: skills/_template/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: business_quality_assessment
+    source_path: skills/business_quality_assessment/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: capital_allocation_judgment
+    source_path: skills/capital_allocation_judgment/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: circle_of_competence_enforcement
+    source_path: skills/circle_of_competence_enforcement/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: error_recognition_and_correction
+    source_path: skills/error_recognition_and_correction/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: governance_and_trust_evaluation
+    source_path: skills/governance_and_trust_evaluation/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: incentive_alignment_analysis
+    source_path: skills/incentive_alignment_analysis/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: institutional_constraint_awareness
+    source_path: skills/institutional_constraint_awareness/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: intrinsic_value_estimation
+    source_path: skills/intrinsic_value_estimation/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not:
+      - final_admission
+      - waive_constraints
+      - alter_mandate
+      - override_skill
+      - "set final valuation bounds without human sign-off"
+      - "determine purchase decisions or sizing"
+
+  - skill_id: long_horizon_compounding
+    source_path: skills/long_horizon_compounding/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: long_horizon_compounding_orientation
+    source_path: skills/long_horizon_compounding_orientation/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: margin_of_safety_enforcement
+    source_path: skills/margin_of_safety_enforcement/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not:
+      - final_admission
+      - waive_constraints
+      - alter_mandate
+      - override_skill
+      - "waive margin requirements"
+      - "override silently (overrides require escalation records)"
+
+  - skill_id: market_noise_immunity
+    source_path: skills/market_noise_immunity/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: narrative_resistance
+    source_path: skills/narrative_resistance/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: opportunity_cost_awareness
+    source_path: skills/opportunity_cost_awareness/SKILL.me
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: owner_mindset_reasoning
+    source_path: skills/owner_mindset_reasoning/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: patience_as_active_strategy
+    source_path: skills/patience_as_active_strategy/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: permanent_capital_loss_avoidance
+    source_path: skills/permanent_capital_loss_avoidance/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not:
+      - final_admission
+      - waive_constraints
+      - alter_mandate
+      - override_skill
+      - "approve exposure with irreversible loss risk"
+      - "waive without formal escalation"
+
+  - skill_id: risk_asymmetry_recognition
+    source_path: skills/risk_asymmetry_recognition/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: scale_aware_decision_making
+    source_path: skills/scale_aware_decision_making/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: simplicity_preference
+    source_path: skills/simplicity_preference/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+
+  - skill_id: structural_advantage_identification
+    source_path: skills/structural_advantage_identification/SKILL.md
+    model_role: advisory_only
+    human_required_for: [final_judgment]
+    model_may: [summarize_evidence, flag_concerns, propose_questions]
+    model_may_not: [final_admission, waive_constraints, alter_mandate, override_skill]
+

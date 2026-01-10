@@ -1,0 +1,53 @@
+# Cross-Skill Conflict Resolution Policy (non-authoritative, minimal v1)
+#
+# This file is a machine-readable policy describing escalation-first handling of
+# cross-skill conflicts. It MUST NOT introduce new authority or precedence rules.
+#
+# When uncertain, defer to canonical authority sources and escalate on conflict:
+# - `documentation/JUDGMENT_AUTHORITY.md`
+# - `documentation/PROCEDURE_CONTRACT.md`
+# - `documentation/JUDGMENT_RECORD_SCHEMA.md`
+# - `mandates/**/mandate.yaml`
+# - `judgment_loops/**/procedure.md`
+#
+# Existing runtime record locations (append-only):
+# - Judgment Records: `data/processed/judgment_records/`
+# - Escalation stubs: `data/processed/escalations/`
+# - Override artifacts: `data/processed/overrides/` (see `governance/override_log.md`)
+
+version: 1
+non_authoritative: true
+status: draft
+
+conflict_definition:
+  description: >
+    A conflict exists when two or more skill assessments yield incompatible
+    dispositions (e.g., one skill indicates "do not proceed"/veto/inaction while
+    another indicates proceeding), and the conflict cannot be resolved by the
+    governing mandate and binding procedure without introducing discretionary
+    precedence not already defined in canonical authority.
+
+required_response:
+  disposition: escalate
+  prohibitions:
+    - no silent override
+    - no implicit precedence ordering
+
+resolution_record:
+  # This is an override artifact recorded for governance traceability.
+  output_dir: data/processed/overrides
+  append_only: true
+  format: yaml
+  required_fields:
+    - mandate_id
+    - mandate_version
+    - procedure_id
+    - procedure_version
+    - involved_skill_ids
+    - evidence_references
+    - chosen_disposition
+  field_notes:
+    involved_skill_ids: "List of skill directory names under `skills/`."
+    evidence_references: "List of file paths and/or record_ids supporting the resolution."
+    chosen_disposition: "Must be `escalate`."
+

@@ -205,6 +205,7 @@ Scenario-based expected outcomes that prevent procedural drift. If changes cause
 #### Skills (`skills/`)
 
 Packaging for agent runtimes only; they reference canonical sources rather than duplicating them. Skills can have lifecycle metadata (draft→active) without becoming a second implementation. Any divergence is a bug by definition.
+Skill changes must be reviewed using [`documentation/prompts/skill_version_review.md`](documentation/prompts/skill_version_review.md).
 
 ### Institutional Learning (No Trial-and-Error)
 

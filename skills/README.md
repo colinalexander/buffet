@@ -14,6 +14,8 @@ that may be invoked by agent runtimes operating under MandateOS.
 Skills are **not logic**, **not strategies**, and **not sources of authority**.
 They are *judgment packaging*.
 
+Skill directories must contain only SKILL.md; procedure pointers belong in canonical locations.”
+
 ---
 
 ## Purpose

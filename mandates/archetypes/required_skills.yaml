@@ -1,0 +1,24 @@
+# Default archetype → skills mapping (non-authoritative)
+#
+# This file provides orchestration defaults keyed by `meta.archetype` in
+# `mandates/**/mandate.yaml`.
+#
+# Canonical authority remains:
+# - `documentation/**` (authority contracts)
+# - `mandates/**/mandate.yaml` (constraints and boundaries)
+# - `judgment_loops/**/procedure.md` (binding procedural logic)
+#
+# Do not treat this mapping as a source of authority. When in doubt, defer to the
+# governing mandate/procedure and escalate on conflict.
+
+liability_driven:
+  gating_skills:
+    - institutional_constraint_awareness
+  required_skills: []
+  recommended_skills: []
+
+perpetual_capital:
+  gating_skills:
+    - institutional_constraint_awareness
+  required_skills: []
+  recommended_skills: []

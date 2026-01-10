@@ -1,7 +1,15 @@
 # Skills
 
-This directory defines **investment judgment skills** as reusable, auditable
-capabilities that may be invoked by agent runtimes operating under MandateOS.
+This directory defines **judgment primitives**.
+
+It intentionally exposes *what* institutional judgment must account for, while leaving
+*how skills are composed, evaluated, prioritized, and evolved over time* explicitly
+**out of scope**.
+
+Those mechanisms are treated as institutional IP and are not specified here.
+
+This directory defines **investment judgment skills** as reusable, auditable capabilities
+that may be invoked by agent runtimes operating under MandateOS.
 
 Skills are **not logic**, **not strategies**, and **not sources of authority**.
 They are *judgment packaging*.

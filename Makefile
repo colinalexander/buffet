@@ -1,4 +1,17 @@
 .PHONY: test test-cov eval run-example run-skill founder-demo pages
+.DEFAULT_GOAL := help
+
+help:
+	@echo ""
+	@echo "MandateOS — common targets"
+	@echo ""
+	@echo "  make test        Run unit tests"
+	@echo "  make test-cov    Run tests with coverage"
+	@echo "  make eval        Run scenario-based procedure evaluation"
+	@echo "  make run-example Run example judgment loops (writes records)"
+	@echo "  make founder-demo Run the narrative founder demo"
+	@echo "  make pages       Regenerate GitHub Pages dataset under docs/"
+	@echo ""
 
 test:
 	uv run pytest -q

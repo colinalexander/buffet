@@ -1,0 +1,50 @@
+record_id: "8b138f74-0a4b-4e5f-9e2f-3e8d1c9d7b51"
+timestamp: "2026-01-01T00:00:00Z"
+authority:
+  mandate_id: endowment_v1
+  mandate_version: "1.0"
+  procedure_id: rate_regime_adjustment
+  procedure_version: "v1"
+invocation:
+  trigger_type: scheduled_review
+  trigger_description: "Quarterly mandate alignment review"
+  persistence_evidence: null
+state:
+  portfolio_summary:
+    key_exposures:
+      gross_exposure: 1.05
+    liquidity_position:
+      buffer_months: 24
+    leverage_level: 1.05
+  environment_summary:
+    regime_state: stable
+    key_uncertainties:
+      - low
+outcome:
+  type: affirm_alignment
+  rationale: "Exposures remain within mandate bounds; inaction is justified under the procedure."
+inaction:
+  justification: "Gross exposure and liquidity buffer remain within mandate tolerances."
+  risks_acknowledged:
+    - "Regime shifts may emerge between review cycles; continue monitoring."
+confidence:
+  level: 0.82
+  trend: stable
+  attribution: "Scenario inputs are stable and internally consistent."
+constraints:
+  hard_constraints_breached: false
+  constraints_at_risk: []
+compliance:
+  procedure_followed: true
+  deviations: null
+behavior:
+  tool_calls: 0
+  procedure_branches_taken:
+    - outcome_affirm_alignment
+  decision_latency_ms: 5
+  escalated: false
+  inaction: true
+audit:
+  retained_until: "2036-01-01"
+  immutable: true
+  superseded_by: null

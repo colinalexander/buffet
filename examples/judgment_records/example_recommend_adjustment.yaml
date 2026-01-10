@@ -1,0 +1,54 @@
+record_id: "6d7d62d0-0d8a-4e83-9d20-5dfc0dd0f1d2"
+timestamp: "2026-01-01T00:10:00Z"
+authority:
+  mandate_id: db_pension_v1
+  mandate_version: "1.0"
+  procedure_id: rate_regime_adjustment
+  procedure_version: "v1"
+invocation:
+  trigger_type: state_change
+  trigger_description: "Scenario rising_rates_2022"
+  persistence_evidence: "2 confirmations over 2 cycles"
+state:
+  portfolio_summary:
+    key_exposures:
+      gross_exposure: 1.15
+    liquidity_position:
+      buffer_months: 14
+    leverage_level: 1.15
+  environment_summary:
+    regime_state: rising_rates
+    key_uncertainties:
+      - elevated
+outcome:
+  type: recommend_adjustment
+  rationale: "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | constraints_at_risk"
+adjustment:
+  adjustment_unit: exposure
+  recommended_changes:
+    - "Increase liquidity buffer toward mandate minimum"
+    - "Reduce gross exposure modestly within mandate limits"
+  mandate_constraints_checked: true
+confidence:
+  level: 0.73
+  trend: stable
+  attribution: "Regime classification is stable; uncertainty remains within mandate confidence floor."
+constraints:
+  hard_constraints_breached: false
+  constraints_at_risk:
+    - liquidity_buffer_months
+compliance:
+  procedure_followed: true
+  deviations: null
+behavior:
+  tool_calls: 0
+  procedure_branches_taken:
+    - constraints_at_risk
+    - outcome_recommend_adjustment
+  decision_latency_ms: 7
+  escalated: false
+  inaction: false
+audit:
+  retained_until: "2036-01-01"
+  immutable: true
+  superseded_by: null

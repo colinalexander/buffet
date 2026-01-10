@@ -1,0 +1,55 @@
+record_id: "b2fd2e2a-0b44-47b1-8e83-5e91f2a12d39"
+timestamp: "2026-01-01T00:20:00Z"
+authority:
+  mandate_id: db_pension_v1
+  mandate_version: "1.0"
+  procedure_id: rate_regime_adjustment
+  procedure_version: "v1"
+invocation:
+  trigger_type: threshold_breach
+  trigger_description: "Gross exposure exceeds mandate maximum during rate regime stress"
+  persistence_evidence: null
+state:
+  portfolio_summary:
+    key_exposures:
+      gross_exposure: 1.35
+    liquidity_position:
+      buffer_months: 14
+    leverage_level: 1.35
+  environment_summary:
+    regime_state: rising_rates
+    key_uncertainties:
+      - elevated
+outcome:
+  type: escalate
+  rationale: "Hard constraint breach detected (gross_exposure); human authority required."
+escalation:
+  escalation_reason: "Mandate hard constraint breached and cannot be resolved procedurally."
+  human_authority_required:
+    - "Investment committee review"
+  automated_actions_suspended: true
+confidence:
+  level: 0.72
+  trend: degrading
+  attribution: "Regime uncertainty elevated; constraint breach requires escalation independent of confidence."
+constraints:
+  hard_constraints_breached: true
+  constraints_at_risk:
+    - gross_exposure
+    - liquidity_buffer_months
+compliance:
+  procedure_followed: true
+  deviations: null
+behavior:
+  tool_calls: 0
+  procedure_branches_taken:
+    - hard_constraint_breach
+    - constraints_at_risk
+    - outcome_escalate
+  decision_latency_ms: 8
+  escalated: true
+  inaction: false
+audit:
+  retained_until: "2036-01-01"
+  immutable: true
+  superseded_by: null

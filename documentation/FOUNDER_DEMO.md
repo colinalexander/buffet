@@ -26,6 +26,7 @@ Notes:
 - No network calls; all inputs are local and deterministic (fixed seeds; pinned inputs).
 - `make founder-demo` runs `make eval` first, then writes two new Judgment Records (same scenario, two mandates).
 - Expected: the two records have different `outcome.type` values.
+- The viewer groups identical judgments by default; expand “Emissions” to see append-only attestations.
 - Optional: `uv run python scripts/print_latest_records.py 2`
 
 ---

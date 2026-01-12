@@ -34,8 +34,17 @@ def test_publish_pages_data(tmp_path: Path) -> None:
         "audit": {},
     }
 
-    record_path = in_dir / "record.yaml"
+    record_path = in_dir / "record_1.yaml"
     record_path.write_text(yaml.safe_dump(record, sort_keys=True))
+
+    record2 = dict(record)
+    record2["record_id"] = "def"
+    record2["timestamp"] = "2022-01-02T00:00:00Z"
+    record2["behavior"] = dict(record["behavior"])
+    record2["behavior"]["decision_latency_ms"] = 1234
+
+    record_path2 = in_dir / "record_2.yaml"
+    record_path2.write_text(yaml.safe_dump(record2, sort_keys=True))
 
     index = publish_pages_data(in_dir=in_dir, out_dir=out_dir, clean=True)
 
@@ -44,7 +53,7 @@ def test_publish_pages_data(tmp_path: Path) -> None:
     parsed_index = json.loads(index_path.read_text())
 
     assert "records" in parsed_index
-    assert len(parsed_index["records"]) == 1
+    assert len(parsed_index["records"]) == 2
     entry = parsed_index["records"][0]
     for key in [
         "path",
@@ -54,13 +63,28 @@ def test_publish_pages_data(tmp_path: Path) -> None:
         "procedure_id",
         "outcome_type",
         "confidence_level",
+        "published_from",
+        "judgment_fingerprint",
     ]:
         assert key in entry
     assert entry["path"].startswith("data/records/")
 
+    fingerprints = {e["judgment_fingerprint"] for e in parsed_index["records"]}
+    assert len(fingerprints) == 1
+
+    assert "groups" in parsed_index
+    assert len(parsed_index["groups"]) == 1
+    group = parsed_index["groups"][0]
+    assert group["count"] == 2
+    assert group["fingerprint"] in fingerprints
+    assert group["representative_path"] in {e["path"] for e in parsed_index["records"]}
+    assert group["first_timestamp"] == "2022-01-01T00:00:00Z"
+    assert group["last_timestamp"] == "2022-01-02T00:00:00Z"
+    assert [e["timestamp"] for e in group["emissions"]] == ["2022-01-02T00:00:00Z", "2022-01-01T00:00:00Z"]
+
     records_dir = out_dir / "records"
     record_files = list(records_dir.glob("*.json"))
-    assert len(record_files) == 1
+    assert len(record_files) == 2
     record_json = json.loads(record_files[0].read_text())
     for key in [
         "authority",
@@ -72,10 +96,11 @@ def test_publish_pages_data(tmp_path: Path) -> None:
         "compliance",
         "behavior",
         "audit",
+        "judgment_fingerprint",
         "_published_from",
         "_published_at",
     ]:
         assert key in record_json
-    assert record_json["_published_from"] == "record.yaml"
 
-    assert len(index["records"]) == 1
+    assert len(index["records"]) == 2
+    assert len(index["groups"]) == 1

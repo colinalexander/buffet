@@ -384,6 +384,22 @@ body {
   flex-wrap: wrap;
 }
 
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.toggle input {
+  margin: 0;
+}
+
 .panel-header h2 {
   margin: 0;
 }
@@ -507,6 +523,12 @@ select {
   gap: 0.5rem;
 }
 
+.record-badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -518,6 +540,13 @@ select {
   border: 1px solid var(--border);
   background: var(--chip);
   color: var(--muted);
+}
+
+.badge.repeat {
+  text-transform: none;
+  letter-spacing: 0;
+  border-color: rgba(122, 162, 247, 0.25);
+  background: rgba(122, 162, 247, 0.06);
 }
 
 .badge.affirm_alignment {
@@ -570,6 +599,44 @@ select {
 .detail section {
   border-top: 1px solid var(--border);
   padding-top: 0.75rem;
+}
+
+.emissions-details summary {
+  cursor: pointer;
+  color: var(--text);
+}
+
+.emissions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.emissions-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #12151c;
+}
+
+.emission-meta {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.emission-meta strong {
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.emission-meta span {
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
 .detail h4 {

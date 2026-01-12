@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import shutil
 from datetime import datetime, timezone
@@ -76,6 +77,61 @@ def _record_json_path(out_dir: Path, source_path: Path) -> Path:
     return out_dir / "records" / filename
 
 
+def _canonical_json_bytes(payload: Dict[str, Any]) -> bytes:
+    """Return a deterministic JSON byte representation for hashing."""
+    return json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+
+
+def _judgment_identity_payload(record: Dict[str, Any]) -> Dict[str, Any]:
+    """Build the semantic identity payload for a judgment fingerprint."""
+    authority = record.get("authority") if isinstance(record.get("authority"), dict) else {}
+    invocation = record.get("invocation") if isinstance(record.get("invocation"), dict) else {}
+    confidence = record.get("confidence") if isinstance(record.get("confidence"), dict) else {}
+
+    scenario_id = invocation.get("scenario_id") or invocation.get("scenario")
+    trigger_description = invocation.get("trigger_description") if scenario_id is None else None
+
+    identity: Dict[str, Any] = {
+        "authority": {
+            "mandate_id": authority.get("mandate_id"),
+            "mandate_version": authority.get("mandate_version"),
+            "procedure_id": authority.get("procedure_id"),
+            "procedure_version": authority.get("procedure_version"),
+        },
+        "invocation": {
+            "trigger_type": invocation.get("trigger_type"),
+            "trigger_description": trigger_description,
+            "scenario_id": scenario_id,
+            "persistence_evidence": invocation.get("persistence_evidence"),
+        },
+        "state": record.get("state"),
+        "outcome": record.get("outcome"),
+        "confidence": {
+            "level": confidence.get("level"),
+            "trend": confidence.get("trend"),
+        },
+        "constraints": record.get("constraints"),
+    }
+
+    if "attribution" in confidence:
+        identity["confidence"]["attribution"] = confidence.get("attribution")
+
+    if record.get("adjustment") is not None:
+        identity["adjustment"] = record.get("adjustment")
+    if record.get("inaction") is not None:
+        identity["inaction"] = record.get("inaction")
+    if record.get("escalation") is not None:
+        identity["escalation"] = record.get("escalation")
+
+    return identity
+
+
+def _judgment_fingerprint(record: Dict[str, Any]) -> str:
+    """Compute a deterministic SHA-256 fingerprint of a judgment's semantic identity."""
+    identity = _judgment_identity_payload(record)
+    return hashlib.sha256(_canonical_json_bytes(identity)).hexdigest()
+
+
 def _index_entry(record: Dict[str, Any], json_path: Path, out_dir: Path) -> Dict[str, Any]:
     """Build index entry metadata."""
     authority = record.get("authority", {})
@@ -92,6 +148,8 @@ def _index_entry(record: Dict[str, Any], json_path: Path, out_dir: Path) -> Dict
         "procedure_version": authority.get("procedure_version"),
         "outcome_type": outcome.get("type"),
         "confidence_level": confidence.get("level"),
+        "published_from": record.get("_published_from"),
+        "judgment_fingerprint": record.get("judgment_fingerprint"),
     }
 
 
@@ -368,6 +426,7 @@ def publish_pages_data(
         source_path = record.pop("_source_path")
         json_path = _record_json_path(out_dir, source_path)
         payload = dict(record)
+        payload["judgment_fingerprint"] = _judgment_fingerprint(payload)
         payload["_published_from"] = source_path.name
         payload["_published_at"] = published_at
         with json_path.open("w", encoding="utf-8") as handle:
@@ -384,10 +443,50 @@ def publish_pages_data(
             if procedure_id and procedure_version:
                 procedure_keys.append((str(procedure_id), str(procedure_version)))
 
+    index_entries.sort(key=lambda entry: entry.get("record_id") or "")
     index_entries.sort(key=lambda entry: entry.get("timestamp") or "", reverse=True)
+
+    groups_by_fp: Dict[str, List[Dict[str, Any]]] = {}
+    for entry in index_entries:
+        fp = entry.get("judgment_fingerprint")
+        if not fp:
+            continue
+        groups_by_fp.setdefault(str(fp), []).append(entry)
+
+    groups: List[Dict[str, Any]] = []
+    for fingerprint, emissions in groups_by_fp.items():
+        emissions.sort(key=lambda entry: entry.get("record_id") or "")
+        emissions.sort(key=lambda entry: entry.get("timestamp") or "", reverse=True)
+        newest = emissions[0]
+        timestamps = [e.get("timestamp") for e in emissions if e.get("timestamp")]
+        groups.append(
+            {
+                "fingerprint": fingerprint,
+                "mandate_id": newest.get("mandate_id"),
+                "procedure_id": newest.get("procedure_id"),
+                "outcome_type": newest.get("outcome_type"),
+                "first_timestamp": min(timestamps) if timestamps else None,
+                "last_timestamp": max(timestamps) if timestamps else None,
+                "count": len(emissions),
+                "representative_path": newest.get("path"),
+                "emissions": [
+                    {
+                        "path": e.get("path"),
+                        "record_id": e.get("record_id"),
+                        "timestamp": e.get("timestamp"),
+                        "published_from": e.get("published_from"),
+                    }
+                    for e in emissions
+                ],
+            }
+        )
+
+    groups.sort(key=lambda group: group.get("fingerprint") or "")
+    groups.sort(key=lambda group: group.get("last_timestamp") or "", reverse=True)
     index = {
         "generated_at": published_at,
         "records": index_entries,
+        "groups": groups,
     }
 
     out_dir.mkdir(parents=True, exist_ok=True)

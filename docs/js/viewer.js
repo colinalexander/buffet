@@ -4,6 +4,13 @@ import { buildGovernanceSummary, outcomeLabel, OUTCOME_CONTEXT } from "./governa
 import { setActiveNav, wireOnboarding } from "./page.js";
 import { openMandateViewer } from "../mandate_viewer.js";
 
+const STORAGE_KEY = "mandateos.viewer.showAllEmissions";
+
+let showAllEmissions = false;
+let allRecords = [];
+let groupedRecords = [];
+const representativeByEmissionId = new Map();
+
 let indexRecords = [];
 let selectedMeta = null;
 let compareMeta = null;
@@ -51,6 +58,63 @@ function option(label, value) {
   opt.value = value;
   opt.textContent = label;
   return opt;
+}
+
+function buildGroupedRecords(records, groups) {
+  representativeByEmissionId.clear();
+
+  if (!Array.isArray(groups) || !groups.length) {
+    return [];
+  }
+
+  const recordById = new Map(records.map((record) => [String(record.record_id), record]));
+  const grouped = [];
+
+  groups.forEach((group) => {
+    const emissions = Array.isArray(group?.emissions) ? group.emissions : [];
+    const representative = emissions[0] || null;
+    const representativeId = representative?.record_id ? String(representative.record_id) : null;
+    const representativePath = group?.representative_path || representative?.path || null;
+    if (!representativeId || !representativePath) {
+      return;
+    }
+
+    const base = recordById.get(representativeId);
+    const meta = base
+      ? { ...base }
+      : {
+          path: representativePath,
+          record_id: representativeId,
+          timestamp: group?.last_timestamp || representative?.timestamp,
+          mandate_id: group?.mandate_id,
+          mandate_version: null,
+          procedure_id: group?.procedure_id,
+          procedure_version: null,
+          outcome_type: group?.outcome_type,
+          confidence_level: null,
+          published_from: representative?.published_from,
+          judgment_fingerprint: group?.fingerprint,
+        };
+
+    meta.path = representativePath;
+    meta.timestamp = group?.last_timestamp || meta.timestamp;
+    meta.group = group;
+    if (!meta.judgment_fingerprint && group?.fingerprint) {
+      meta.judgment_fingerprint = group.fingerprint;
+    }
+
+    grouped.push(meta);
+
+    emissions.forEach((emission) => {
+      if (emission?.record_id) {
+        representativeByEmissionId.set(String(emission.record_id), representativeId);
+      }
+    });
+  });
+
+  grouped.sort((a, b) => String(a.record_id ?? "").localeCompare(String(b.record_id ?? "")));
+  grouped.sort((a, b) => String(b.timestamp ?? "").localeCompare(String(a.timestamp ?? "")));
+  return grouped;
 }
 
 function buildFilters() {
@@ -180,10 +244,18 @@ function renderList() {
     const confidenceText =
       confidence === undefined || confidence === null ? "" : ` · confidence ${Number(confidence).toFixed(2)}`;
 
+    const outcomeType = record.outcome_type || "unknown";
+    const repeatCount =
+      !showAllEmissions && record.group && Number(record.group.count) > 1 ? Number(record.group.count) : null;
+    const repeatBadge = repeatCount ? `<span class="badge repeat">Repeated ×${repeatCount}</span>` : "";
+
     button.innerHTML = `
       <div class="record-top">
         <strong>${record.mandate_id}</strong>
-        <span class="badge ${record.outcome_type}">${record.outcome_type}</span>
+        <div class="record-badges">
+          <span class="badge ${outcomeType}">${outcomeType}</span>
+          ${repeatBadge}
+        </div>
       </div>
       <div class="meta">${record.procedure_id} · ${date}${confidenceText}</div>
     `;
@@ -377,6 +449,38 @@ function renderDetail(data, recordPath, meta) {
     `;
   }
 
+  if (!showAllEmissions && meta?.group) {
+    const emissions = Array.isArray(meta.group.emissions) ? meta.group.emissions : [];
+    const emissionsCount = Number(meta.group.count) || emissions.length;
+    const emissionsList = emissions.length
+      ? `<ul class="emissions-list">${emissions
+          .map((emission) => {
+            const timestamp = emission?.timestamp || "unknown timestamp";
+            const publishedFrom = emission?.published_from ? `from ${emission.published_from}` : "";
+            const path = emission?.path || "#";
+            return `
+              <li>
+                <div class="emission-meta">
+                  <strong>${timestamp}</strong>
+                  <span>${publishedFrom}</span>
+                </div>
+                <a href="${path}" target="_blank" rel="noopener">Open JSON</a>
+              </li>
+            `;
+          })
+          .join("")}</ul>`
+      : "<p class=\"muted\">No emissions found.</p>";
+
+    els.detailPanel.innerHTML += `
+      <section>
+        <details class="emissions-details">
+          <summary>Emissions (append-only attestations) · ${emissionsCount}</summary>
+          ${emissionsList}
+        </details>
+      </section>
+    `;
+  }
+
   const viewMandateBtn = els.detailPanel.querySelector("[data-view-mandate]");
   if (viewMandateBtn && authority.mandate_id) {
     viewMandateBtn.addEventListener("click", () =>
@@ -428,7 +532,12 @@ function renderCompareOptions() {
 }
 
 function recordById(recordId) {
-  return indexRecords.find((record) => record.record_id === recordId) || null;
+  if (!recordId) {
+    return null;
+  }
+  const key = String(recordId);
+  const normalized = showAllEmissions ? key : representativeByEmissionId.get(key) || key;
+  return indexRecords.find((record) => String(record.record_id) === normalized) || null;
 }
 
 function parseTimestamp(ts) {
@@ -826,12 +935,23 @@ function applyRecordFromUrl() {
   return false;
 }
 
-export async function initViewer() {
+export async function initViewer({ showAllEmissions: initialShowAllEmissions } = {}) {
   setActiveNav();
   wireOnboarding();
 
+  try {
+    showAllEmissions =
+      typeof initialShowAllEmissions === "boolean"
+        ? initialShowAllEmissions
+        : window.localStorage.getItem(STORAGE_KEY) === "1";
+  } catch {
+    showAllEmissions = typeof initialShowAllEmissions === "boolean" ? initialShowAllEmissions : false;
+  }
+
   const index = await loadIndex();
-  indexRecords = index.records || [];
+  allRecords = index.records || [];
+  groupedRecords = buildGroupedRecords(allRecords, index.groups);
+  indexRecords = showAllEmissions || !groupedRecords.length ? allRecords : groupedRecords;
   renderExecutivePanels(indexRecords);
 
   buildFilters();

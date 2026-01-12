@@ -15,9 +15,11 @@ export async function loadIndex() {
   }
   const data = await response.json();
   const records = Array.isArray(data.records) ? data.records : [];
+  const groups = Array.isArray(data.groups) ? data.groups : [];
   cachedIndex = {
     generated_at: data.generated_at,
     records: sortByTimestampDesc(records),
+    groups,
   };
   return cachedIndex;
 }
@@ -57,4 +59,3 @@ export async function loadAllRecords(recordMetas, { concurrency = 8 } = {}) {
     return { meta, data };
   });
 }
-

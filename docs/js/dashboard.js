@@ -1,11 +1,14 @@
 import { debounce, groupBy, uniq } from "./core.js";
-import { loadIndex } from "./data.js";
+import { getActiveDataset, loadIndex, writeShowAllEmissions } from "./data.js";
 import { outcomeLabel } from "./governance.js";
 import { setActiveNav, wireOnboarding } from "./page.js";
 import { openMandateViewer } from "../mandate_viewer.js";
 
 const els = {
+  toggleEmissions: document.getElementById("toggle-emissions"),
+  tileTotalLabel: document.getElementById("tile-total-label"),
   tileTotal: document.getElementById("tile-total"),
+  tileTotalNote: document.getElementById("tile-total-note"),
   tileEscalations: document.getElementById("tile-escalations"),
   tileMandates: document.getElementById("tile-mandates"),
   tileProcedures: document.getElementById("tile-procedures"),
@@ -18,6 +21,7 @@ const els = {
 };
 
 let indexRecords = [];
+let showAllEmissions = false;
 let chartEscMandate = null;
 let chartTrend = null;
 
@@ -32,6 +36,20 @@ function destroyCharts() {
   if (chartTrend) chartTrend.destroy();
   chartEscMandate = null;
   chartTrend = null;
+}
+
+function renderUnitLabels() {
+  if (els.toggleEmissions) {
+    els.toggleEmissions.checked = showAllEmissions;
+  }
+  if (els.tileTotalLabel) {
+    els.tileTotalLabel.textContent = showAllEmissions ? "Total Emissions (append-only)" : "Total Judgments";
+  }
+  if (els.tileTotalNote) {
+    els.tileTotalNote.textContent = showAllEmissions
+      ? "Append-only audit artifacts published by the system."
+      : "Distinct judgments grouped by semantic identity (audit emissions available).";
+  }
 }
 
 function renderTiles(records) {
@@ -251,6 +269,7 @@ function renderProceduresTable(records) {
 
 function renderAll() {
   destroyCharts();
+  renderUnitLabels();
   renderTiles(indexRecords);
   renderEscalationsByMandate(indexRecords);
   renderTrend(indexRecords);
@@ -262,7 +281,17 @@ async function init() {
   wireOnboarding({ autoOpen: false });
 
   const index = await loadIndex();
-  indexRecords = index.records || [];
+  const dataset = getActiveDataset(index);
+  indexRecords = dataset.records || [];
+  showAllEmissions = dataset.showAllEmissions;
+
+  if (els.toggleEmissions) {
+    els.toggleEmissions.checked = showAllEmissions;
+    els.toggleEmissions.addEventListener("change", () => {
+      writeShowAllEmissions(Boolean(els.toggleEmissions.checked));
+      window.location.reload();
+    });
+  }
 
   window.addEventListener("resize", debounce(() => renderAll(), 200));
 

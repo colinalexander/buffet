@@ -1,9 +1,9 @@
 {
   "_published_at": "2026-01-12T22:12:51.509882Z",
-  "_published_from": "20260108T075407Z_7d89853c-1796-4044-914d-be5908f294ee.yaml",
+  "_published_from": "20260112T221251Z_d78676cc-d678-4209-8afd-4852ed40fc00.yaml",
   "audit": {
     "immutable": true,
-    "retained_until": "2041-01-04",
+    "retained_until": "2041-01-08",
     "superseded_by": null
   },
   "authority": {
@@ -50,7 +50,7 @@
     "description": "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | confidence=0.72 | mandate=endowment_v1 | within_constraints",
     "type": "affirm_alignment"
   },
-  "record_id": "7d89853c-1796-4044-914d-be5908f294ee",
+  "record_id": "d78676cc-d678-4209-8afd-4852ed40fc00",
   "state": {
     "environment_summary": {
       "key_uncertainties": [
@@ -68,5 +68,5 @@
       }
     }
   },
-  "timestamp": "2026-01-08T07:54:07Z"
+  "timestamp": "2026-01-12T22:12:51Z"
 }

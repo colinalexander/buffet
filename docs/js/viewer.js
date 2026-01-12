@@ -1,15 +1,11 @@
 import { debounce, formatShortDate, truncate, uniq } from "./core.js";
-import { fetchRecordByPath, loadIndex } from "./data.js";
+import { fetchRecordByPath, getActiveDataset, loadIndex } from "./data.js";
 import { buildGovernanceSummary, outcomeLabel, OUTCOME_CONTEXT } from "./governance.js";
 import { setActiveNav, wireOnboarding } from "./page.js";
 import { openMandateViewer } from "../mandate_viewer.js";
 
-const STORAGE_KEY = "mandateos.viewer.showAllEmissions";
-
 let showAllEmissions = false;
-let allRecords = [];
-let groupedRecords = [];
-const representativeByEmissionId = new Map();
+let representativeByEmissionId = new Map();
 
 let indexRecords = [];
 let selectedMeta = null;
@@ -39,6 +35,7 @@ const els = {
   downloadAudit: document.getElementById("download-audit"),
   contextPanel: document.getElementById("context-panel"),
   rawJson: document.getElementById("raw-json"),
+  execTotalLabel: document.getElementById("exec-total-label"),
   execTotal: document.getElementById("exec-total"),
   execAffirm: document.getElementById("exec-affirm"),
   execRecommend: document.getElementById("exec-recommend"),
@@ -58,63 +55,6 @@ function option(label, value) {
   opt.value = value;
   opt.textContent = label;
   return opt;
-}
-
-function buildGroupedRecords(records, groups) {
-  representativeByEmissionId.clear();
-
-  if (!Array.isArray(groups) || !groups.length) {
-    return [];
-  }
-
-  const recordById = new Map(records.map((record) => [String(record.record_id), record]));
-  const grouped = [];
-
-  groups.forEach((group) => {
-    const emissions = Array.isArray(group?.emissions) ? group.emissions : [];
-    const representative = emissions[0] || null;
-    const representativeId = representative?.record_id ? String(representative.record_id) : null;
-    const representativePath = group?.representative_path || representative?.path || null;
-    if (!representativeId || !representativePath) {
-      return;
-    }
-
-    const base = recordById.get(representativeId);
-    const meta = base
-      ? { ...base }
-      : {
-          path: representativePath,
-          record_id: representativeId,
-          timestamp: group?.last_timestamp || representative?.timestamp,
-          mandate_id: group?.mandate_id,
-          mandate_version: null,
-          procedure_id: group?.procedure_id,
-          procedure_version: null,
-          outcome_type: group?.outcome_type,
-          confidence_level: null,
-          published_from: representative?.published_from,
-          judgment_fingerprint: group?.fingerprint,
-        };
-
-    meta.path = representativePath;
-    meta.timestamp = group?.last_timestamp || meta.timestamp;
-    meta.group = group;
-    if (!meta.judgment_fingerprint && group?.fingerprint) {
-      meta.judgment_fingerprint = group.fingerprint;
-    }
-
-    grouped.push(meta);
-
-    emissions.forEach((emission) => {
-      if (emission?.record_id) {
-        representativeByEmissionId.set(String(emission.record_id), representativeId);
-      }
-    });
-  });
-
-  grouped.sort((a, b) => String(a.record_id ?? "").localeCompare(String(b.record_id ?? "")));
-  grouped.sort((a, b) => String(b.timestamp ?? "").localeCompare(String(a.timestamp ?? "")));
-  return grouped;
 }
 
 function buildFilters() {
@@ -576,6 +516,10 @@ function renderExecutivePanels(records) {
     return;
   }
 
+  if (els.execTotalLabel) {
+    els.execTotalLabel.textContent = showAllEmissions ? "Total Emissions (append-only)" : "Total Judgments";
+  }
+
   const total = records.length;
   const affirm = records.filter((r) => r.outcome_type === "affirm_alignment").length;
   const recommend = records.filter((r) => r.outcome_type === "recommend_adjustment").length;
@@ -939,19 +883,11 @@ export async function initViewer({ showAllEmissions: initialShowAllEmissions } =
   setActiveNav();
   wireOnboarding();
 
-  try {
-    showAllEmissions =
-      typeof initialShowAllEmissions === "boolean"
-        ? initialShowAllEmissions
-        : window.localStorage.getItem(STORAGE_KEY) === "1";
-  } catch {
-    showAllEmissions = typeof initialShowAllEmissions === "boolean" ? initialShowAllEmissions : false;
-  }
-
   const index = await loadIndex();
-  allRecords = index.records || [];
-  groupedRecords = buildGroupedRecords(allRecords, index.groups);
-  indexRecords = showAllEmissions || !groupedRecords.length ? allRecords : groupedRecords;
+  const dataset = getActiveDataset(index, { showAllEmissions: initialShowAllEmissions });
+  showAllEmissions = dataset.showAllEmissions;
+  indexRecords = dataset.records || [];
+  representativeByEmissionId = dataset.representativeByEmissionId || new Map();
   renderExecutivePanels(indexRecords);
 
   buildFilters();

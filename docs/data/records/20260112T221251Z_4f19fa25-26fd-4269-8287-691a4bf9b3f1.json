@@ -1,16 +1,9 @@
 {
   "_published_at": "2026-01-12T22:12:51.509882Z",
-  "_published_from": "20260109T044358Z_97b19174-250a-4a77-b446-8038801f3cc4.yaml",
-  "adjustment": {
-    "adjustment_unit": "exposure",
-    "mandate_constraints_checked": true,
-    "recommended_changes": [
-      "Increase liquidity buffer to mandate minimum"
-    ]
-  },
+  "_published_from": "20260112T221251Z_4f19fa25-26fd-4269-8287-691a4bf9b3f1.yaml",
   "audit": {
     "immutable": true,
-    "retained_until": "2036-01-07",
+    "retained_until": "2036-01-10",
     "superseded_by": null
   },
   "authority": {
@@ -21,11 +14,12 @@
   },
   "behavior": {
     "decision_latency_ms": 0,
-    "escalated": false,
+    "escalated": true,
     "inaction": false,
     "procedure_branches_taken": [
+      "hard_constraint_breach",
       "constraints_at_risk",
-      "outcome_recommend_adjustment"
+      "outcome_escalate"
     ],
     "tool_calls": 0
   },
@@ -42,19 +36,26 @@
     "constraints_at_risk": [
       "liquidity_buffer_months"
     ],
-    "hard_constraints_breached": false
+    "hard_constraints_breached": true
+  },
+  "escalation": {
+    "automated_actions_suspended": true,
+    "escalation_reason": "Mandate constraints breached or confidence below floor.",
+    "human_authority_required": [
+      "Investment committee review"
+    ]
   },
   "invocation": {
     "persistence_evidence": "2 confirmations over 2 cycles",
-    "trigger_description": "Scenario rising_rates_2022",
+    "trigger_description": "Scenario escalation_case",
     "trigger_type": "state_change"
   },
-  "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+  "judgment_fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
   "outcome": {
-    "description": "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | confidence=0.72 | mandate=db_pension_v1 | constraints_at_risk",
-    "type": "recommend_adjustment"
+    "description": "Regime=rising_rates | gross_exposure=1.35 | liquidity_buffer_months=14 | confidence=0.72 | mandate=db_pension_v1 | hard_constraint_breach",
+    "type": "escalate"
   },
-  "record_id": "97b19174-250a-4a77-b446-8038801f3cc4",
+  "record_id": "4f19fa25-26fd-4269-8287-691a4bf9b3f1",
   "state": {
     "environment_summary": {
       "key_uncertainties": [
@@ -64,13 +65,13 @@
     },
     "portfolio_summary": {
       "key_exposures": {
-        "gross_exposure": 1.15
+        "gross_exposure": 1.35
       },
-      "leverage_level": 1.15,
+      "leverage_level": 1.35,
       "liquidity_position": {
         "buffer_months": 14
       }
     }
   },
-  "timestamp": "2026-01-09T04:43:58Z"
+  "timestamp": "2026-01-12T22:12:51Z"
 }

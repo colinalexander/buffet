@@ -41,6 +41,12 @@
             <h2>Governance overview</h2>
             <p class="panel-subtitle">Calm executive metrics designed for audit and committee packets.</p>
           </div>
+          <div class="panel-actions">
+            <label class="toggle">
+              <input id="toggle-emissions" type="checkbox" />
+              <span>Show all emissions</span>
+            </label>
+          </div>
         </div>
 
         <p class="executive-lede">
@@ -51,9 +57,9 @@
 
         <div class="tile-grid" aria-label="Executive metrics">
           <div class="tile">
-            <div class="tile-kicker">Total Judgment Records</div>
+            <div id="tile-total-label" class="tile-kicker">Total Judgments</div>
             <div id="tile-total" class="tile-value">—</div>
-            <div class="tile-note">Append-only audit artifacts published by the system.</div>
+            <div id="tile-total-note" class="tile-note">Distinct judgments grouped by semantic identity (audit emissions available).</div>
           </div>
           <div class="tile tile-danger">
             <div class="tile-kicker">Total Escalations</div>

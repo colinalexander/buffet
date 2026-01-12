@@ -1,11 +1,13 @@
 import { debounce, formatShortDate, groupBy, sum, uniq } from "./core.js";
-import { fetchRecordByPath, loadIndex } from "./data.js";
+import { fetchRecordByPath, getActiveDataset, loadIndex, writeShowAllEmissions } from "./data.js";
 import { outcomeLabel, OUTCOME_CONTEXT } from "./governance.js";
 import { setActiveNav, wireOnboarding } from "./page.js";
 import { openMandateViewer } from "../mandate_viewer.js";
 
 const els = {
   count: document.getElementById("viz-count"),
+  countUnit: document.getElementById("viz-count-unit"),
+  toggleEmissions: document.getElementById("toggle-emissions"),
   reset: document.getElementById("viz-reset"),
   search: document.getElementById("viz-search"),
   mandate: document.getElementById("viz-mandate"),
@@ -23,6 +25,7 @@ const els = {
 };
 
 let indexRecords = [];
+let showAllEmissions = false;
 let timelineChart = null;
 let mandateChart = null;
 let procedureChart = null;
@@ -499,6 +502,9 @@ async function renderAll() {
   ensureCharts();
   const records = filteredRecords();
   els.count.textContent = String(records.length);
+  if (els.countUnit) {
+    els.countUnit.textContent = showAllEmissions ? "emissions" : "judgments";
+  }
   renderTimeline(records);
   renderEscalations(records);
   await renderHeatmap(records);
@@ -537,7 +543,17 @@ async function init() {
   setActiveNav();
   wireOnboarding({ autoOpen: false });
   const index = await loadIndex();
-  indexRecords = index.records || [];
+  const dataset = getActiveDataset(index);
+  indexRecords = dataset.records || [];
+  showAllEmissions = dataset.showAllEmissions;
+
+  if (els.toggleEmissions) {
+    els.toggleEmissions.checked = showAllEmissions;
+    els.toggleEmissions.addEventListener("change", () => {
+      writeShowAllEmissions(Boolean(els.toggleEmissions.checked));
+      window.location.reload();
+    });
+  }
   buildFilters();
   wireFilters();
   await renderAll();

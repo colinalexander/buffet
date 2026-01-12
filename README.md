@@ -207,6 +207,15 @@ Scenario-based expected outcomes that prevent procedural drift. If changes cause
 Packaging for agent runtimes only; they reference canonical sources rather than duplicating them. Skills can have lifecycle metadata (draft→active) without becoming a second implementation. Any divergence is a bug by definition.
 Skill changes must be reviewed using [`documentation/prompts/skill_version_review.md`](documentation/prompts/skill_version_review.md).
 
+## Model Governance Framework
+
+MandateOS is informed by a broader, implementation-agnostic **Model Governance Framework** that defines how quantitative and machine-learning models should be governed across their full lifecycle in institutional settings.
+
+The framework covers model classification, declared operating context, evidence standards, deployment approval, escalation, and accountability. MandateOS implements a subset of these principles as an executable, mandate-bound judgment system.
+
+For the full governance framework, see:
+https://github.com/colinalexander/model-governance-framework
+
 ### Institutional Learning (No Trial-and-Error)
 
 MandateOS does not “learn” by experimenting with capital. The institution learns by reviewing Judgment Records and deliberately updating mandates and procedures.

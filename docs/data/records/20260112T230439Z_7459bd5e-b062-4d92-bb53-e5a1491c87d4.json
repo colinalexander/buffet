@@ -1,6 +1,6 @@
 {
   "_published_at": "2026-01-12T23:04:39.249627Z",
-  "_published_from": "20260109T043408Z_d0a23004-098e-4b36-a02e-33bcf22aa9b0.yaml",
+  "_published_from": "20260112T230439Z_7459bd5e-b062-4d92-bb53-e5a1491c87d4.yaml",
   "adjustment": {
     "adjustment_unit": "exposure",
     "mandate_constraints_checked": true,
@@ -10,7 +10,7 @@
   },
   "audit": {
     "immutable": true,
-    "retained_until": "2036-01-07",
+    "retained_until": "2036-01-10",
     "superseded_by": null
   },
   "authority": {
@@ -54,7 +54,7 @@
     "description": "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | confidence=0.72 | mandate=db_pension_v1 | constraints_at_risk",
     "type": "recommend_adjustment"
   },
-  "record_id": "d0a23004-098e-4b36-a02e-33bcf22aa9b0",
+  "record_id": "7459bd5e-b062-4d92-bb53-e5a1491c87d4",
   "state": {
     "environment_summary": {
       "key_uncertainties": [
@@ -72,5 +72,5 @@
       }
     }
   },
-  "timestamp": "2026-01-09T04:34:08Z"
+  "timestamp": "2026-01-12T23:04:39Z"
 }

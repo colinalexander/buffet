@@ -39,9 +39,15 @@
         <div class="panel-header">
           <div>
             <h2>Select records</h2>
-            <p class="panel-subtitle"><span id="dl-visible">0</span> visible · <span id="dl-selected">0</span> selected</p>
+            <p class="panel-subtitle">
+              <span id="dl-visible">0</span> visible · <span id="dl-selected">0</span> selected · <span id="dl-mode">Grouped judgments (default)</span>
+            </p>
           </div>
           <div class="panel-actions">
+            <label class="toggle">
+              <input id="toggle-emissions" type="checkbox" />
+              <span>Show all emissions</span>
+            </label>
             <button id="dl-select-all" class="btn btn-ghost" type="button">Select all</button>
             <button id="dl-clear" class="btn btn-ghost" type="button">Clear</button>
           </div>

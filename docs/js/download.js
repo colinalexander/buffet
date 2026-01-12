@@ -1,11 +1,13 @@
 import { debounce, downloadBlob, formatShortDate, toCsv, uniq } from "./core.js";
-import { fetchRecordByPath, loadIndex } from "./data.js";
+import { fetchRecordByPath, getActiveDataset, loadIndex, writeShowAllEmissions } from "./data.js";
 import { buildGovernanceSummary, outcomeLabel } from "./governance.js";
 import { setActiveNav, wireOnboarding } from "./page.js";
 
 const els = {
   visible: document.getElementById("dl-visible"),
   selected: document.getElementById("dl-selected"),
+  mode: document.getElementById("dl-mode"),
+  toggleEmissions: document.getElementById("toggle-emissions"),
   selectAll: document.getElementById("dl-select-all"),
   clear: document.getElementById("dl-clear"),
   search: document.getElementById("dl-search"),
@@ -24,6 +26,9 @@ const els = {
 };
 
 let indexRecords = [];
+let indexData = null;
+let showAllEmissions = false;
+let representativeByEmissionId = new Map();
 const selectedIds = new Set();
 
 function option(label, value) {
@@ -31,6 +36,23 @@ function option(label, value) {
   opt.value = value;
   opt.textContent = label;
   return opt;
+}
+
+function setModeSubtitle() {
+  if (!els.mode) return;
+  els.mode.textContent = showAllEmissions
+    ? "All emissions (append-only attestations)"
+    : "Grouped judgments (default)";
+}
+
+function restoreSelectValue(select, value) {
+  if (!select) return;
+  if (!value) {
+    select.value = "";
+    return;
+  }
+  const exists = Array.from(select.options).some((opt) => opt.value === value);
+  select.value = exists ? value : "";
 }
 
 function buildFilters() {
@@ -104,29 +126,75 @@ function renderRows() {
 
   visible.slice(0, 200).forEach((r) => {
     const tr = document.createElement("tr");
-    const checked = selectedIds.has(r.record_id);
+    const recordId = String(r.record_id);
+    const checked = selectedIds.has(recordId);
     tr.innerHTML = `
-      <td><input type="checkbox" ${checked ? "checked" : ""} aria-label="Select record ${r.record_id}" /></td>
+      <td><input type="checkbox" ${checked ? "checked" : ""} aria-label="Select record ${recordId}" /></td>
       <td>${formatShortDate(r.timestamp)}</td>
       <td>${r.mandate_id}</td>
       <td>${r.procedure_id}</td>
       <td><span class="badge ${r.outcome_type}">${r.outcome_type}</span></td>
-      <td><a class="link" href="./index.html?record=${encodeURIComponent(r.record_id)}">Open</a></td>
+      <td><a class="link" href="./index.html?record=${encodeURIComponent(recordId)}">Open</a></td>
     `;
     const checkbox = tr.querySelector("input[type=checkbox]");
     checkbox.addEventListener("change", () => {
-      if (checkbox.checked) selectedIds.add(r.record_id);
-      else selectedIds.delete(r.record_id);
+      if (checkbox.checked) selectedIds.add(recordId);
+      else selectedIds.delete(recordId);
       updateCounts(visible);
     });
     els.rows.appendChild(tr);
   });
 }
 
+function remapSelectionToRepresentatives() {
+  const allowed = new Set(indexRecords.map((r) => String(r.record_id)));
+  const next = new Set();
+  selectedIds.forEach((id) => {
+    const key = String(id);
+    const representativeId = representativeByEmissionId.get(key) || key;
+    if (allowed.has(representativeId)) {
+      next.add(representativeId);
+    }
+  });
+  selectedIds.clear();
+  next.forEach((id) => selectedIds.add(id));
+}
+
+function applyDataset(dataset, { preserveFilters = true, remapSelection = false } = {}) {
+  const previous = preserveFilters
+    ? {
+        mandate: els.mandate.value,
+        procedure: els.procedure.value,
+        outcome: els.outcome.value,
+      }
+    : null;
+
+  showAllEmissions = Boolean(dataset?.showAllEmissions);
+  indexRecords = Array.isArray(dataset?.records) ? dataset.records : [];
+  representativeByEmissionId = dataset?.representativeByEmissionId || new Map();
+
+  if (remapSelection) {
+    remapSelectionToRepresentatives();
+  }
+
+  buildFilters();
+  if (previous) {
+    restoreSelectValue(els.mandate, previous.mandate);
+    restoreSelectValue(els.procedure, previous.procedure);
+    restoreSelectValue(els.outcome, previous.outcome);
+  }
+
+  if (els.toggleEmissions) {
+    els.toggleEmissions.checked = showAllEmissions;
+  }
+  setModeSubtitle();
+  renderRows();
+}
+
 function metasByIds(ids) {
-  const byId = new Map(indexRecords.map((r) => [r.record_id, r]));
+  const byId = new Map(indexRecords.map((r) => [String(r.record_id), r]));
   return Array.from(ids)
-    .map((id) => byId.get(id))
+    .map((id) => byId.get(String(id)))
     .filter(Boolean);
 }
 
@@ -345,8 +413,17 @@ function wireActions() {
   els.from.addEventListener("change", rerender);
   els.to.addEventListener("change", rerender);
 
+  if (els.toggleEmissions) {
+    els.toggleEmissions.addEventListener("change", () => {
+      const nextShowAllEmissions = Boolean(els.toggleEmissions.checked);
+      const dataset = getActiveDataset(indexData, { showAllEmissions: nextShowAllEmissions });
+      writeShowAllEmissions(nextShowAllEmissions);
+      applyDataset(dataset, { preserveFilters: true, remapSelection: !nextShowAllEmissions });
+    });
+  }
+
   els.selectAll.addEventListener("click", () => {
-    filteredRecords().forEach((r) => selectedIds.add(r.record_id));
+    filteredRecords().forEach((r) => selectedIds.add(String(r.record_id)));
     renderRows();
   });
   els.clear.addEventListener("click", () => {
@@ -367,11 +444,10 @@ async function init() {
   setActiveNav();
   wireOnboarding({ autoOpen: false });
 
-  const index = await loadIndex();
-  indexRecords = index.records || [];
-  buildFilters();
+  indexData = await loadIndex();
+  const dataset = getActiveDataset(indexData);
+  applyDataset(dataset, { preserveFilters: false, remapSelection: false });
   wireActions();
-  renderRows();
   setStatus("");
 }
 

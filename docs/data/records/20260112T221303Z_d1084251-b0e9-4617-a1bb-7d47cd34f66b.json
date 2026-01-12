@@ -1,20 +1,13 @@
 {
   "_published_at": "2026-01-12T23:04:39.249627Z",
-  "_published_from": "20260109T043408Z_d0a23004-098e-4b36-a02e-33bcf22aa9b0.yaml",
-  "adjustment": {
-    "adjustment_unit": "exposure",
-    "mandate_constraints_checked": true,
-    "recommended_changes": [
-      "Increase liquidity buffer to mandate minimum"
-    ]
-  },
+  "_published_from": "20260112T221303Z_d1084251-b0e9-4617-a1bb-7d47cd34f66b.yaml",
   "audit": {
     "immutable": true,
-    "retained_until": "2036-01-07",
+    "retained_until": "2041-01-08",
     "superseded_by": null
   },
   "authority": {
-    "mandate_id": "db_pension_v1",
+    "mandate_id": "endowment_v1",
     "mandate_version": "1.0",
     "procedure_id": "rate_regime_adjustment",
     "procedure_version": "v1"
@@ -22,10 +15,9 @@
   "behavior": {
     "decision_latency_ms": 0,
     "escalated": false,
-    "inaction": false,
+    "inaction": true,
     "procedure_branches_taken": [
-      "constraints_at_risk",
-      "outcome_recommend_adjustment"
+      "outcome_affirm_alignment"
     ],
     "tool_calls": 0
   },
@@ -39,22 +31,26 @@
     "trend": "stable"
   },
   "constraints": {
-    "constraints_at_risk": [
-      "liquidity_buffer_months"
-    ],
+    "constraints_at_risk": [],
     "hard_constraints_breached": false
+  },
+  "inaction": {
+    "justification": "Exposures remain within mandate tolerances; no adjustment required.",
+    "risks_acknowledged": [
+      "Regime shift warrants continued monitoring"
+    ]
   },
   "invocation": {
     "persistence_evidence": "2 confirmations over 2 cycles",
     "trigger_description": "Scenario rising_rates_2022",
     "trigger_type": "state_change"
   },
-  "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+  "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
   "outcome": {
-    "description": "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | confidence=0.72 | mandate=db_pension_v1 | constraints_at_risk",
-    "type": "recommend_adjustment"
+    "description": "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | confidence=0.72 | mandate=endowment_v1 | within_constraints",
+    "type": "affirm_alignment"
   },
-  "record_id": "d0a23004-098e-4b36-a02e-33bcf22aa9b0",
+  "record_id": "d1084251-b0e9-4617-a1bb-7d47cd34f66b",
   "state": {
     "environment_summary": {
       "key_uncertainties": [
@@ -72,5 +68,5 @@
       }
     }
   },
-  "timestamp": "2026-01-09T04:34:08Z"
+  "timestamp": "2026-01-12T22:13:03Z"
 }

@@ -1,9 +1,15 @@
 {
-  "generated_at": "2026-01-12T22:12:51.509882Z",
+  "generated_at": "2026-01-12T23:04:39.249627Z",
   "groups": [
     {
-      "count": 6,
+      "count": 7,
       "emissions": [
+        {
+          "path": "data/records/20260112T230439Z_4ac1f9c1-2191-4eb0-bccb-44704581f480.json",
+          "published_from": "20260112T230439Z_4ac1f9c1-2191-4eb0-bccb-44704581f480.yaml",
+          "record_id": "4ac1f9c1-2191-4eb0-bccb-44704581f480",
+          "timestamp": "2026-01-12T23:04:39Z"
+        },
         {
           "path": "data/records/20260112T221251Z_4f19fa25-26fd-4269-8287-691a4bf9b3f1.json",
           "published_from": "20260112T221251Z_4f19fa25-26fd-4269-8287-691a4bf9b3f1.yaml",
@@ -43,15 +49,27 @@
       ],
       "fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
       "first_timestamp": "2026-01-08T09:55:05Z",
-      "last_timestamp": "2026-01-12T22:12:51Z",
+      "last_timestamp": "2026-01-12T23:04:39Z",
       "mandate_id": "db_pension_v1",
       "outcome_type": "escalate",
       "procedure_id": "rate_regime_adjustment",
-      "representative_path": "data/records/20260112T221251Z_4f19fa25-26fd-4269-8287-691a4bf9b3f1.json"
+      "representative_path": "data/records/20260112T230439Z_4ac1f9c1-2191-4eb0-bccb-44704581f480.json"
     },
     {
-      "count": 78,
+      "count": 80,
       "emissions": [
+        {
+          "path": "data/records/20260112T230439Z_7459bd5e-b062-4d92-bb53-e5a1491c87d4.json",
+          "published_from": "20260112T230439Z_7459bd5e-b062-4d92-bb53-e5a1491c87d4.yaml",
+          "record_id": "7459bd5e-b062-4d92-bb53-e5a1491c87d4",
+          "timestamp": "2026-01-12T23:04:39Z"
+        },
+        {
+          "path": "data/records/20260112T221303Z_28583355-e78d-4175-a53e-ed7d9a298f04.json",
+          "published_from": "20260112T221303Z_28583355-e78d-4175-a53e-ed7d9a298f04.yaml",
+          "record_id": "28583355-e78d-4175-a53e-ed7d9a298f04",
+          "timestamp": "2026-01-12T22:13:03Z"
+        },
         {
           "path": "data/records/20260112T221251Z_e76aabb8-aecd-4a9e-ac72-43d24d4e27da.json",
           "published_from": "20260112T221251Z_e76aabb8-aecd-4a9e-ac72-43d24d4e27da.yaml",
@@ -523,15 +541,27 @@
       ],
       "fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "first_timestamp": "2026-01-08T07:54:07Z",
-      "last_timestamp": "2026-01-12T22:12:51Z",
+      "last_timestamp": "2026-01-12T23:04:39Z",
       "mandate_id": "db_pension_v1",
       "outcome_type": "recommend_adjustment",
       "procedure_id": "rate_regime_adjustment",
-      "representative_path": "data/records/20260112T221251Z_e76aabb8-aecd-4a9e-ac72-43d24d4e27da.json"
+      "representative_path": "data/records/20260112T230439Z_7459bd5e-b062-4d92-bb53-e5a1491c87d4.json"
     },
     {
-      "count": 12,
+      "count": 14,
       "emissions": [
+        {
+          "path": "data/records/20260112T230439Z_84e2e4d3-5268-4ba5-9916-6840b08a46cf.json",
+          "published_from": "20260112T230439Z_84e2e4d3-5268-4ba5-9916-6840b08a46cf.yaml",
+          "record_id": "84e2e4d3-5268-4ba5-9916-6840b08a46cf",
+          "timestamp": "2026-01-12T23:04:39Z"
+        },
+        {
+          "path": "data/records/20260112T221303Z_d1084251-b0e9-4617-a1bb-7d47cd34f66b.json",
+          "published_from": "20260112T221303Z_d1084251-b0e9-4617-a1bb-7d47cd34f66b.yaml",
+          "record_id": "d1084251-b0e9-4617-a1bb-7d47cd34f66b",
+          "timestamp": "2026-01-12T22:13:03Z"
+        },
         {
           "path": "data/records/20260112T221251Z_d78676cc-d678-4209-8afd-4852ed40fc00.json",
           "published_from": "20260112T221251Z_d78676cc-d678-4209-8afd-4852ed40fc00.yaml",
@@ -607,14 +637,79 @@
       ],
       "fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
       "first_timestamp": "2026-01-08T07:54:07Z",
-      "last_timestamp": "2026-01-12T22:12:51Z",
+      "last_timestamp": "2026-01-12T23:04:39Z",
       "mandate_id": "endowment_v1",
       "outcome_type": "affirm_alignment",
       "procedure_id": "rate_regime_adjustment",
-      "representative_path": "data/records/20260112T221251Z_d78676cc-d678-4209-8afd-4852ed40fc00.json"
+      "representative_path": "data/records/20260112T230439Z_84e2e4d3-5268-4ba5-9916-6840b08a46cf.json"
     }
   ],
   "records": [
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "escalate",
+      "path": "data/records/20260112T230439Z_4ac1f9c1-2191-4eb0-bccb-44704581f480.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T230439Z_4ac1f9c1-2191-4eb0-bccb-44704581f480.yaml",
+      "record_id": "4ac1f9c1-2191-4eb0-bccb-44704581f480",
+      "timestamp": "2026-01-12T23:04:39Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T230439Z_7459bd5e-b062-4d92-bb53-e5a1491c87d4.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T230439Z_7459bd5e-b062-4d92-bb53-e5a1491c87d4.yaml",
+      "record_id": "7459bd5e-b062-4d92-bb53-e5a1491c87d4",
+      "timestamp": "2026-01-12T23:04:39Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
+      "mandate_id": "endowment_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "affirm_alignment",
+      "path": "data/records/20260112T230439Z_84e2e4d3-5268-4ba5-9916-6840b08a46cf.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T230439Z_84e2e4d3-5268-4ba5-9916-6840b08a46cf.yaml",
+      "record_id": "84e2e4d3-5268-4ba5-9916-6840b08a46cf",
+      "timestamp": "2026-01-12T23:04:39Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T221303Z_28583355-e78d-4175-a53e-ed7d9a298f04.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T221303Z_28583355-e78d-4175-a53e-ed7d9a298f04.yaml",
+      "record_id": "28583355-e78d-4175-a53e-ed7d9a298f04",
+      "timestamp": "2026-01-12T22:13:03Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
+      "mandate_id": "endowment_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "affirm_alignment",
+      "path": "data/records/20260112T221303Z_d1084251-b0e9-4617-a1bb-7d47cd34f66b.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T221303Z_d1084251-b0e9-4617-a1bb-7d47cd34f66b.yaml",
+      "record_id": "d1084251-b0e9-4617-a1bb-7d47cd34f66b",
+      "timestamp": "2026-01-12T22:13:03Z"
+    },
     {
       "confidence_level": 0.725,
       "judgment_fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",

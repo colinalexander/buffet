@@ -44,6 +44,8 @@ Think of MandateOS like an aircraft autopilot for *governance*: it executes appr
 
 MandateOS is designed to make **Investment Policy Statements (IPS)** operational by encoding judgment as supervised, constraint-aware procedures whose outcomes are recorded, reviewable, and accountable.
 
+- **Problem framing deck:** [*If foundation models can reason, can they also beat Warren Buffett?*](https://gamma.app/docs/If-foundation-models-can-reason-can-they-also-beat-Warren-Buffett-wifdlud4xxxoz2a)
+
 ---
 
 ## One-Minute Explanation

@@ -1,0 +1,77 @@
+{
+  "_published_at": "2026-01-12T20:02:08.728252Z",
+  "_published_from": "20260112T200208Z_5024ff15-46c2-4d32-8948-f0b352fe5fed.yaml",
+  "audit": {
+    "immutable": true,
+    "retained_until": "2036-01-10",
+    "superseded_by": null
+  },
+  "authority": {
+    "mandate_id": "db_pension_v1",
+    "mandate_version": "1.0",
+    "procedure_id": "rate_regime_adjustment",
+    "procedure_version": "v1"
+  },
+  "behavior": {
+    "decision_latency_ms": 0,
+    "escalated": true,
+    "inaction": false,
+    "procedure_branches_taken": [
+      "hard_constraint_breach",
+      "constraints_at_risk",
+      "outcome_escalate"
+    ],
+    "tool_calls": 0
+  },
+  "compliance": {
+    "deviations": null,
+    "procedure_followed": true
+  },
+  "confidence": {
+    "attribution": "Derived from scenario uncertainty and regime stability.",
+    "level": 0.725,
+    "trend": "stable"
+  },
+  "constraints": {
+    "constraints_at_risk": [
+      "liquidity_buffer_months"
+    ],
+    "hard_constraints_breached": true
+  },
+  "escalation": {
+    "automated_actions_suspended": true,
+    "escalation_reason": "Mandate constraints breached or confidence below floor.",
+    "human_authority_required": [
+      "Investment committee review"
+    ]
+  },
+  "invocation": {
+    "persistence_evidence": "2 confirmations over 2 cycles",
+    "trigger_description": "Scenario escalation_case",
+    "trigger_type": "state_change"
+  },
+  "judgment_fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
+  "outcome": {
+    "description": "Regime=rising_rates | gross_exposure=1.35 | liquidity_buffer_months=14 | confidence=0.72 | mandate=db_pension_v1 | hard_constraint_breach",
+    "type": "escalate"
+  },
+  "record_id": "5024ff15-46c2-4d32-8948-f0b352fe5fed",
+  "state": {
+    "environment_summary": {
+      "key_uncertainties": [
+        "elevated"
+      ],
+      "regime_state": "rising_rates"
+    },
+    "portfolio_summary": {
+      "key_exposures": {
+        "gross_exposure": 1.35
+      },
+      "leverage_level": 1.35,
+      "liquidity_position": {
+        "buffer_months": 14
+      }
+    }
+  },
+  "timestamp": "2026-01-12T20:02:08Z"
+}

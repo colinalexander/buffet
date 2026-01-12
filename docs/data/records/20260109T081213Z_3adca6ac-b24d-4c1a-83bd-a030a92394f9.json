@@ -1,5 +1,5 @@
 {
-  "_published_at": "2026-01-10T02:33:15.773015Z",
+  "_published_at": "2026-01-12T20:02:08.728252Z",
   "_published_from": "20260109T081213Z_3adca6ac-b24d-4c1a-83bd-a030a92394f9.yaml",
   "audit": {
     "immutable": true,
@@ -50,6 +50,7 @@
     "trigger_description": "Scenario escalation_case",
     "trigger_type": "state_change"
   },
+  "judgment_fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
   "outcome": {
     "description": "Regime=rising_rates | gross_exposure=1.35 | liquidity_buffer_months=14 | confidence=0.72 | mandate=db_pension_v1 | hard_constraint_breach",
     "type": "escalate"

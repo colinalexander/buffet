@@ -1,5 +1,5 @@
 {
-  "_published_at": "2026-01-10T02:33:15.773015Z",
+  "_published_at": "2026-01-12T20:02:08.728252Z",
   "_published_from": "20260108T081726Z_cf600828-06ab-4a85-a840-0bbb723392ac.yaml",
   "adjustment": {
     "adjustment_unit": "exposure",
@@ -49,6 +49,7 @@
     "trigger_description": "Scenario rising_rates_2022",
     "trigger_type": "state_change"
   },
+  "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
   "outcome": {
     "description": "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | confidence=0.72 | mandate=db_pension_v1 | constraints_at_risk",
     "type": "recommend_adjustment"

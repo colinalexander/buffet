@@ -1,0 +1,72 @@
+{
+  "_published_at": "2026-01-12T20:02:08.728252Z",
+  "_published_from": "20260112T200208Z_c327e2b1-f75a-4e4e-8f61-a8d0c60bce61.yaml",
+  "audit": {
+    "immutable": true,
+    "retained_until": "2041-01-08",
+    "superseded_by": null
+  },
+  "authority": {
+    "mandate_id": "endowment_v1",
+    "mandate_version": "1.0",
+    "procedure_id": "rate_regime_adjustment",
+    "procedure_version": "v1"
+  },
+  "behavior": {
+    "decision_latency_ms": 0,
+    "escalated": false,
+    "inaction": true,
+    "procedure_branches_taken": [
+      "outcome_affirm_alignment"
+    ],
+    "tool_calls": 0
+  },
+  "compliance": {
+    "deviations": null,
+    "procedure_followed": true
+  },
+  "confidence": {
+    "attribution": "Derived from scenario uncertainty and regime stability.",
+    "level": 0.725,
+    "trend": "stable"
+  },
+  "constraints": {
+    "constraints_at_risk": [],
+    "hard_constraints_breached": false
+  },
+  "inaction": {
+    "justification": "Exposures remain within mandate tolerances; no adjustment required.",
+    "risks_acknowledged": [
+      "Regime shift warrants continued monitoring"
+    ]
+  },
+  "invocation": {
+    "persistence_evidence": "2 confirmations over 2 cycles",
+    "trigger_description": "Scenario rising_rates_2022",
+    "trigger_type": "state_change"
+  },
+  "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
+  "outcome": {
+    "description": "Regime=rising_rates | gross_exposure=1.15 | liquidity_buffer_months=14 | confidence=0.72 | mandate=endowment_v1 | within_constraints",
+    "type": "affirm_alignment"
+  },
+  "record_id": "c327e2b1-f75a-4e4e-8f61-a8d0c60bce61",
+  "state": {
+    "environment_summary": {
+      "key_uncertainties": [
+        "elevated"
+      ],
+      "regime_state": "rising_rates"
+    },
+    "portfolio_summary": {
+      "key_exposures": {
+        "gross_exposure": 1.15
+      },
+      "leverage_level": 1.15,
+      "liquidity_position": {
+        "buffer_months": 14
+      }
+    }
+  },
+  "timestamp": "2026-01-12T20:02:08Z"
+}

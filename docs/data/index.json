@@ -1,751 +1,1751 @@
 {
-  "generated_at": "2026-01-10T02:33:15.773015Z",
+  "generated_at": "2026-01-12T20:02:08.728252Z",
+  "groups": [
+    {
+      "count": 5,
+      "emissions": [
+        {
+          "path": "data/records/20260112T200208Z_5024ff15-46c2-4d32-8948-f0b352fe5fed.json",
+          "published_from": "20260112T200208Z_5024ff15-46c2-4d32-8948-f0b352fe5fed.yaml",
+          "record_id": "5024ff15-46c2-4d32-8948-f0b352fe5fed",
+          "timestamp": "2026-01-12T20:02:08Z"
+        },
+        {
+          "path": "data/records/20260110T023315Z_3fc0e31f-725e-4951-8b0f-ed8a15a14a2b.json",
+          "published_from": "20260110T023315Z_3fc0e31f-725e-4951-8b0f-ed8a15a14a2b.yaml",
+          "record_id": "3fc0e31f-725e-4951-8b0f-ed8a15a14a2b",
+          "timestamp": "2026-01-10T02:33:15Z"
+        },
+        {
+          "path": "data/records/20260109T110500Z_bd3a91bf-5f67-4f54-81d3-487ba6deb295.json",
+          "published_from": "20260109T110500Z_bd3a91bf-5f67-4f54-81d3-487ba6deb295.yaml",
+          "record_id": "bd3a91bf-5f67-4f54-81d3-487ba6deb295",
+          "timestamp": "2026-01-09T11:05:00Z"
+        },
+        {
+          "path": "data/records/20260109T081213Z_3adca6ac-b24d-4c1a-83bd-a030a92394f9.json",
+          "published_from": "20260109T081213Z_3adca6ac-b24d-4c1a-83bd-a030a92394f9.yaml",
+          "record_id": "3adca6ac-b24d-4c1a-83bd-a030a92394f9",
+          "timestamp": "2026-01-09T08:12:13Z"
+        },
+        {
+          "path": "data/records/20260108T095505Z_23d1d90a-fea4-481d-9f7d-e355996c40a9.json",
+          "published_from": "20260108T095505Z_23d1d90a-fea4-481d-9f7d-e355996c40a9.yaml",
+          "record_id": "23d1d90a-fea4-481d-9f7d-e355996c40a9",
+          "timestamp": "2026-01-08T09:55:05Z"
+        }
+      ],
+      "fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
+      "first_timestamp": "2026-01-08T09:55:05Z",
+      "last_timestamp": "2026-01-12T20:02:08Z",
+      "mandate_id": "db_pension_v1",
+      "outcome_type": "escalate",
+      "procedure_id": "rate_regime_adjustment",
+      "representative_path": "data/records/20260112T200208Z_5024ff15-46c2-4d32-8948-f0b352fe5fed.json"
+    },
+    {
+      "count": 74,
+      "emissions": [
+        {
+          "path": "data/records/20260112T200208Z_95be6aa7-b3a0-48fd-a721-12f2dbb403dc.json",
+          "published_from": "20260112T200208Z_95be6aa7-b3a0-48fd-a721-12f2dbb403dc.yaml",
+          "record_id": "95be6aa7-b3a0-48fd-a721-12f2dbb403dc",
+          "timestamp": "2026-01-12T20:02:08Z"
+        },
+        {
+          "path": "data/records/20260112T194013Z_cb32da6f-43bc-4218-a60e-c3a0a3da78e5.json",
+          "published_from": "20260112T194013Z_cb32da6f-43bc-4218-a60e-c3a0a3da78e5.yaml",
+          "record_id": "cb32da6f-43bc-4218-a60e-c3a0a3da78e5",
+          "timestamp": "2026-01-12T19:40:13Z"
+        },
+        {
+          "path": "data/records/20260112T194013Z_db9223b1-a14c-46c7-bfa2-d04b917deb11.json",
+          "published_from": "20260112T194013Z_db9223b1-a14c-46c7-bfa2-d04b917deb11.yaml",
+          "record_id": "db9223b1-a14c-46c7-bfa2-d04b917deb11",
+          "timestamp": "2026-01-12T19:40:13Z"
+        },
+        {
+          "path": "data/records/20260112T194013Z_f1851c14-fe2d-4235-8be5-fb7cde9c7a3c.json",
+          "published_from": "20260112T194013Z_f1851c14-fe2d-4235-8be5-fb7cde9c7a3c.yaml",
+          "record_id": "f1851c14-fe2d-4235-8be5-fb7cde9c7a3c",
+          "timestamp": "2026-01-12T19:40:13Z"
+        },
+        {
+          "path": "data/records/20260112T190641Z_ad2c5599-cc55-49ad-bd6a-41384ec826ce.json",
+          "published_from": "20260112T190641Z_ad2c5599-cc55-49ad-bd6a-41384ec826ce.yaml",
+          "record_id": "ad2c5599-cc55-49ad-bd6a-41384ec826ce",
+          "timestamp": "2026-01-12T19:06:41Z"
+        },
+        {
+          "path": "data/records/20260112T190625Z_79095145-f983-4f58-880b-c7117ee09ebd.json",
+          "published_from": "20260112T190625Z_79095145-f983-4f58-880b-c7117ee09ebd.yaml",
+          "record_id": "79095145-f983-4f58-880b-c7117ee09ebd",
+          "timestamp": "2026-01-12T19:06:25Z"
+        },
+        {
+          "path": "data/records/20260112T190625Z_ae98d2db-7fd1-4fef-a0dc-7a5c448bea9f.json",
+          "published_from": "20260112T190625Z_ae98d2db-7fd1-4fef-a0dc-7a5c448bea9f.yaml",
+          "record_id": "ae98d2db-7fd1-4fef-a0dc-7a5c448bea9f",
+          "timestamp": "2026-01-12T19:06:25Z"
+        },
+        {
+          "path": "data/records/20260112T190625Z_e582cf1a-ba6d-41eb-9351-071a4bc362e8.json",
+          "published_from": "20260112T190625Z_e582cf1a-ba6d-41eb-9351-071a4bc362e8.yaml",
+          "record_id": "e582cf1a-ba6d-41eb-9351-071a4bc362e8",
+          "timestamp": "2026-01-12T19:06:25Z"
+        },
+        {
+          "path": "data/records/20260112T190245Z_4347c368-0fbb-4a39-b4e9-a82941b3ee6f.json",
+          "published_from": "20260112T190245Z_4347c368-0fbb-4a39-b4e9-a82941b3ee6f.yaml",
+          "record_id": "4347c368-0fbb-4a39-b4e9-a82941b3ee6f",
+          "timestamp": "2026-01-12T19:02:45Z"
+        },
+        {
+          "path": "data/records/20260112T190245Z_89fc8feb-9d7d-4d8e-9787-f7e0c6d197be.json",
+          "published_from": "20260112T190245Z_89fc8feb-9d7d-4d8e-9787-f7e0c6d197be.yaml",
+          "record_id": "89fc8feb-9d7d-4d8e-9787-f7e0c6d197be",
+          "timestamp": "2026-01-12T19:02:45Z"
+        },
+        {
+          "path": "data/records/20260112T190245Z_c30f9cbb-5b0c-45d3-9014-1223a5c12a6d.json",
+          "published_from": "20260112T190245Z_c30f9cbb-5b0c-45d3-9014-1223a5c12a6d.yaml",
+          "record_id": "c30f9cbb-5b0c-45d3-9014-1223a5c12a6d",
+          "timestamp": "2026-01-12T19:02:45Z"
+        },
+        {
+          "path": "data/records/20260110T235847Z_769865a7-b4a3-4ca5-858f-4022ab565d37.json",
+          "published_from": "20260110T235847Z_769865a7-b4a3-4ca5-858f-4022ab565d37.yaml",
+          "record_id": "769865a7-b4a3-4ca5-858f-4022ab565d37",
+          "timestamp": "2026-01-10T23:58:47Z"
+        },
+        {
+          "path": "data/records/20260110T235808Z_1f4827cb-9621-42c8-8ae1-983228c6cce9.json",
+          "published_from": "20260110T235808Z_1f4827cb-9621-42c8-8ae1-983228c6cce9.yaml",
+          "record_id": "1f4827cb-9621-42c8-8ae1-983228c6cce9",
+          "timestamp": "2026-01-10T23:58:08Z"
+        },
+        {
+          "path": "data/records/20260110T235808Z_38543f5f-3ca5-4fae-bdfb-d1f3c51265bb.json",
+          "published_from": "20260110T235808Z_38543f5f-3ca5-4fae-bdfb-d1f3c51265bb.yaml",
+          "record_id": "38543f5f-3ca5-4fae-bdfb-d1f3c51265bb",
+          "timestamp": "2026-01-10T23:58:08Z"
+        },
+        {
+          "path": "data/records/20260110T235808Z_59b4c1be-9437-47a9-b0df-98cbfee990fd.json",
+          "published_from": "20260110T235808Z_59b4c1be-9437-47a9-b0df-98cbfee990fd.yaml",
+          "record_id": "59b4c1be-9437-47a9-b0df-98cbfee990fd",
+          "timestamp": "2026-01-10T23:58:08Z"
+        },
+        {
+          "path": "data/records/20260110T235801Z_5bd1869e-0acd-4330-b592-36fbf7295214.json",
+          "published_from": "20260110T235801Z_5bd1869e-0acd-4330-b592-36fbf7295214.yaml",
+          "record_id": "5bd1869e-0acd-4330-b592-36fbf7295214",
+          "timestamp": "2026-01-10T23:58:01Z"
+        },
+        {
+          "path": "data/records/20260110T235801Z_69a86d7b-5259-456a-80bc-7ee6ead85db8.json",
+          "published_from": "20260110T235801Z_69a86d7b-5259-456a-80bc-7ee6ead85db8.yaml",
+          "record_id": "69a86d7b-5259-456a-80bc-7ee6ead85db8",
+          "timestamp": "2026-01-10T23:58:01Z"
+        },
+        {
+          "path": "data/records/20260110T235801Z_8731d34b-39f3-4102-bea8-bb7135d810fa.json",
+          "published_from": "20260110T235801Z_8731d34b-39f3-4102-bea8-bb7135d810fa.yaml",
+          "record_id": "8731d34b-39f3-4102-bea8-bb7135d810fa",
+          "timestamp": "2026-01-10T23:58:01Z"
+        },
+        {
+          "path": "data/records/20260110T023315Z_d545b3e6-444f-472d-9352-5e90f088507c.json",
+          "published_from": "20260110T023315Z_d545b3e6-444f-472d-9352-5e90f088507c.yaml",
+          "record_id": "d545b3e6-444f-472d-9352-5e90f088507c",
+          "timestamp": "2026-01-10T02:33:15Z"
+        },
+        {
+          "path": "data/records/20260110T023135Z_6beae6fb-866f-4e5a-80a3-60b6a8fc0921.json",
+          "published_from": "20260110T023135Z_6beae6fb-866f-4e5a-80a3-60b6a8fc0921.yaml",
+          "record_id": "6beae6fb-866f-4e5a-80a3-60b6a8fc0921",
+          "timestamp": "2026-01-10T02:31:35Z"
+        },
+        {
+          "path": "data/records/20260110T023135Z_bc5edb36-bf73-4dde-bf35-0e3d8dfcd549.json",
+          "published_from": "20260110T023135Z_bc5edb36-bf73-4dde-bf35-0e3d8dfcd549.yaml",
+          "record_id": "bc5edb36-bf73-4dde-bf35-0e3d8dfcd549",
+          "timestamp": "2026-01-10T02:31:35Z"
+        },
+        {
+          "path": "data/records/20260110T023135Z_c3052ebf-7399-4b26-94c7-324059f175ce.json",
+          "published_from": "20260110T023135Z_c3052ebf-7399-4b26-94c7-324059f175ce.yaml",
+          "record_id": "c3052ebf-7399-4b26-94c7-324059f175ce",
+          "timestamp": "2026-01-10T02:31:35Z"
+        },
+        {
+          "path": "data/records/20260110T023118Z_bb41bd71-4183-467a-8747-d0b74666766f.json",
+          "published_from": "20260110T023118Z_bb41bd71-4183-467a-8747-d0b74666766f.yaml",
+          "record_id": "bb41bd71-4183-467a-8747-d0b74666766f",
+          "timestamp": "2026-01-10T02:31:18Z"
+        },
+        {
+          "path": "data/records/20260110T023118Z_d726f8b1-5267-40f8-ac3f-1a64d0fd76ab.json",
+          "published_from": "20260110T023118Z_d726f8b1-5267-40f8-ac3f-1a64d0fd76ab.yaml",
+          "record_id": "d726f8b1-5267-40f8-ac3f-1a64d0fd76ab",
+          "timestamp": "2026-01-10T02:31:18Z"
+        },
+        {
+          "path": "data/records/20260110T023118Z_e5ad40f9-5409-411d-84df-a5d867cc60bf.json",
+          "published_from": "20260110T023118Z_e5ad40f9-5409-411d-84df-a5d867cc60bf.yaml",
+          "record_id": "e5ad40f9-5409-411d-84df-a5d867cc60bf",
+          "timestamp": "2026-01-10T02:31:18Z"
+        },
+        {
+          "path": "data/records/20260109T223001Z_24648c0e-af29-4d8d-a929-fdeef499eba6.json",
+          "published_from": "20260109T223001Z_24648c0e-af29-4d8d-a929-fdeef499eba6.yaml",
+          "record_id": "24648c0e-af29-4d8d-a929-fdeef499eba6",
+          "timestamp": "2026-01-09T22:30:01Z"
+        },
+        {
+          "path": "data/records/20260109T223001Z_48af62cb-7424-42c6-8549-b935772bfd24.json",
+          "published_from": "20260109T223001Z_48af62cb-7424-42c6-8549-b935772bfd24.yaml",
+          "record_id": "48af62cb-7424-42c6-8549-b935772bfd24",
+          "timestamp": "2026-01-09T22:30:01Z"
+        },
+        {
+          "path": "data/records/20260109T223001Z_7bcd899b-045a-4bbe-8aba-aca73629891c.json",
+          "published_from": "20260109T223001Z_7bcd899b-045a-4bbe-8aba-aca73629891c.yaml",
+          "record_id": "7bcd899b-045a-4bbe-8aba-aca73629891c",
+          "timestamp": "2026-01-09T22:30:01Z"
+        },
+        {
+          "path": "data/records/20260109T110500Z_870817f5-2e18-4d94-8a30-1d60ffb6d480.json",
+          "published_from": "20260109T110500Z_870817f5-2e18-4d94-8a30-1d60ffb6d480.yaml",
+          "record_id": "870817f5-2e18-4d94-8a30-1d60ffb6d480",
+          "timestamp": "2026-01-09T11:05:00Z"
+        },
+        {
+          "path": "data/records/20260109T092052Z_75a38286-c5d8-40ac-836d-da721c9fe5e5.json",
+          "published_from": "20260109T092052Z_75a38286-c5d8-40ac-836d-da721c9fe5e5.yaml",
+          "record_id": "75a38286-c5d8-40ac-836d-da721c9fe5e5",
+          "timestamp": "2026-01-09T09:20:52Z"
+        },
+        {
+          "path": "data/records/20260109T092052Z_be914a5d-cbf9-4ffb-9b1c-92758934af07.json",
+          "published_from": "20260109T092052Z_be914a5d-cbf9-4ffb-9b1c-92758934af07.yaml",
+          "record_id": "be914a5d-cbf9-4ffb-9b1c-92758934af07",
+          "timestamp": "2026-01-09T09:20:52Z"
+        },
+        {
+          "path": "data/records/20260109T092052Z_f3f427a2-9151-4952-83b0-f06e04a4872e.json",
+          "published_from": "20260109T092052Z_f3f427a2-9151-4952-83b0-f06e04a4872e.yaml",
+          "record_id": "f3f427a2-9151-4952-83b0-f06e04a4872e",
+          "timestamp": "2026-01-09T09:20:52Z"
+        },
+        {
+          "path": "data/records/20260109T081212Z_34651649-4e71-4dd5-b851-670aee946939.json",
+          "published_from": "20260109T081212Z_34651649-4e71-4dd5-b851-670aee946939.yaml",
+          "record_id": "34651649-4e71-4dd5-b851-670aee946939",
+          "timestamp": "2026-01-09T08:12:12Z"
+        },
+        {
+          "path": "data/records/20260109T073319Z_225d60d4-f845-44bd-b695-cbb1b2e05feb.json",
+          "published_from": "20260109T073319Z_225d60d4-f845-44bd-b695-cbb1b2e05feb.yaml",
+          "record_id": "225d60d4-f845-44bd-b695-cbb1b2e05feb",
+          "timestamp": "2026-01-09T07:33:19Z"
+        },
+        {
+          "path": "data/records/20260109T073319Z_4191c233-95ad-4ec5-b529-5d03df51a040.json",
+          "published_from": "20260109T073319Z_4191c233-95ad-4ec5-b529-5d03df51a040.yaml",
+          "record_id": "4191c233-95ad-4ec5-b529-5d03df51a040",
+          "timestamp": "2026-01-09T07:33:19Z"
+        },
+        {
+          "path": "data/records/20260109T073319Z_7b827b01-ca12-47a0-ae42-c88a8c63d651.json",
+          "published_from": "20260109T073319Z_7b827b01-ca12-47a0-ae42-c88a8c63d651.yaml",
+          "record_id": "7b827b01-ca12-47a0-ae42-c88a8c63d651",
+          "timestamp": "2026-01-09T07:33:19Z"
+        },
+        {
+          "path": "data/records/20260109T053957Z_1323f738-9442-49e9-a60a-125a429ef223.json",
+          "published_from": "20260109T053957Z_1323f738-9442-49e9-a60a-125a429ef223.yaml",
+          "record_id": "1323f738-9442-49e9-a60a-125a429ef223",
+          "timestamp": "2026-01-09T05:39:57Z"
+        },
+        {
+          "path": "data/records/20260109T053957Z_56d29043-f760-45aa-aa00-f721ff30b894.json",
+          "published_from": "20260109T053957Z_56d29043-f760-45aa-aa00-f721ff30b894.yaml",
+          "record_id": "56d29043-f760-45aa-aa00-f721ff30b894",
+          "timestamp": "2026-01-09T05:39:57Z"
+        },
+        {
+          "path": "data/records/20260109T053957Z_c19d8c59-1b43-43f3-a5c5-fa7d8375391e.json",
+          "published_from": "20260109T053957Z_c19d8c59-1b43-43f3-a5c5-fa7d8375391e.yaml",
+          "record_id": "c19d8c59-1b43-43f3-a5c5-fa7d8375391e",
+          "timestamp": "2026-01-09T05:39:57Z"
+        },
+        {
+          "path": "data/records/20260109T044358Z_0121bba6-48e6-40a2-b039-c526f612d35e.json",
+          "published_from": "20260109T044358Z_0121bba6-48e6-40a2-b039-c526f612d35e.yaml",
+          "record_id": "0121bba6-48e6-40a2-b039-c526f612d35e",
+          "timestamp": "2026-01-09T04:43:58Z"
+        },
+        {
+          "path": "data/records/20260109T044358Z_97b19174-250a-4a77-b446-8038801f3cc4.json",
+          "published_from": "20260109T044358Z_97b19174-250a-4a77-b446-8038801f3cc4.yaml",
+          "record_id": "97b19174-250a-4a77-b446-8038801f3cc4",
+          "timestamp": "2026-01-09T04:43:58Z"
+        },
+        {
+          "path": "data/records/20260109T044358Z_a3f683d1-61f4-4e8a-a625-dfdd1179cc3e.json",
+          "published_from": "20260109T044358Z_a3f683d1-61f4-4e8a-a625-dfdd1179cc3e.yaml",
+          "record_id": "a3f683d1-61f4-4e8a-a625-dfdd1179cc3e",
+          "timestamp": "2026-01-09T04:43:58Z"
+        },
+        {
+          "path": "data/records/20260109T044238Z_c25044eb-67d1-4778-b841-0109c2d0e31f.json",
+          "published_from": "20260109T044238Z_c25044eb-67d1-4778-b841-0109c2d0e31f.yaml",
+          "record_id": "c25044eb-67d1-4778-b841-0109c2d0e31f",
+          "timestamp": "2026-01-09T04:42:38Z"
+        },
+        {
+          "path": "data/records/20260109T044238Z_ce5507f8-e923-41cb-9080-e0ababfb9972.json",
+          "published_from": "20260109T044238Z_ce5507f8-e923-41cb-9080-e0ababfb9972.yaml",
+          "record_id": "ce5507f8-e923-41cb-9080-e0ababfb9972",
+          "timestamp": "2026-01-09T04:42:38Z"
+        },
+        {
+          "path": "data/records/20260109T044238Z_fc6eda0c-89bb-464e-88d4-7e512d191234.json",
+          "published_from": "20260109T044238Z_fc6eda0c-89bb-464e-88d4-7e512d191234.yaml",
+          "record_id": "fc6eda0c-89bb-464e-88d4-7e512d191234",
+          "timestamp": "2026-01-09T04:42:38Z"
+        },
+        {
+          "path": "data/records/20260109T043408Z_0178ba6b-fba5-432c-8ec3-39f25efdbead.json",
+          "published_from": "20260109T043408Z_0178ba6b-fba5-432c-8ec3-39f25efdbead.yaml",
+          "record_id": "0178ba6b-fba5-432c-8ec3-39f25efdbead",
+          "timestamp": "2026-01-09T04:34:08Z"
+        },
+        {
+          "path": "data/records/20260109T043408Z_d0a23004-098e-4b36-a02e-33bcf22aa9b0.json",
+          "published_from": "20260109T043408Z_d0a23004-098e-4b36-a02e-33bcf22aa9b0.yaml",
+          "record_id": "d0a23004-098e-4b36-a02e-33bcf22aa9b0",
+          "timestamp": "2026-01-09T04:34:08Z"
+        },
+        {
+          "path": "data/records/20260109T043408Z_d38630a4-a829-4e25-b7ed-6d584006b02b.json",
+          "published_from": "20260109T043408Z_d38630a4-a829-4e25-b7ed-6d584006b02b.yaml",
+          "record_id": "d38630a4-a829-4e25-b7ed-6d584006b02b",
+          "timestamp": "2026-01-09T04:34:08Z"
+        },
+        {
+          "path": "data/records/20260108T095505Z_17742099-a1c7-473b-af4d-79ba2884a379.json",
+          "published_from": "20260108T095505Z_17742099-a1c7-473b-af4d-79ba2884a379.yaml",
+          "record_id": "17742099-a1c7-473b-af4d-79ba2884a379",
+          "timestamp": "2026-01-08T09:55:05Z"
+        },
+        {
+          "path": "data/records/20260108T093455Z_946933cc-d1e8-48de-bbe0-1a813dde0dc8.json",
+          "published_from": "20260108T093455Z_946933cc-d1e8-48de-bbe0-1a813dde0dc8.yaml",
+          "record_id": "946933cc-d1e8-48de-bbe0-1a813dde0dc8",
+          "timestamp": "2026-01-08T09:34:55Z"
+        },
+        {
+          "path": "data/records/20260108T091528Z_6af47685-5786-4afe-a170-b755ad7e77a5.json",
+          "published_from": "20260108T091528Z_6af47685-5786-4afe-a170-b755ad7e77a5.yaml",
+          "record_id": "6af47685-5786-4afe-a170-b755ad7e77a5",
+          "timestamp": "2026-01-08T09:15:28Z"
+        },
+        {
+          "path": "data/records/20260108T090807Z_1eac2281-1ee9-4389-89ee-125224e768b4.json",
+          "published_from": "20260108T090807Z_1eac2281-1ee9-4389-89ee-125224e768b4.yaml",
+          "record_id": "1eac2281-1ee9-4389-89ee-125224e768b4",
+          "timestamp": "2026-01-08T09:08:07Z"
+        },
+        {
+          "path": "data/records/20260108T090048Z_6bd89ee3-d604-4e61-a31b-db2a99807fb0.json",
+          "published_from": "20260108T090048Z_6bd89ee3-d604-4e61-a31b-db2a99807fb0.yaml",
+          "record_id": "6bd89ee3-d604-4e61-a31b-db2a99807fb0",
+          "timestamp": "2026-01-08T09:00:48Z"
+        },
+        {
+          "path": "data/records/20260108T090048Z_a8fc3bbb-5f5f-4d7e-93c7-1c62fb827c70.json",
+          "published_from": "20260108T090048Z_a8fc3bbb-5f5f-4d7e-93c7-1c62fb827c70.yaml",
+          "record_id": "a8fc3bbb-5f5f-4d7e-93c7-1c62fb827c70",
+          "timestamp": "2026-01-08T09:00:48Z"
+        },
+        {
+          "path": "data/records/20260108T090048Z_b37c3e61-133d-45a2-b379-1f285ddff8d5.json",
+          "published_from": "20260108T090048Z_b37c3e61-133d-45a2-b379-1f285ddff8d5.yaml",
+          "record_id": "b37c3e61-133d-45a2-b379-1f285ddff8d5",
+          "timestamp": "2026-01-08T09:00:48Z"
+        },
+        {
+          "path": "data/records/20260108T083827Z_1b529694-16d3-41f0-9306-953624670ab9.json",
+          "published_from": "20260108T083827Z_1b529694-16d3-41f0-9306-953624670ab9.yaml",
+          "record_id": "1b529694-16d3-41f0-9306-953624670ab9",
+          "timestamp": "2026-01-08T08:38:27Z"
+        },
+        {
+          "path": "data/records/20260108T083827Z_73e41616-8d15-4e9c-8a9b-cccfe56db7ce.json",
+          "published_from": "20260108T083827Z_73e41616-8d15-4e9c-8a9b-cccfe56db7ce.yaml",
+          "record_id": "73e41616-8d15-4e9c-8a9b-cccfe56db7ce",
+          "timestamp": "2026-01-08T08:38:27Z"
+        },
+        {
+          "path": "data/records/20260108T083827Z_c535ce26-eb84-41aa-957e-ab1575b5dfb0.json",
+          "published_from": "20260108T083827Z_c535ce26-eb84-41aa-957e-ab1575b5dfb0.yaml",
+          "record_id": "c535ce26-eb84-41aa-957e-ab1575b5dfb0",
+          "timestamp": "2026-01-08T08:38:27Z"
+        },
+        {
+          "path": "data/records/20260108T083809Z_1ef46d45-75a6-4455-9e9d-98003805a381.json",
+          "published_from": "20260108T083809Z_1ef46d45-75a6-4455-9e9d-98003805a381.yaml",
+          "record_id": "1ef46d45-75a6-4455-9e9d-98003805a381",
+          "timestamp": "2026-01-08T08:38:09Z"
+        },
+        {
+          "path": "data/records/20260108T083809Z_30b43638-8562-4379-9b81-bea8018b204e.json",
+          "published_from": "20260108T083809Z_30b43638-8562-4379-9b81-bea8018b204e.yaml",
+          "record_id": "30b43638-8562-4379-9b81-bea8018b204e",
+          "timestamp": "2026-01-08T08:38:09Z"
+        },
+        {
+          "path": "data/records/20260108T083809Z_e29ab20f-2cfb-4d80-a756-88f202f49e20.json",
+          "published_from": "20260108T083809Z_e29ab20f-2cfb-4d80-a756-88f202f49e20.yaml",
+          "record_id": "e29ab20f-2cfb-4d80-a756-88f202f49e20",
+          "timestamp": "2026-01-08T08:38:09Z"
+        },
+        {
+          "path": "data/records/20260108T081824Z_0b37e772-489d-4064-9b3f-548974ea491c.json",
+          "published_from": "20260108T081824Z_0b37e772-489d-4064-9b3f-548974ea491c.yaml",
+          "record_id": "0b37e772-489d-4064-9b3f-548974ea491c",
+          "timestamp": "2026-01-08T08:18:24Z"
+        },
+        {
+          "path": "data/records/20260108T081824Z_4f41f5a4-9cc7-483a-94f2-754ef87e79d0.json",
+          "published_from": "20260108T081824Z_4f41f5a4-9cc7-483a-94f2-754ef87e79d0.yaml",
+          "record_id": "4f41f5a4-9cc7-483a-94f2-754ef87e79d0",
+          "timestamp": "2026-01-08T08:18:24Z"
+        },
+        {
+          "path": "data/records/20260108T081824Z_a6c14e8a-b44f-415b-965a-96d4e18353d6.json",
+          "published_from": "20260108T081824Z_a6c14e8a-b44f-415b-965a-96d4e18353d6.yaml",
+          "record_id": "a6c14e8a-b44f-415b-965a-96d4e18353d6",
+          "timestamp": "2026-01-08T08:18:24Z"
+        },
+        {
+          "path": "data/records/20260108T081726Z_6eb43ddd-c908-4564-8867-6e9e58aa2f09.json",
+          "published_from": "20260108T081726Z_6eb43ddd-c908-4564-8867-6e9e58aa2f09.yaml",
+          "record_id": "6eb43ddd-c908-4564-8867-6e9e58aa2f09",
+          "timestamp": "2026-01-08T08:17:26Z"
+        },
+        {
+          "path": "data/records/20260108T081726Z_8f08f394-93f8-4cc7-8de6-e20aafe65025.json",
+          "published_from": "20260108T081726Z_8f08f394-93f8-4cc7-8de6-e20aafe65025.yaml",
+          "record_id": "8f08f394-93f8-4cc7-8de6-e20aafe65025",
+          "timestamp": "2026-01-08T08:17:26Z"
+        },
+        {
+          "path": "data/records/20260108T081726Z_cf600828-06ab-4a85-a840-0bbb723392ac.json",
+          "published_from": "20260108T081726Z_cf600828-06ab-4a85-a840-0bbb723392ac.yaml",
+          "record_id": "cf600828-06ab-4a85-a840-0bbb723392ac",
+          "timestamp": "2026-01-08T08:17:26Z"
+        },
+        {
+          "path": "data/records/20260108T080550Z_24737e35-460c-49c6-89ea-4f76a0f16471.json",
+          "published_from": "20260108T080550Z_24737e35-460c-49c6-89ea-4f76a0f16471.yaml",
+          "record_id": "24737e35-460c-49c6-89ea-4f76a0f16471",
+          "timestamp": "2026-01-08T08:05:50Z"
+        },
+        {
+          "path": "data/records/20260108T080550Z_34f0e815-1158-4fa2-9586-55291d6e45b3.json",
+          "published_from": "20260108T080550Z_34f0e815-1158-4fa2-9586-55291d6e45b3.yaml",
+          "record_id": "34f0e815-1158-4fa2-9586-55291d6e45b3",
+          "timestamp": "2026-01-08T08:05:50Z"
+        },
+        {
+          "path": "data/records/20260108T080550Z_cc683a5a-e51c-468e-ac14-4e7541a4d24a.json",
+          "published_from": "20260108T080550Z_cc683a5a-e51c-468e-ac14-4e7541a4d24a.yaml",
+          "record_id": "cc683a5a-e51c-468e-ac14-4e7541a4d24a",
+          "timestamp": "2026-01-08T08:05:50Z"
+        },
+        {
+          "path": "data/records/20260108T075416Z_5739f99e-1762-4e7e-9978-0c9bb7a46d88.json",
+          "published_from": "20260108T075416Z_5739f99e-1762-4e7e-9978-0c9bb7a46d88.yaml",
+          "record_id": "5739f99e-1762-4e7e-9978-0c9bb7a46d88",
+          "timestamp": "2026-01-08T07:54:16Z"
+        },
+        {
+          "path": "data/records/20260108T075416Z_a1dba2ca-efbf-4cf2-b914-d113bfc6a4bb.json",
+          "published_from": "20260108T075416Z_a1dba2ca-efbf-4cf2-b914-d113bfc6a4bb.yaml",
+          "record_id": "a1dba2ca-efbf-4cf2-b914-d113bfc6a4bb",
+          "timestamp": "2026-01-08T07:54:16Z"
+        },
+        {
+          "path": "data/records/20260108T075416Z_ac043091-2376-435a-ac0f-cf35561b8d92.json",
+          "published_from": "20260108T075416Z_ac043091-2376-435a-ac0f-cf35561b8d92.yaml",
+          "record_id": "ac043091-2376-435a-ac0f-cf35561b8d92",
+          "timestamp": "2026-01-08T07:54:16Z"
+        },
+        {
+          "path": "data/records/20260108T075407Z_0a3a8154-4e69-4008-bc22-be91c727e509.json",
+          "published_from": "20260108T075407Z_0a3a8154-4e69-4008-bc22-be91c727e509.yaml",
+          "record_id": "0a3a8154-4e69-4008-bc22-be91c727e509",
+          "timestamp": "2026-01-08T07:54:07Z"
+        }
+      ],
+      "fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "first_timestamp": "2026-01-08T07:54:07Z",
+      "last_timestamp": "2026-01-12T20:02:08Z",
+      "mandate_id": "db_pension_v1",
+      "outcome_type": "recommend_adjustment",
+      "procedure_id": "rate_regime_adjustment",
+      "representative_path": "data/records/20260112T200208Z_95be6aa7-b3a0-48fd-a721-12f2dbb403dc.json"
+    },
+    {
+      "count": 11,
+      "emissions": [
+        {
+          "path": "data/records/20260112T200208Z_c327e2b1-f75a-4e4e-8f61-a8d0c60bce61.json",
+          "published_from": "20260112T200208Z_c327e2b1-f75a-4e4e-8f61-a8d0c60bce61.yaml",
+          "record_id": "c327e2b1-f75a-4e4e-8f61-a8d0c60bce61",
+          "timestamp": "2026-01-12T20:02:08Z"
+        },
+        {
+          "path": "data/records/20260112T190641Z_36e2fce1-9f6b-4417-8bad-82f0cbe89fe9.json",
+          "published_from": "20260112T190641Z_36e2fce1-9f6b-4417-8bad-82f0cbe89fe9.yaml",
+          "record_id": "36e2fce1-9f6b-4417-8bad-82f0cbe89fe9",
+          "timestamp": "2026-01-12T19:06:41Z"
+        },
+        {
+          "path": "data/records/20260110T235847Z_364ef2a6-5bf5-49fb-a5ab-2e2739cf6666.json",
+          "published_from": "20260110T235847Z_364ef2a6-5bf5-49fb-a5ab-2e2739cf6666.yaml",
+          "record_id": "364ef2a6-5bf5-49fb-a5ab-2e2739cf6666",
+          "timestamp": "2026-01-10T23:58:47Z"
+        },
+        {
+          "path": "data/records/20260110T023315Z_63e94d73-cb53-4767-8819-87da1b7dd83c.json",
+          "published_from": "20260110T023315Z_63e94d73-cb53-4767-8819-87da1b7dd83c.yaml",
+          "record_id": "63e94d73-cb53-4767-8819-87da1b7dd83c",
+          "timestamp": "2026-01-10T02:33:15Z"
+        },
+        {
+          "path": "data/records/20260109T110500Z_c4d0364f-550d-4b92-8d61-b09466f391c6.json",
+          "published_from": "20260109T110500Z_c4d0364f-550d-4b92-8d61-b09466f391c6.yaml",
+          "record_id": "c4d0364f-550d-4b92-8d61-b09466f391c6",
+          "timestamp": "2026-01-09T11:05:00Z"
+        },
+        {
+          "path": "data/records/20260109T081212Z_23932765-76ae-4bcf-b287-3476c0dea791.json",
+          "published_from": "20260109T081212Z_23932765-76ae-4bcf-b287-3476c0dea791.yaml",
+          "record_id": "23932765-76ae-4bcf-b287-3476c0dea791",
+          "timestamp": "2026-01-09T08:12:12Z"
+        },
+        {
+          "path": "data/records/20260108T095505Z_566f4d72-8737-4312-8e49-3cd4b0e5f499.json",
+          "published_from": "20260108T095505Z_566f4d72-8737-4312-8e49-3cd4b0e5f499.yaml",
+          "record_id": "566f4d72-8737-4312-8e49-3cd4b0e5f499",
+          "timestamp": "2026-01-08T09:55:05Z"
+        },
+        {
+          "path": "data/records/20260108T093455Z_3e183978-2cbc-4d7e-b1e1-d211d8eff916.json",
+          "published_from": "20260108T093455Z_3e183978-2cbc-4d7e-b1e1-d211d8eff916.yaml",
+          "record_id": "3e183978-2cbc-4d7e-b1e1-d211d8eff916",
+          "timestamp": "2026-01-08T09:34:55Z"
+        },
+        {
+          "path": "data/records/20260108T091528Z_2096e65c-7cc1-47b2-be8c-93b6dfa7b7c4.json",
+          "published_from": "20260108T091528Z_2096e65c-7cc1-47b2-be8c-93b6dfa7b7c4.yaml",
+          "record_id": "2096e65c-7cc1-47b2-be8c-93b6dfa7b7c4",
+          "timestamp": "2026-01-08T09:15:28Z"
+        },
+        {
+          "path": "data/records/20260108T090807Z_01c830a2-6deb-4ee7-bce2-f78c1dde9d43.json",
+          "published_from": "20260108T090807Z_01c830a2-6deb-4ee7-bce2-f78c1dde9d43.yaml",
+          "record_id": "01c830a2-6deb-4ee7-bce2-f78c1dde9d43",
+          "timestamp": "2026-01-08T09:08:07Z"
+        },
+        {
+          "path": "data/records/20260108T075407Z_7d89853c-1796-4044-914d-be5908f294ee.json",
+          "published_from": "20260108T075407Z_7d89853c-1796-4044-914d-be5908f294ee.yaml",
+          "record_id": "7d89853c-1796-4044-914d-be5908f294ee",
+          "timestamp": "2026-01-08T07:54:07Z"
+        }
+      ],
+      "fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
+      "first_timestamp": "2026-01-08T07:54:07Z",
+      "last_timestamp": "2026-01-12T20:02:08Z",
+      "mandate_id": "endowment_v1",
+      "outcome_type": "affirm_alignment",
+      "procedure_id": "rate_regime_adjustment",
+      "representative_path": "data/records/20260112T200208Z_c327e2b1-f75a-4e4e-8f61-a8d0c60bce61.json"
+    }
+  ],
   "records": [
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "escalate",
+      "path": "data/records/20260112T200208Z_5024ff15-46c2-4d32-8948-f0b352fe5fed.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T200208Z_5024ff15-46c2-4d32-8948-f0b352fe5fed.yaml",
+      "record_id": "5024ff15-46c2-4d32-8948-f0b352fe5fed",
+      "timestamp": "2026-01-12T20:02:08Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T200208Z_95be6aa7-b3a0-48fd-a721-12f2dbb403dc.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T200208Z_95be6aa7-b3a0-48fd-a721-12f2dbb403dc.yaml",
+      "record_id": "95be6aa7-b3a0-48fd-a721-12f2dbb403dc",
+      "timestamp": "2026-01-12T20:02:08Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
+      "mandate_id": "endowment_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "affirm_alignment",
+      "path": "data/records/20260112T200208Z_c327e2b1-f75a-4e4e-8f61-a8d0c60bce61.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T200208Z_c327e2b1-f75a-4e4e-8f61-a8d0c60bce61.yaml",
+      "record_id": "c327e2b1-f75a-4e4e-8f61-a8d0c60bce61",
+      "timestamp": "2026-01-12T20:02:08Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T194013Z_cb32da6f-43bc-4218-a60e-c3a0a3da78e5.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T194013Z_cb32da6f-43bc-4218-a60e-c3a0a3da78e5.yaml",
+      "record_id": "cb32da6f-43bc-4218-a60e-c3a0a3da78e5",
+      "timestamp": "2026-01-12T19:40:13Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T194013Z_db9223b1-a14c-46c7-bfa2-d04b917deb11.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T194013Z_db9223b1-a14c-46c7-bfa2-d04b917deb11.yaml",
+      "record_id": "db9223b1-a14c-46c7-bfa2-d04b917deb11",
+      "timestamp": "2026-01-12T19:40:13Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T194013Z_f1851c14-fe2d-4235-8be5-fb7cde9c7a3c.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T194013Z_f1851c14-fe2d-4235-8be5-fb7cde9c7a3c.yaml",
+      "record_id": "f1851c14-fe2d-4235-8be5-fb7cde9c7a3c",
+      "timestamp": "2026-01-12T19:40:13Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
+      "mandate_id": "endowment_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "affirm_alignment",
+      "path": "data/records/20260112T190641Z_36e2fce1-9f6b-4417-8bad-82f0cbe89fe9.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T190641Z_36e2fce1-9f6b-4417-8bad-82f0cbe89fe9.yaml",
+      "record_id": "36e2fce1-9f6b-4417-8bad-82f0cbe89fe9",
+      "timestamp": "2026-01-12T19:06:41Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T190641Z_ad2c5599-cc55-49ad-bd6a-41384ec826ce.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T190641Z_ad2c5599-cc55-49ad-bd6a-41384ec826ce.yaml",
+      "record_id": "ad2c5599-cc55-49ad-bd6a-41384ec826ce",
+      "timestamp": "2026-01-12T19:06:41Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T190625Z_79095145-f983-4f58-880b-c7117ee09ebd.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T190625Z_79095145-f983-4f58-880b-c7117ee09ebd.yaml",
+      "record_id": "79095145-f983-4f58-880b-c7117ee09ebd",
+      "timestamp": "2026-01-12T19:06:25Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T190625Z_ae98d2db-7fd1-4fef-a0dc-7a5c448bea9f.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T190625Z_ae98d2db-7fd1-4fef-a0dc-7a5c448bea9f.yaml",
+      "record_id": "ae98d2db-7fd1-4fef-a0dc-7a5c448bea9f",
+      "timestamp": "2026-01-12T19:06:25Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T190625Z_e582cf1a-ba6d-41eb-9351-071a4bc362e8.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T190625Z_e582cf1a-ba6d-41eb-9351-071a4bc362e8.yaml",
+      "record_id": "e582cf1a-ba6d-41eb-9351-071a4bc362e8",
+      "timestamp": "2026-01-12T19:06:25Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T190245Z_4347c368-0fbb-4a39-b4e9-a82941b3ee6f.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T190245Z_4347c368-0fbb-4a39-b4e9-a82941b3ee6f.yaml",
+      "record_id": "4347c368-0fbb-4a39-b4e9-a82941b3ee6f",
+      "timestamp": "2026-01-12T19:02:45Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T190245Z_89fc8feb-9d7d-4d8e-9787-f7e0c6d197be.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T190245Z_89fc8feb-9d7d-4d8e-9787-f7e0c6d197be.yaml",
+      "record_id": "89fc8feb-9d7d-4d8e-9787-f7e0c6d197be",
+      "timestamp": "2026-01-12T19:02:45Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260112T190245Z_c30f9cbb-5b0c-45d3-9014-1223a5c12a6d.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260112T190245Z_c30f9cbb-5b0c-45d3-9014-1223a5c12a6d.yaml",
+      "record_id": "c30f9cbb-5b0c-45d3-9014-1223a5c12a6d",
+      "timestamp": "2026-01-12T19:02:45Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
+      "mandate_id": "endowment_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "affirm_alignment",
+      "path": "data/records/20260110T235847Z_364ef2a6-5bf5-49fb-a5ab-2e2739cf6666.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260110T235847Z_364ef2a6-5bf5-49fb-a5ab-2e2739cf6666.yaml",
+      "record_id": "364ef2a6-5bf5-49fb-a5ab-2e2739cf6666",
+      "timestamp": "2026-01-10T23:58:47Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260110T235847Z_769865a7-b4a3-4ca5-858f-4022ab565d37.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260110T235847Z_769865a7-b4a3-4ca5-858f-4022ab565d37.yaml",
+      "record_id": "769865a7-b4a3-4ca5-858f-4022ab565d37",
+      "timestamp": "2026-01-10T23:58:47Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260110T235808Z_1f4827cb-9621-42c8-8ae1-983228c6cce9.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260110T235808Z_1f4827cb-9621-42c8-8ae1-983228c6cce9.yaml",
+      "record_id": "1f4827cb-9621-42c8-8ae1-983228c6cce9",
+      "timestamp": "2026-01-10T23:58:08Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260110T235808Z_38543f5f-3ca5-4fae-bdfb-d1f3c51265bb.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260110T235808Z_38543f5f-3ca5-4fae-bdfb-d1f3c51265bb.yaml",
+      "record_id": "38543f5f-3ca5-4fae-bdfb-d1f3c51265bb",
+      "timestamp": "2026-01-10T23:58:08Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260110T235808Z_59b4c1be-9437-47a9-b0df-98cbfee990fd.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260110T235808Z_59b4c1be-9437-47a9-b0df-98cbfee990fd.yaml",
+      "record_id": "59b4c1be-9437-47a9-b0df-98cbfee990fd",
+      "timestamp": "2026-01-10T23:58:08Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260110T235801Z_5bd1869e-0acd-4330-b592-36fbf7295214.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260110T235801Z_5bd1869e-0acd-4330-b592-36fbf7295214.yaml",
+      "record_id": "5bd1869e-0acd-4330-b592-36fbf7295214",
+      "timestamp": "2026-01-10T23:58:01Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260110T235801Z_69a86d7b-5259-456a-80bc-7ee6ead85db8.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260110T235801Z_69a86d7b-5259-456a-80bc-7ee6ead85db8.yaml",
+      "record_id": "69a86d7b-5259-456a-80bc-7ee6ead85db8",
+      "timestamp": "2026-01-10T23:58:01Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
+      "mandate_id": "db_pension_v1",
+      "mandate_version": "1.0",
+      "outcome_type": "recommend_adjustment",
+      "path": "data/records/20260110T235801Z_8731d34b-39f3-4102-bea8-bb7135d810fa.json",
+      "procedure_id": "rate_regime_adjustment",
+      "procedure_version": "v1",
+      "published_from": "20260110T235801Z_8731d34b-39f3-4102-bea8-bb7135d810fa.yaml",
+      "record_id": "8731d34b-39f3-4102-bea8-bb7135d810fa",
+      "timestamp": "2026-01-10T23:58:01Z"
+    },
+    {
+      "confidence_level": 0.725,
+      "judgment_fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "escalate",
       "path": "data/records/20260110T023315Z_3fc0e31f-725e-4951-8b0f-ed8a15a14a2b.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260110T023315Z_3fc0e31f-725e-4951-8b0f-ed8a15a14a2b.yaml",
       "record_id": "3fc0e31f-725e-4951-8b0f-ed8a15a14a2b",
       "timestamp": "2026-01-10T02:33:15Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
       "mandate_id": "endowment_v1",
       "mandate_version": "1.0",
       "outcome_type": "affirm_alignment",
       "path": "data/records/20260110T023315Z_63e94d73-cb53-4767-8819-87da1b7dd83c.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260110T023315Z_63e94d73-cb53-4767-8819-87da1b7dd83c.yaml",
       "record_id": "63e94d73-cb53-4767-8819-87da1b7dd83c",
       "timestamp": "2026-01-10T02:33:15Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260110T023315Z_d545b3e6-444f-472d-9352-5e90f088507c.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260110T023315Z_d545b3e6-444f-472d-9352-5e90f088507c.yaml",
       "record_id": "d545b3e6-444f-472d-9352-5e90f088507c",
       "timestamp": "2026-01-10T02:33:15Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260110T023135Z_6beae6fb-866f-4e5a-80a3-60b6a8fc0921.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260110T023135Z_6beae6fb-866f-4e5a-80a3-60b6a8fc0921.yaml",
       "record_id": "6beae6fb-866f-4e5a-80a3-60b6a8fc0921",
       "timestamp": "2026-01-10T02:31:35Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260110T023135Z_bc5edb36-bf73-4dde-bf35-0e3d8dfcd549.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260110T023135Z_bc5edb36-bf73-4dde-bf35-0e3d8dfcd549.yaml",
       "record_id": "bc5edb36-bf73-4dde-bf35-0e3d8dfcd549",
       "timestamp": "2026-01-10T02:31:35Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260110T023135Z_c3052ebf-7399-4b26-94c7-324059f175ce.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260110T023135Z_c3052ebf-7399-4b26-94c7-324059f175ce.yaml",
       "record_id": "c3052ebf-7399-4b26-94c7-324059f175ce",
       "timestamp": "2026-01-10T02:31:35Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260110T023118Z_bb41bd71-4183-467a-8747-d0b74666766f.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260110T023118Z_bb41bd71-4183-467a-8747-d0b74666766f.yaml",
       "record_id": "bb41bd71-4183-467a-8747-d0b74666766f",
       "timestamp": "2026-01-10T02:31:18Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260110T023118Z_d726f8b1-5267-40f8-ac3f-1a64d0fd76ab.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260110T023118Z_d726f8b1-5267-40f8-ac3f-1a64d0fd76ab.yaml",
       "record_id": "d726f8b1-5267-40f8-ac3f-1a64d0fd76ab",
       "timestamp": "2026-01-10T02:31:18Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260110T023118Z_e5ad40f9-5409-411d-84df-a5d867cc60bf.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260110T023118Z_e5ad40f9-5409-411d-84df-a5d867cc60bf.yaml",
       "record_id": "e5ad40f9-5409-411d-84df-a5d867cc60bf",
       "timestamp": "2026-01-10T02:31:18Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T223001Z_24648c0e-af29-4d8d-a929-fdeef499eba6.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T223001Z_24648c0e-af29-4d8d-a929-fdeef499eba6.yaml",
       "record_id": "24648c0e-af29-4d8d-a929-fdeef499eba6",
       "timestamp": "2026-01-09T22:30:01Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T223001Z_48af62cb-7424-42c6-8549-b935772bfd24.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T223001Z_48af62cb-7424-42c6-8549-b935772bfd24.yaml",
       "record_id": "48af62cb-7424-42c6-8549-b935772bfd24",
       "timestamp": "2026-01-09T22:30:01Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T223001Z_7bcd899b-045a-4bbe-8aba-aca73629891c.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T223001Z_7bcd899b-045a-4bbe-8aba-aca73629891c.yaml",
       "record_id": "7bcd899b-045a-4bbe-8aba-aca73629891c",
       "timestamp": "2026-01-09T22:30:01Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T110500Z_870817f5-2e18-4d94-8a30-1d60ffb6d480.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T110500Z_870817f5-2e18-4d94-8a30-1d60ffb6d480.yaml",
       "record_id": "870817f5-2e18-4d94-8a30-1d60ffb6d480",
       "timestamp": "2026-01-09T11:05:00Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "escalate",
       "path": "data/records/20260109T110500Z_bd3a91bf-5f67-4f54-81d3-487ba6deb295.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T110500Z_bd3a91bf-5f67-4f54-81d3-487ba6deb295.yaml",
       "record_id": "bd3a91bf-5f67-4f54-81d3-487ba6deb295",
       "timestamp": "2026-01-09T11:05:00Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
       "mandate_id": "endowment_v1",
       "mandate_version": "1.0",
       "outcome_type": "affirm_alignment",
       "path": "data/records/20260109T110500Z_c4d0364f-550d-4b92-8d61-b09466f391c6.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T110500Z_c4d0364f-550d-4b92-8d61-b09466f391c6.yaml",
       "record_id": "c4d0364f-550d-4b92-8d61-b09466f391c6",
       "timestamp": "2026-01-09T11:05:00Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T092052Z_75a38286-c5d8-40ac-836d-da721c9fe5e5.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T092052Z_75a38286-c5d8-40ac-836d-da721c9fe5e5.yaml",
       "record_id": "75a38286-c5d8-40ac-836d-da721c9fe5e5",
       "timestamp": "2026-01-09T09:20:52Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T092052Z_be914a5d-cbf9-4ffb-9b1c-92758934af07.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T092052Z_be914a5d-cbf9-4ffb-9b1c-92758934af07.yaml",
       "record_id": "be914a5d-cbf9-4ffb-9b1c-92758934af07",
       "timestamp": "2026-01-09T09:20:52Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T092052Z_f3f427a2-9151-4952-83b0-f06e04a4872e.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T092052Z_f3f427a2-9151-4952-83b0-f06e04a4872e.yaml",
       "record_id": "f3f427a2-9151-4952-83b0-f06e04a4872e",
       "timestamp": "2026-01-09T09:20:52Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "escalate",
       "path": "data/records/20260109T081213Z_3adca6ac-b24d-4c1a-83bd-a030a92394f9.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T081213Z_3adca6ac-b24d-4c1a-83bd-a030a92394f9.yaml",
       "record_id": "3adca6ac-b24d-4c1a-83bd-a030a92394f9",
       "timestamp": "2026-01-09T08:12:13Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
       "mandate_id": "endowment_v1",
       "mandate_version": "1.0",
       "outcome_type": "affirm_alignment",
       "path": "data/records/20260109T081212Z_23932765-76ae-4bcf-b287-3476c0dea791.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T081212Z_23932765-76ae-4bcf-b287-3476c0dea791.yaml",
       "record_id": "23932765-76ae-4bcf-b287-3476c0dea791",
       "timestamp": "2026-01-09T08:12:12Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T081212Z_34651649-4e71-4dd5-b851-670aee946939.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T081212Z_34651649-4e71-4dd5-b851-670aee946939.yaml",
       "record_id": "34651649-4e71-4dd5-b851-670aee946939",
       "timestamp": "2026-01-09T08:12:12Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T073319Z_225d60d4-f845-44bd-b695-cbb1b2e05feb.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T073319Z_225d60d4-f845-44bd-b695-cbb1b2e05feb.yaml",
       "record_id": "225d60d4-f845-44bd-b695-cbb1b2e05feb",
       "timestamp": "2026-01-09T07:33:19Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T073319Z_4191c233-95ad-4ec5-b529-5d03df51a040.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T073319Z_4191c233-95ad-4ec5-b529-5d03df51a040.yaml",
       "record_id": "4191c233-95ad-4ec5-b529-5d03df51a040",
       "timestamp": "2026-01-09T07:33:19Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T073319Z_7b827b01-ca12-47a0-ae42-c88a8c63d651.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T073319Z_7b827b01-ca12-47a0-ae42-c88a8c63d651.yaml",
       "record_id": "7b827b01-ca12-47a0-ae42-c88a8c63d651",
       "timestamp": "2026-01-09T07:33:19Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T053957Z_1323f738-9442-49e9-a60a-125a429ef223.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T053957Z_1323f738-9442-49e9-a60a-125a429ef223.yaml",
       "record_id": "1323f738-9442-49e9-a60a-125a429ef223",
       "timestamp": "2026-01-09T05:39:57Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T053957Z_56d29043-f760-45aa-aa00-f721ff30b894.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T053957Z_56d29043-f760-45aa-aa00-f721ff30b894.yaml",
       "record_id": "56d29043-f760-45aa-aa00-f721ff30b894",
       "timestamp": "2026-01-09T05:39:57Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T053957Z_c19d8c59-1b43-43f3-a5c5-fa7d8375391e.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T053957Z_c19d8c59-1b43-43f3-a5c5-fa7d8375391e.yaml",
       "record_id": "c19d8c59-1b43-43f3-a5c5-fa7d8375391e",
       "timestamp": "2026-01-09T05:39:57Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T044358Z_0121bba6-48e6-40a2-b039-c526f612d35e.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T044358Z_0121bba6-48e6-40a2-b039-c526f612d35e.yaml",
       "record_id": "0121bba6-48e6-40a2-b039-c526f612d35e",
       "timestamp": "2026-01-09T04:43:58Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T044358Z_97b19174-250a-4a77-b446-8038801f3cc4.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T044358Z_97b19174-250a-4a77-b446-8038801f3cc4.yaml",
       "record_id": "97b19174-250a-4a77-b446-8038801f3cc4",
       "timestamp": "2026-01-09T04:43:58Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T044358Z_a3f683d1-61f4-4e8a-a625-dfdd1179cc3e.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T044358Z_a3f683d1-61f4-4e8a-a625-dfdd1179cc3e.yaml",
       "record_id": "a3f683d1-61f4-4e8a-a625-dfdd1179cc3e",
       "timestamp": "2026-01-09T04:43:58Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T044238Z_c25044eb-67d1-4778-b841-0109c2d0e31f.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T044238Z_c25044eb-67d1-4778-b841-0109c2d0e31f.yaml",
       "record_id": "c25044eb-67d1-4778-b841-0109c2d0e31f",
       "timestamp": "2026-01-09T04:42:38Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T044238Z_ce5507f8-e923-41cb-9080-e0ababfb9972.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T044238Z_ce5507f8-e923-41cb-9080-e0ababfb9972.yaml",
       "record_id": "ce5507f8-e923-41cb-9080-e0ababfb9972",
       "timestamp": "2026-01-09T04:42:38Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T044238Z_fc6eda0c-89bb-464e-88d4-7e512d191234.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T044238Z_fc6eda0c-89bb-464e-88d4-7e512d191234.yaml",
       "record_id": "fc6eda0c-89bb-464e-88d4-7e512d191234",
       "timestamp": "2026-01-09T04:42:38Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T043408Z_0178ba6b-fba5-432c-8ec3-39f25efdbead.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T043408Z_0178ba6b-fba5-432c-8ec3-39f25efdbead.yaml",
       "record_id": "0178ba6b-fba5-432c-8ec3-39f25efdbead",
       "timestamp": "2026-01-09T04:34:08Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T043408Z_d0a23004-098e-4b36-a02e-33bcf22aa9b0.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T043408Z_d0a23004-098e-4b36-a02e-33bcf22aa9b0.yaml",
       "record_id": "d0a23004-098e-4b36-a02e-33bcf22aa9b0",
       "timestamp": "2026-01-09T04:34:08Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260109T043408Z_d38630a4-a829-4e25-b7ed-6d584006b02b.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260109T043408Z_d38630a4-a829-4e25-b7ed-6d584006b02b.yaml",
       "record_id": "d38630a4-a829-4e25-b7ed-6d584006b02b",
       "timestamp": "2026-01-09T04:34:08Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T095505Z_17742099-a1c7-473b-af4d-79ba2884a379.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T095505Z_17742099-a1c7-473b-af4d-79ba2884a379.yaml",
       "record_id": "17742099-a1c7-473b-af4d-79ba2884a379",
       "timestamp": "2026-01-08T09:55:05Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "0c419f898927a7c07570007ebc0de2b21c0bc1866a3eefe126f465c9e4033caa",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "escalate",
       "path": "data/records/20260108T095505Z_23d1d90a-fea4-481d-9f7d-e355996c40a9.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T095505Z_23d1d90a-fea4-481d-9f7d-e355996c40a9.yaml",
       "record_id": "23d1d90a-fea4-481d-9f7d-e355996c40a9",
       "timestamp": "2026-01-08T09:55:05Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
       "mandate_id": "endowment_v1",
       "mandate_version": "1.0",
       "outcome_type": "affirm_alignment",
       "path": "data/records/20260108T095505Z_566f4d72-8737-4312-8e49-3cd4b0e5f499.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T095505Z_566f4d72-8737-4312-8e49-3cd4b0e5f499.yaml",
       "record_id": "566f4d72-8737-4312-8e49-3cd4b0e5f499",
       "timestamp": "2026-01-08T09:55:05Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
       "mandate_id": "endowment_v1",
       "mandate_version": "1.0",
       "outcome_type": "affirm_alignment",
       "path": "data/records/20260108T093455Z_3e183978-2cbc-4d7e-b1e1-d211d8eff916.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T093455Z_3e183978-2cbc-4d7e-b1e1-d211d8eff916.yaml",
       "record_id": "3e183978-2cbc-4d7e-b1e1-d211d8eff916",
       "timestamp": "2026-01-08T09:34:55Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T093455Z_946933cc-d1e8-48de-bbe0-1a813dde0dc8.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T093455Z_946933cc-d1e8-48de-bbe0-1a813dde0dc8.yaml",
       "record_id": "946933cc-d1e8-48de-bbe0-1a813dde0dc8",
       "timestamp": "2026-01-08T09:34:55Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
       "mandate_id": "endowment_v1",
       "mandate_version": "1.0",
       "outcome_type": "affirm_alignment",
       "path": "data/records/20260108T091528Z_2096e65c-7cc1-47b2-be8c-93b6dfa7b7c4.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T091528Z_2096e65c-7cc1-47b2-be8c-93b6dfa7b7c4.yaml",
       "record_id": "2096e65c-7cc1-47b2-be8c-93b6dfa7b7c4",
       "timestamp": "2026-01-08T09:15:28Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T091528Z_6af47685-5786-4afe-a170-b755ad7e77a5.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T091528Z_6af47685-5786-4afe-a170-b755ad7e77a5.yaml",
       "record_id": "6af47685-5786-4afe-a170-b755ad7e77a5",
       "timestamp": "2026-01-08T09:15:28Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
       "mandate_id": "endowment_v1",
       "mandate_version": "1.0",
       "outcome_type": "affirm_alignment",
       "path": "data/records/20260108T090807Z_01c830a2-6deb-4ee7-bce2-f78c1dde9d43.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T090807Z_01c830a2-6deb-4ee7-bce2-f78c1dde9d43.yaml",
       "record_id": "01c830a2-6deb-4ee7-bce2-f78c1dde9d43",
       "timestamp": "2026-01-08T09:08:07Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T090807Z_1eac2281-1ee9-4389-89ee-125224e768b4.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T090807Z_1eac2281-1ee9-4389-89ee-125224e768b4.yaml",
       "record_id": "1eac2281-1ee9-4389-89ee-125224e768b4",
       "timestamp": "2026-01-08T09:08:07Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T090048Z_6bd89ee3-d604-4e61-a31b-db2a99807fb0.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T090048Z_6bd89ee3-d604-4e61-a31b-db2a99807fb0.yaml",
       "record_id": "6bd89ee3-d604-4e61-a31b-db2a99807fb0",
       "timestamp": "2026-01-08T09:00:48Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T090048Z_a8fc3bbb-5f5f-4d7e-93c7-1c62fb827c70.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T090048Z_a8fc3bbb-5f5f-4d7e-93c7-1c62fb827c70.yaml",
       "record_id": "a8fc3bbb-5f5f-4d7e-93c7-1c62fb827c70",
       "timestamp": "2026-01-08T09:00:48Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T090048Z_b37c3e61-133d-45a2-b379-1f285ddff8d5.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T090048Z_b37c3e61-133d-45a2-b379-1f285ddff8d5.yaml",
       "record_id": "b37c3e61-133d-45a2-b379-1f285ddff8d5",
       "timestamp": "2026-01-08T09:00:48Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T083827Z_1b529694-16d3-41f0-9306-953624670ab9.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T083827Z_1b529694-16d3-41f0-9306-953624670ab9.yaml",
       "record_id": "1b529694-16d3-41f0-9306-953624670ab9",
       "timestamp": "2026-01-08T08:38:27Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T083827Z_73e41616-8d15-4e9c-8a9b-cccfe56db7ce.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T083827Z_73e41616-8d15-4e9c-8a9b-cccfe56db7ce.yaml",
       "record_id": "73e41616-8d15-4e9c-8a9b-cccfe56db7ce",
       "timestamp": "2026-01-08T08:38:27Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T083827Z_c535ce26-eb84-41aa-957e-ab1575b5dfb0.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T083827Z_c535ce26-eb84-41aa-957e-ab1575b5dfb0.yaml",
       "record_id": "c535ce26-eb84-41aa-957e-ab1575b5dfb0",
       "timestamp": "2026-01-08T08:38:27Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T083809Z_1ef46d45-75a6-4455-9e9d-98003805a381.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T083809Z_1ef46d45-75a6-4455-9e9d-98003805a381.yaml",
       "record_id": "1ef46d45-75a6-4455-9e9d-98003805a381",
       "timestamp": "2026-01-08T08:38:09Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T083809Z_30b43638-8562-4379-9b81-bea8018b204e.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T083809Z_30b43638-8562-4379-9b81-bea8018b204e.yaml",
       "record_id": "30b43638-8562-4379-9b81-bea8018b204e",
       "timestamp": "2026-01-08T08:38:09Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T083809Z_e29ab20f-2cfb-4d80-a756-88f202f49e20.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T083809Z_e29ab20f-2cfb-4d80-a756-88f202f49e20.yaml",
       "record_id": "e29ab20f-2cfb-4d80-a756-88f202f49e20",
       "timestamp": "2026-01-08T08:38:09Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T081824Z_0b37e772-489d-4064-9b3f-548974ea491c.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T081824Z_0b37e772-489d-4064-9b3f-548974ea491c.yaml",
       "record_id": "0b37e772-489d-4064-9b3f-548974ea491c",
       "timestamp": "2026-01-08T08:18:24Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T081824Z_4f41f5a4-9cc7-483a-94f2-754ef87e79d0.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T081824Z_4f41f5a4-9cc7-483a-94f2-754ef87e79d0.yaml",
       "record_id": "4f41f5a4-9cc7-483a-94f2-754ef87e79d0",
       "timestamp": "2026-01-08T08:18:24Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T081824Z_a6c14e8a-b44f-415b-965a-96d4e18353d6.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T081824Z_a6c14e8a-b44f-415b-965a-96d4e18353d6.yaml",
       "record_id": "a6c14e8a-b44f-415b-965a-96d4e18353d6",
       "timestamp": "2026-01-08T08:18:24Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T081726Z_6eb43ddd-c908-4564-8867-6e9e58aa2f09.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T081726Z_6eb43ddd-c908-4564-8867-6e9e58aa2f09.yaml",
       "record_id": "6eb43ddd-c908-4564-8867-6e9e58aa2f09",
       "timestamp": "2026-01-08T08:17:26Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T081726Z_8f08f394-93f8-4cc7-8de6-e20aafe65025.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T081726Z_8f08f394-93f8-4cc7-8de6-e20aafe65025.yaml",
       "record_id": "8f08f394-93f8-4cc7-8de6-e20aafe65025",
       "timestamp": "2026-01-08T08:17:26Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T081726Z_cf600828-06ab-4a85-a840-0bbb723392ac.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T081726Z_cf600828-06ab-4a85-a840-0bbb723392ac.yaml",
       "record_id": "cf600828-06ab-4a85-a840-0bbb723392ac",
       "timestamp": "2026-01-08T08:17:26Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T080550Z_24737e35-460c-49c6-89ea-4f76a0f16471.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T080550Z_24737e35-460c-49c6-89ea-4f76a0f16471.yaml",
       "record_id": "24737e35-460c-49c6-89ea-4f76a0f16471",
       "timestamp": "2026-01-08T08:05:50Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T080550Z_34f0e815-1158-4fa2-9586-55291d6e45b3.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T080550Z_34f0e815-1158-4fa2-9586-55291d6e45b3.yaml",
       "record_id": "34f0e815-1158-4fa2-9586-55291d6e45b3",
       "timestamp": "2026-01-08T08:05:50Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T080550Z_cc683a5a-e51c-468e-ac14-4e7541a4d24a.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T080550Z_cc683a5a-e51c-468e-ac14-4e7541a4d24a.yaml",
       "record_id": "cc683a5a-e51c-468e-ac14-4e7541a4d24a",
       "timestamp": "2026-01-08T08:05:50Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T075416Z_5739f99e-1762-4e7e-9978-0c9bb7a46d88.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T075416Z_5739f99e-1762-4e7e-9978-0c9bb7a46d88.yaml",
       "record_id": "5739f99e-1762-4e7e-9978-0c9bb7a46d88",
       "timestamp": "2026-01-08T07:54:16Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T075416Z_a1dba2ca-efbf-4cf2-b914-d113bfc6a4bb.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T075416Z_a1dba2ca-efbf-4cf2-b914-d113bfc6a4bb.yaml",
       "record_id": "a1dba2ca-efbf-4cf2-b914-d113bfc6a4bb",
       "timestamp": "2026-01-08T07:54:16Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T075416Z_ac043091-2376-435a-ac0f-cf35561b8d92.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T075416Z_ac043091-2376-435a-ac0f-cf35561b8d92.yaml",
       "record_id": "ac043091-2376-435a-ac0f-cf35561b8d92",
       "timestamp": "2026-01-08T07:54:16Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "14d2bbaf8cd739830fd0a8049e559602fb0ca2acda9bb77dd3baaa6251c163fc",
       "mandate_id": "db_pension_v1",
       "mandate_version": "1.0",
       "outcome_type": "recommend_adjustment",
       "path": "data/records/20260108T075407Z_0a3a8154-4e69-4008-bc22-be91c727e509.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T075407Z_0a3a8154-4e69-4008-bc22-be91c727e509.yaml",
       "record_id": "0a3a8154-4e69-4008-bc22-be91c727e509",
       "timestamp": "2026-01-08T07:54:07Z"
     },
     {
       "confidence_level": 0.725,
+      "judgment_fingerprint": "c2e577302b308e8efb8ee97ef46118d6a5d8c0648430351832c40a9bf4abf597",
       "mandate_id": "endowment_v1",
       "mandate_version": "1.0",
       "outcome_type": "affirm_alignment",
       "path": "data/records/20260108T075407Z_7d89853c-1796-4044-914d-be5908f294ee.json",
       "procedure_id": "rate_regime_adjustment",
       "procedure_version": "v1",
+      "published_from": "20260108T075407Z_7d89853c-1796-4044-914d-be5908f294ee.yaml",
       "record_id": "7d89853c-1796-4044-914d-be5908f294ee",
       "timestamp": "2026-01-08T07:54:07Z"
     }
